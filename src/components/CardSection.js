@@ -32,7 +32,7 @@ const App = () => {
       Get your own non-custodial card powered by Visa to spend globally and to win exclusive rewards </div>
       <br></br>
 	  <div className="CardbuttonContainer">
-	  <button><b>Apply for card</b></button>
+	  <button>Apply for card</button>
 	  </div>
 	  <br/>
       {/* <div className="header3" style = {{background:'#121314',marginTop:"2%",fontFamily: 'Benzin-Medium',color:'#ddd',textAlign:'center',paddingTop:'5%'}}>PARTNERS & BACKERS </div>

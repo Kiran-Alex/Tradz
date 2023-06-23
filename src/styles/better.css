@@ -13,23 +13,26 @@
     color:#949494;
 }
 
-.CardbuttonContainer {
-  align-items: center;
-  padding-left: 44%;
-  padding-right: 44%;
-  height: 61px;
-}
-
 .CardbuttonContainer button {
-  width: 100%;
   background-color: #2D2D2D;
   border-style: none;
+  font-weight: bold;
   color: white;
   height: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.CardbuttonContainer {
+  align-items: center;
+  height: 61px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -243,3 +246,4 @@ background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684
     padding: 13px 50px 13px;
   }
 }
+

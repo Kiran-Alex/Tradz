@@ -18,17 +18,21 @@ const App = () => {
         observer.observe(imageRef.current);
       }, []);
   return (
-    <div className="lol" style = {{backgroundColor: '#121314'}}>
+    <div className="lol" style = {{backgroundColor: 'rgb(16,16,17)'}}>
          <div  className={`image-container1`}ref={imageRef}>
-      <img className={`image ${isExpanded ? 'expanded' : ''}`} src={process.env.PUBLIC_URL + '/Media/nft.png'} alt="Image" />
+      <img className={`image ${isExpanded ? 'expanded' : ''}`} src={process.env.PUBLIC_URL + '/Media/wellnewnft.png'} alt="Image" />
     </div>
       <div className="header">
         Feel the premium experience
       </div>
       <br />
-      <div className="topText" style={{fontSize: '1.5rem', marginBottom: '2rem'}}>
-      Offering you our unique NFT-based subscriptions that give their owners reduced fees, Xade Tokens, exclusive collectibles, a free card and much more      </div>
+      <div className="topText" style={{fontSize: '1.4rem', marginBottom: '2rem'}}>
+      Offering you our unique NFT-based subscriptions that give their owners reduced fees, Xade Tokens, exclusive collectibles, a free card and much more </div>
       <br></br>
+      <div className="CardbuttonContainer">
+	  <button>Apply for card</button>
+	  </div>
+    <br/>
     </div>
   );
 };
