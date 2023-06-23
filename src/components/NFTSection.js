@@ -1,0 +1,36 @@
+
+import "../styles/better.css";
+
+import React, {useState, useEffect, useRef} from 'react'
+const App = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const imageRef = useRef(null);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setIsExpanded(true);
+              observer.unobserve(imageRef.current);
+            }
+          },
+          { threshold: 0.5 } // Trigger the observer when the image is 50% in view
+        );
+        observer.observe(imageRef.current);
+      }, []);
+  return (
+    <div className="lol" style = {{backgroundColor: '#121314'}}>
+         <div  className={`image-container1`}ref={imageRef}>
+      <img className={`image ${isExpanded ? 'expanded' : ''}`} src={process.env.PUBLIC_URL + '/Media/nft.png'} alt="Image" />
+    </div>
+      <div className="header">
+        Feel the premium experience
+      </div>
+      <br />
+      <div className="topText" style={{fontSize: '1.5rem', marginBottom: '2rem'}}>
+      Offering you our unique NFT-based subscriptions that give their owners reduced fees, Xade Tokens, exclusive collectibles, a free card and much more      </div>
+      <br></br>
+    </div>
+  );
+};
+
+export default App;

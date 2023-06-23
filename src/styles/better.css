@@ -1,0 +1,245 @@
+.header { 
+    font-size: 2.7rem;
+    font-family: NeueMontreal-Bold;
+    text-align: center;
+}
+
+.topText {
+    padding: 0% 25%;
+    font-size: 1.2rem;
+    font-family: NeueMontreal-Medium;
+    text-align: center;
+    color: rgb(255, 255, 255)    ;
+    color:#949494;
+}
+
+.CardbuttonContainer {
+  align-items: center;
+  padding-left: 44%;
+  padding-right: 44%;
+  height: 61px;
+}
+
+.CardbuttonContainer button {
+  width: 100%;
+  background-color: #2D2D2D;
+  border-style: none;
+  color: white;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+
+
+.boxgfather {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding-bottom: 5%;
+    
+}
+
+.boxfather {
+    /* margin: 1.2rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.betterbox {
+    height: 24rem;
+    width: 30%;
+    /* height: 10rem; */
+    border-radius: 2rem;
+    background: purple;
+    padding: 2rem;
+    /* padding-top: 1rem; */
+    margin: 1.2rem 1.2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.betterbox1 {
+    background: linear-gradient(113.01deg, #8C46FF -2.72%, #B080FF 111.29%);
+background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747054/Real_world_use_pgdual.png);
+}
+.betterbox2 {
+    background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_45_jkcruk.png);
+}
+.betterbox3 {
+  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747054/Real_world_use-2_s95o6o.png);}
+.betterbox4 {
+  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_46_qfdwro.png);}
+
+.line1 {
+    width: 20%;
+    border: 0.01px solid white;
+    margin: 2rem 0 2rem 0;
+    font-family: Regular;
+}
+.image-container1 {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 2s ease-in-out;
+    transition-duration: 3s;
+  }
+  .image {
+    width: 50%;
+  }
+  .expanded {
+    transition-duration: 1.5s;
+    width: 60%;
+  }
+  .mainText {
+    text-align: center;
+  }
+
+.headerText {
+    /* padding: 10% 0; */
+    /* width: 70%; */
+    height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: SemiBold;
+}
+  .buttonstuff {
+
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonstuff:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.buttonstuff:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .buttonstuff {
+    padding: 13px 50px 13px;
+  }
+}
+
+  .imagecard {
+    width:50%;
+}
+@font-face {
+    font-family: NeueMontreal-Bold;
+    src: url("NeueMontreal-Bold.otf");
+  }
+
+  @font-face {
+    font-family: NeueMontreal-Medium;
+    src: url("NeueMontreal-Medium.otf");
+  }
+
+  @font-face {
+    font-family: NeueMontreal-Regular;
+    src: url("NeueMontreal-Regular.otf");
+  }
+
+  @font-face {
+    font-family: Cred;
+    src: url("FontsFree-Net-Gilroy-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: Benzin-Medium;
+    src: url("benzin-medium.ttf");
+  }
+
+  @font-face {
+    font-family: NeueMontreal-Light;
+    src: url("benzin-medium.ttf");
+  }
+
+  @media screen and (max-width: 800px) {
+    .betterbox {
+        width: 90vw;
+        margin: 1rem 0 0 0;
+    }
+
+    .expanded {
+        width: 100%;
+    }
+
+    .imagecard {
+        width: 90%;
+    }
+
+    .topText {
+        padding: 0% 5%;
+    }
+
+    .header {
+        padding: 0 2%;
+    }
+  }
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
