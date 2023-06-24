@@ -13,6 +13,7 @@ import NFT from './components/NFTSection';
 import CardSection from './components/CardSection'
 import CoinSection from './components/CoinsSection'
 import Stats from './components/Stats'
+import Security from "./components/Security";
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -49,6 +50,7 @@ function App() {
       <NFT />
 
       <Stats />
+      <Security />	
       <FAQ />
     
       {/* <BottomSection /> */}

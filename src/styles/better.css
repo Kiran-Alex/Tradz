@@ -22,8 +22,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-size: large;
 }
 
 .CardbuttonContainer {
@@ -81,6 +82,25 @@ background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684
 .betterbox4 {
   background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_46_qfdwro.png);}
 
+  .betterbox5 {
+    background-color: rgb(27, 27, 28);
+    width : 25%;
+    padding-left: 2.5rem;
+  }
+
+  .betterbox5 .headerText {
+    font-family:"NeueMontreal-Regular";
+    font-weight :normal;
+    font-size: 3rem;
+    text-align: left;
+    line-height: 50px;
+  }
+
+  .betterbox5 .mainText {
+    color: #B4B4B4;
+    font-size: 1.2rem;
+    text-align: left;
+  }
 .line1 {
     width: 20%;
     border: 0.01px solid white;
