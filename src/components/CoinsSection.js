@@ -28,7 +28,11 @@ const App = () => {
       <br />
       <div className="topText" style={{fontSize: '1.5rem', marginBottom: '2rem'}}>
       Complete quests, be active in the Xade community and earn Xade coins that you can save or spend on amazing rewards </div>
-      <br></br>
+      <br/>
+      <div className="CardbuttonContainer">
+	  <button>Apply for card</button>
+	  </div>
+    <br/>
     </div>
   );
 };
