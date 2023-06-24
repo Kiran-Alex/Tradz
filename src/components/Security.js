@@ -18,7 +18,7 @@ const Security = () => {
                     <div className="betterbox betterbox5">
 
                         <div className="headerText"><span style={{ marginRight: "60px" }}>Non-</span>
-                            custodial</div>
+                        custodial</div>
                         <br />
                         <br />
                         <div className="circle"></div>

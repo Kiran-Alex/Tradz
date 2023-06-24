@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/style.css";
+import BlogSection from "./BlogSection";
 
 export default function FAQ() {
   return (
@@ -51,6 +52,7 @@ export default function FAQ() {
           </div>
         </div>
       </div>
+      <BlogSection/>
       <div className="header"style = {{marginTop:"5%"}}>
       Join the revolution
       </div>

@@ -54,7 +54,7 @@ function App() {
       <FAQ />
     
       {/* <BottomSection /> */}
-
+      
      <Footer />
     </div>
   );

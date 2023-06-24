@@ -82,25 +82,67 @@ background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684
 .betterbox4 {
   background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_46_qfdwro.png);}
 
-  .betterbox5 {
+.betterbox5 {
     background-color: rgb(27, 27, 28);
     width : 25%;
-    padding-left: 2.5rem;
-  }
+    padding-left: 2.5rem;}
 
-  .betterbox5 .headerText {
+.betterbox5 .headerText {
     font-family:"NeueMontreal-Regular";
     font-weight :normal;
     font-size: 3rem;
     text-align: left;
-    line-height: 50px;
-  }
+    line-height: 50px;}
 
-  .betterbox5 .mainText {
+.betterbox5 .mainText {
     color: #B4B4B4;
     font-size: 1.2rem;
-    text-align: left;
-  }
+    text-align: left;}
+
+.betterbox6  {
+  background-color: #151516;
+  width : 27%;
+  height:30rem;
+}
+
+.betterbox6 .headerText {
+  text-align: left;
+  font-family:"NeueMontreal-Regular";
+  font-weight :normal;
+  font-size: 2.5rem;
+  line-height: 50px;
+  text-overflow:clip;
+}
+
+.betterbox6 .mainText {
+  color :#B4B4B4;
+  text-align: left;
+  
+}
+
+.readNow {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    width : 100%
+}
+
+.readNowBtn button {
+  background-color: #2D2D2D;
+  border-style: none;
+  font-weight: bold;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+.readNowImg img {
+  width: 100%;
+  height: 100%;
+}
+
 .line1 {
     width: 20%;
     border: 0.01px solid white;
@@ -264,6 +306,15 @@ background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684
 @media (min-width: 768px) {
   .button-52 {
     padding: 13px 50px 13px;
+  }
+}
+
+@media (max-width: 411px) {
+  .readNowImg img {
+    display: none;
+  }
+  .betterbox6 .mainText {
+    margin-top: 30px;
   }
 }
 
