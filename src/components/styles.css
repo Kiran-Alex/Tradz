@@ -125,6 +125,42 @@
 .image-box ~ .image-box {
   margin-left: 50vw;
 }
+
+
+section#container2  .left-half{
+
+  margin-left: 0px;
+  
+}
+section#container2  .right-half{
+
+  margin-left: 30%;
+  
+}
+
+section#container2  .right-half .line2{
+
+  width:80%
+  
+}
+
+
+section#container4  .left-half{
+
+  margin-left: 0px;
+  
+}
+section#container4  .right-half{
+
+  margin-left: 30%;
+  
+}
+
+section#container4  .right-half .line2{
+
+  width:80%
+  
+}
 @media screen and (min-width: 800px) {
   .image-container img { 
     width: 272px;
@@ -232,6 +268,9 @@ grid-column: 1;
   grid-column: 1;
 }
 
+
+
+
 @media (max-width: 800px){
   .container {
     display: flex;
@@ -272,9 +311,37 @@ width: 100%;
   align-self: center;
   margin: auto;
 }
+.header {
+  font-size: 2.5rem;
+}
+
+section#container2 {
+  flex-direction: column-reverse;
+}
+
+section#container2 .right-half {
+  margin-left: 0px;
   
 }
 
+section#container2 .right-half .line2 {
+  width: 85vw;
+}
+
+section#container4 {
+  flex-direction: column-reverse;
+}
+
+section#container4 .right-half {
+  margin-left: 0px;
+  
+}
+
+section#container4 .right-half .line2 {
+  width: 85vw;
+}
+
+}
 
 
 
