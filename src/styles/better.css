@@ -210,6 +210,85 @@ background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684
   left: 0px;
 }
 
+.slider1 {
+  background: black;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider1::before,
+.slider1::after {
+  background: linear-gradient(to right, #222 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider1::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider1::before {
+  left: 0;
+  top: 0;
+}
+.slider1 .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider1 .slide {
+  height: 100px;
+  width: 250px;
+}
+
+.slider2 {
+  background: black;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  direction: ltr;
+  transform: scaleX(-1);
+}
+
+.slider2::before,
+.slider2::after {
+  background: linear-gradient(to left, #222 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider2::after {
+  left: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider2::before {
+  right: 0;
+  top: 0;
+}
+.slider2 .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider2 .slide {
+  height: 100px;
+  width: 250px;
+  direction: rtl;
+  transform: scaleX(-1);
+}
+
+
 @media (min-width: 768px) {
   .buttonstuff {
     padding: 13px 50px 13px;

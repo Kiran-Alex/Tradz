@@ -17,7 +17,7 @@ const Security = () => {
                 <div className="boxfather">
                     <div className="betterbox betterbox5">
 
-                        <div className="headerText"><span style={{ marginRight: "140px" }}>Non-</span>custodial</div>
+                        <div className="headerText" >Non- <span style={{marginRight: "60px"}}> custodial</span></div>
                         <br />
                         <br />
                         <div className="circle"></div>
