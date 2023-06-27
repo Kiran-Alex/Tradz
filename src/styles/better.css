@@ -13,6 +13,15 @@
     color:#949494;
 }
 
+.blogContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.blogContainer button {
+  background-color: black;
+  border-style: none;
+}
 .CardbuttonContainer button {
   background-color: #2D2D2D;
   border-style: none;
@@ -37,100 +46,109 @@
 }
 
 
-
 .boxgfather {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    padding-bottom: 5%;
-    
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding-bottom: 5%;
 }
 
 .boxfather {
-    /* margin: 1.2rem; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .betterbox {
-    height: 24rem;
-    width: 30%;
-    /* height: 10rem; */
-    border-radius: 2rem;
-    background: purple;
-    padding: 2rem;
-    /* padding-top: 1rem; */
-    margin: 1.2rem 1.2rem 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 24rem;
+  width: 30%;
+  border-radius: 2rem;
+  background: purple;
+  padding: 2rem;
+  margin: 1.2rem 1.2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .betterbox1 {
-    background: linear-gradient(113.01deg, #8C46FF -2.72%, #B080FF 111.29%);
-background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747054/Real_world_use_pgdual.png);
+  background: linear-gradient(113.01deg, #8C46FF -2.72%, #B080FF 111.29%);
+  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747054/Real_world_use_pgdual.png);
 }
+
 .betterbox2 {
-    background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_45_jkcruk.png);
+  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_45_jkcruk.png);
 }
+
 .betterbox3 {
-  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747054/Real_world_use-2_s95o6o.png);}
+  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747054/Real_world_use-2_s95o6o.png);
+}
+
 .betterbox4 {
-  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_46_qfdwro.png);}
+  background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684747065/Group_46_qfdwro.png);
+}
 
 .betterbox5 {
-    background-color: rgb(27, 27, 28);
-    width : 25%;
-    padding-left: 2.5rem;}
+  background-color: rgb(27, 27, 28);
+  width: 25%;
+  padding-left: 2.5rem;
+}
 
 .betterbox5 .headerText {
-    font-family:"NeueMontreal-Regular";
-    font-weight :normal;
-    font-size: 3rem;
-    text-align: left;
-    line-height: 50px;}
+  font-family: "NeueMontreal-Regular";
+  font-weight: normal;
+  font-size: 3rem;
+  text-align: left;
+  line-height: 50px;
+}
 
 .betterbox5 .mainText {
-    color: #B4B4B4;
-    font-size: 1.2rem;
-    text-align: left;}
-
-.betterbox6  {
-  background-color: #151516;
-  width : 27%;
-  height:30rem;
+  color: #b4b4b4;
+  font-size: 1.2rem;
+  text-align: left;
 }
+
+.betterbox6 {
+  background-color: #151516;
+  width: 27%;
+  height: 36rem;
+}
+
 
 .betterbox6 .headerText {
   text-align: left;
-  font-family:"NeueMontreal-Regular";
-  font-weight :normal;
+  font-family: "NeueMontreal-Regular";
+  font-weight: normal;
   font-size: 2.5rem;
   line-height: 50px;
-  text-overflow:clip;
+  text-overflow: clip;
 }
 
 .betterbox6 .mainText {
-  color :#B4B4B4;
+  color: #b4b4b4;
   text-align: left;
-  
+}
+
+.betterbox6 .topText {
+  padding: 0px;
+  text-align: left;
 }
 
 .readNow {
   display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
-    flex-wrap: wrap;
-    width : 100%
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .readNowBtn button {
-  background-color: #2D2D2D;
+  background-color: #2d2d2d;
   border-style: none;
   font-weight: bold;
   color: white;
@@ -138,45 +156,49 @@ background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684
   border-radius: 5px;
   margin-bottom: 1em;
 }
+
 .readNowImg img {
   width: 100%;
   height: 100%;
 }
 
 .line1 {
-    width: 20%;
-    border: 0.01px solid white;
-    margin: 2rem 0 2rem 0;
-    font-family: Regular;
+  width: 20%;
+  border: 0.01px solid white;
+  margin: 2rem 0 2rem 0;
+  font-family: Regular;
 }
+
 .image-container1 {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: width 2s ease-in-out;
-    transition-duration: 3s;
-  }
-  .image {
-    width: 50%;
-  }
-  .expanded {
-    transition-duration: 1.5s;
-    width: 60%;
-  }
-  .mainText {
-    text-align: center;
-  }
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 2s ease-in-out;
+  transition-duration: 3s;
+}
+
+.image {
+  width: 50%;
+}
+
+.expanded {
+  transition-duration: 1.5s;
+  width: 60%;
+}
+
+.mainText {
+  text-align: center;
+}
 
 .headerText {
-    /* padding: 10% 0; */
-    /* width: 70%; */
-    height: 5rem;
-    text-align: center;
-    font-size: 2rem;
-    font-family: SemiBold;
+  height: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-family: SemiBold;
 }
+
   .buttonstuff {
 
   font-size: 16px;
@@ -381,19 +403,26 @@ background-image: url(https://res.cloudinary.com/xade-finance/image/upload/v1684
   top: 0px;
   left: 0px;
 }
-
-@media (min-width: 768px) {
+@media(max-width:1415px) and (min-width: 767px) {
+  .readNowImg{
+    display: none;
+  }
+}
+@media (max-width: 768px)  and (min-width: 414px){
   .button-52 {
     padding: 13px 50px 13px;
   }
 }
 
-@media (max-width: 411px) {
+@media (max-width: 415px) and (min-width: 30px){
   .readNowImg img {
     display: none;
   }
   .betterbox6 .mainText {
     margin-top: 30px;
+  }
+  .blogContainer .blogButton {
+    display: none;
   }
 }
 
