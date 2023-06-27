@@ -199,6 +199,21 @@
   font-family: SemiBold;
 }
 
+  .blogvtbutton {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+
+  .blogvtbutton .bvtb1 {
+    border-style: none;
+    background-color: black;
+    border-radius: 90px;
+    margin-right: 10px;
+    }
+
+
   .buttonstuff {
 
   font-size: 16px;
@@ -412,6 +427,12 @@
   .button-52 {
     padding: 13px 50px 13px;
   }
+  .blogContainer .blogButton {
+    display: none;
+  }
+  .blogvtbutton {
+    display: flex;
+  }
 }
 
 @media (max-width: 415px) and (min-width: 30px){
@@ -424,5 +445,16 @@
   .blogContainer .blogButton {
     display: none;
   }
+  .blogvtbutton {
+    display: flex;
+  }
+
+  .betterbox6:nth-of-type(2){
+    display: none;
+  }
+
+  .blogContainer {
+    justify-content: center;
+}
 }
 

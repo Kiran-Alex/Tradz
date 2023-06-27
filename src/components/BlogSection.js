@@ -48,7 +48,7 @@ const BlogSection = () => {
         description: 'At last - our revolutional perpetual future protocol is live! Learn more about its features and why it’s the best solution for trading in DeFi at this moment',
         image: process.env.PUBLIC_URL + '/Media/chart-front-color.png',
       },
-    // Add more blogs as needed
+    
   ];
 
   return (
@@ -115,6 +115,14 @@ const BlogSection = () => {
         <button className="blogButton" onClick={handleNext} style={{ backgroundColor: "none" }}><ArrowForwardIosIcon sx={{ color: 'white' }} /></button>
       </div>
       <br />
+      <div className="blogvtbutton">
+        <button className="bvtb1" onClick={handlePrevious} >
+        <ArrowBackIosIcon sx={{ color: 'white' }} />
+        </button>
+        <button className="bvtb1" onClick={handleNext}>
+        <ArrowForwardIosIcon  style={{ backgroundColor: "none" }} sx={{ color: 'white' }} />
+        </button>
+      </div>
 
     </div>
   );
