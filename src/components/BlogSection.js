@@ -44,8 +44,8 @@ const BlogSection = () => {
         image: process.env.PUBLIC_URL + '/Media/Star.png',
       },
       {
-        title: 'Derivex: Trading unleashed',
-        description: 'At last - our revolutional perpetual future protocol is live! Learn more about its features and why it’s the best solution for trading in DeFi at this moment',
+        title: 'RemmiteX: Payments Reimagined',
+        description: 'Effortlessly send global payments with RemmiteX: the gasless, fiat-pegged stablecoin protocol powered by Biconomy.',
         image: process.env.PUBLIC_URL + '/Media/chart-front-color.png',
       },
     
@@ -115,6 +115,7 @@ const BlogSection = () => {
         <button className="blogButton" onClick={handleNext} style={{ backgroundColor: "none" }}><ArrowForwardIosIcon sx={{ color: 'white' }} /></button>
       </div>
       <br />
+      <div className="blogbtncontainer">
       <div className="blogvtbutton">
         <button className="bvtb1" onClick={handlePrevious} >
         <ArrowBackIosIcon sx={{ color: 'white' }} />
@@ -122,6 +123,7 @@ const BlogSection = () => {
         <button className="bvtb1" onClick={handleNext}>
         <ArrowForwardIosIcon  style={{ backgroundColor: "none" }} sx={{ color: 'white' }} />
         </button>
+      </div>
       </div>
 
     </div>
