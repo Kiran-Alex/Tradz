@@ -32,7 +32,7 @@ const App = () => {
 				Get your own non-custodial card powered by Visa to spend globally and to win exclusive rewards </div>
 			<br></br>
 			<div className="CardbuttonContainer">
-				<button>Apply for card</button>
+				<button onClick={(e)=>{e.preventDefault();window.open("https://forms.gle/DsptyteisKfaqbRX8", '_blank')}}>Apply for card</button>
 			</div>
 			<br />
 

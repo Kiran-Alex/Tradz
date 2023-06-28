@@ -30,7 +30,7 @@ const App = () => {
       Complete quests, be active in the Xade community and earn Xade coins that you can save or spend on amazing rewards </div>
       <br/>
       <div className="CardbuttonContainer">
-	  <button>Learn about our tokenomics</button>
+	  <button onClick={(e)=>{e.preventDefault();window.open("https://docsend.com/view/84zhyz9hcf7d3hgz", '_blank')}}>Learn about our tokenomics</button>
 	  </div>
     <br/>
     </div>
