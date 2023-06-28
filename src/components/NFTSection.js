@@ -30,7 +30,7 @@ const App = () => {
       Offering you our unique NFT-based subscriptions that give their owners reduced fees, Xade Tokens, exclusive collectibles, a free card and much more </div>
       <br></br>
       <div className="CardbuttonContainer">
-	  <button>Apply for card</button>
+	  <button>Learn More</button>
 	  </div>
     <br/>
     </div>
