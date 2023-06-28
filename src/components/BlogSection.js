@@ -48,6 +48,11 @@ const BlogSection = () => {
         description: 'Effortlessly send global payments with RemmiteX: the gasless, fiat-pegged stablecoin protocol powered by Biconomy.',
         image: process.env.PUBLIC_URL + '/Media/chart-front-color.png',
       },
+      {
+        title: 'What is Xade and why do you need it?',
+        description: 'Xade is a DeFi-powered platform serving as a bridge between traditional banking and DeFi protocols, offering on-chain banking services.',
+        image: process.env.PUBLIC_URL + '/Media/chart-front-color.png',
+      },
     
   ];
 

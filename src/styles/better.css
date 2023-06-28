@@ -115,7 +115,7 @@
 .betterbox6 {
   background-color: #151516;
   width: 27%;
-  height: 36rem;
+  height: 39rem;
 }
 
 
@@ -126,6 +126,7 @@
   font-size: 2.5rem;
   line-height: 50px;
   text-overflow: clip;
+  height: fit-content;
 }
 
 .betterbox6 .mainText {
