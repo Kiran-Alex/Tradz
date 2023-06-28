@@ -36,7 +36,7 @@ function App() {
       <TopSection />
       <div className="header3" style = {{marginTop:"5%",fontFamily: 'Benzin-Medium',color:'#ddd',textAlign:'center'}}>RESHAPING FINANCE </div>
       <div className="header"style = {{fontFamily: 'Benzin-Bold', color:'#fff'}}>
-      The Super Decentralised Bank
+      The Decentralised Bank
       </div>
       <br />
       <div className="topText"style = {{fontFamily: 'Regular',color: '#B3C5BB'}}>

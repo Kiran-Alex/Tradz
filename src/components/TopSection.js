@@ -16,7 +16,7 @@ export default function TopSection() {
           <div className="header1" style = {{fontFamily: 'Benzin-Bold',width:'95%'}}>Introducing a New Era of Finance </div>
           <br />
           <div className="subhead2" style = {{fontFamily: 'Medium', color:"#B3C5BB"}}>
-          The super decentralised bank providing all traditional banking services powered by in-house DeFi protocols.{" "}
+          The decentralised bank providing all traditional banking services powered by in-house DeFi protocols.{" "}
           </div>
           <br />
           {/* <br />
@@ -42,7 +42,7 @@ export default function TopSection() {
           </div>
         </div>
       <div style = {{color: 'white'}} className="rightsection">
-        <img src = {process.env.PUBLIC_URL + '/Media/firstpage.png'} />
+        <img src = {process.env.PUBLIC_URL + '/Media/firstpage.png'} alt="xade"/>
       </div>
       </div>
     </>
