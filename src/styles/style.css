@@ -10,6 +10,9 @@ html {
     margin-bottom: 8px;
     letter-spacing: 13px;
   }
+  .header3:nth-of-type(2) {
+    text-align: center;
+  } 
   body {
     background-color: black !important;
   }
@@ -11231,12 +11234,7 @@ text-fill-color: transparent;
     text-align: left !important;
   }
 
-  @media screen and (max-width : 427px) {
-    .button89 {
-      transform: scale(0.8);
-      margin-left: -6px;
-  }
-  }
+
 
   @media screen and (max-width: 900px) {
     .header-articles .headers-post-parent {
@@ -11420,6 +11418,40 @@ text-fill-color: transparent;
       width: auto;
     }
   }
+
+  div#he3 {
+    text-align: center;
+  }
+
+  @media screen and (max-width : 427px) {
+    .button89 {
+      transform: scale(0.8);
+      margin-left: -6px;
+  }
+  .header3:nth-of-type(2) {
+    text-align: left;
+    padding-left: 5%;
+  } 
+
+  div.header {
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  div.topText {
+    text-align: left;
+  }
+
+  div#he3 {
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  }
+
+  
+
+
   .subheader3{
     color:#00e676;
     font-size: 2rem;
@@ -11596,6 +11628,9 @@ padding-left: 15px;
 @mixin white-gradient {
 	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 }
+
+
+
 
 
 

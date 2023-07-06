@@ -56,6 +56,16 @@ const BlogSection = () => {
         'Xade is a DeFi-powered platform serving as a bridge between traditional banking and DeFi protocols, offering on-chain banking services.',
       buttonText: 'Read now',
     },
+    {
+      title : "The Xade Explorers are here",
+      description : "Xade Explorers: Unleash finance's new era in the Xade Mobile App with reduced fees, increased rewards, liquidation bots, events, private sales, and more!",
+      buttonText: 'Read now',
+    },
+    {
+      title : "Meet Our Team",
+      description : "Xade Explorers: Unleash finance's new era in the Xade Mobile App with reduced fees, increased rewards, liquidation bots, events, private sales, and more!",
+      buttonText: 'Read now',
+    }
   ];
 
   return (

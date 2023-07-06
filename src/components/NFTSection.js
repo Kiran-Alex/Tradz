@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="lol" style = {{backgroundColor: 'rgb(16,16,17)'}}>
          <div  className={`image-container1`}ref={imageRef}>
-      <img className={`image ${isExpanded ? 'expanded' : ''}`} src={process.env.PUBLIC_URL + '/Media/wellnewnft.png'} alt="Image" />
+      <img className={`image ${isExpanded ? 'expanded' : ''}`} src={process.env.PUBLIC_URL + '/Media/nftimg.png'} draggable="false" alt="Image" />
     </div>
       <div className="header">
         Feel the premium experience
