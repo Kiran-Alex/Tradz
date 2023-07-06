@@ -42,7 +42,7 @@ export default function TopSection() {
           </div>
         </div>
       <div style = {{color: 'white'}} className="rightsection">
-        <img src = {process.env.PUBLIC_URL + '/Media/mainimg.png'} alt="xade"/>
+        <img src = {process.env.PUBLIC_URL + '/Media/Group 26.png'} alt="xade"/>
       </div>
       </div>
       <br/>

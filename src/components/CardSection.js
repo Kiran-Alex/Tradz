@@ -37,10 +37,10 @@ const App = () => {
 			<br />
 
 			<div className="header3" id="he3" style={{  marginTop: "2%", fontFamily: 'Benzin-Medium', color: '#ddd', paddingTop: '5%' }}>PARTNERS & BACKERS </div>
-			<div className="header" style={{ fontFamily: 'Benzin-Bold', color: '#fff' }}>
+			<div className="header" id="cardh" style={{ fontFamily: 'Benzin-Bold', color: '#fff' }}>
 				We are working with the best
 			</div>
-			<div className="topText" style={{ fontFamily: 'Regular', color: '#B3C5BB' }}>
+			<div className="topText" id="cardtt" style={{ fontFamily: 'Regular', color: '#B3C5BB' }}>
 				We are working with the best projects in the space across community,infrastructure and more while we are backed by some reputable companies in the space</div>
 			<br></br>
 			<div class="slider1"><div class="slide-track"><div class="slide">

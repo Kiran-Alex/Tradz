@@ -18,7 +18,7 @@ const App = () => {
         </div>
       </div>
       <div class="right-half" style={{}}>
-        <img className='credimg' src='https://res.cloudinary.com/xade-finance/image/upload/v1684697594/Mask_group-14_dltqm4.png'></img>
+        <img className='credimg' src = {process.env.PUBLIC_URL + '/Media/payments.png'}></img>
       </div>
     </section>
     <section class="container" id='container2' >

@@ -34,12 +34,12 @@ function App() {
       
       <Header />
       <TopSection />
-      <div className="header3" style = {{marginTop:"5%",fontFamily: 'Benzin-Medium',color:'#ddd'}}>RESHAPING FINANCE </div>
-      <div className="header"style = {{fontFamily: 'Benzin-Bold', color:'#fff'}}>
+      <div className="header3" id="apph3" style = {{marginTop:"5%",fontFamily: 'Benzin-Medium',color:'#ddd'}}>RESHAPING FINANCE </div>
+      <div className="header" id="apph" style = {{fontFamily: 'Benzin-Bold', color:'#fff'}}>
       The Decentralised Bank
       </div>
       <br />
-      <div className="topText"style = {{fontFamily: 'Regular',color: '#B3C5BB'}}>
+      <div className="topText" id="apptt" style = {{fontFamily: 'Regular',color: '#B3C5BB'}}>
       Xade is the only DeFi powered alternative to banks which provides all banking services on chain with the user experience indistinguishable from a digital bank powered by our own in-house DeFi Protocols.
       </div>
  <CredSection />

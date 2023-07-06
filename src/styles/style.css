@@ -11433,16 +11433,31 @@ text-fill-color: transparent;
     padding-left: 5%;
   } 
 
-  div.header {
+  div.header#apph {
     text-align: left;
     padding-left: 5%;
   }
 
-  div.topText {
+  div.header#apph3 {
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  div.topText#apptt {
     text-align: left;
   }
 
   div#he3 {
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  div#cardh {
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  div#cardtt {
     text-align: left;
     padding-left: 5%;
   }
