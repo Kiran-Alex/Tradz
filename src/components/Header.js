@@ -44,7 +44,7 @@ export default function Header() {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="https://premium.xade.finance/" className="nav-link page-scroll">
+                    <a href="http://explorers.xade.finance/" className="nav-link page-scroll">
                       Premium
                     </a>
                   </li>
