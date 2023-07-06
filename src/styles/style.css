@@ -11231,6 +11231,13 @@ text-fill-color: transparent;
     text-align: left !important;
   }
 
+  @media screen and (max-width : 427px) {
+    .button89 {
+      transform: scale(0.8);
+      margin-left: -6px;
+  }
+  }
+
   @media screen and (max-width: 900px) {
     .header-articles .headers-post-parent {
       display: none;
