@@ -67,6 +67,12 @@ const BlogSection = () => {
       buttonText: 'Read now',
       buttonLink: 'https://xadefinance.medium.com/xade-explorers-utility-collection-by-xade-24758e3a42e4',
     },
+    {
+      title : "Meet the amazing team behind Xade",
+      description : "Discover the extraordinary individuals comprising the powerhouse team driving Xade to new heights.",
+      buttonText: 'Read now',
+      buttonLink: 'https://xadefinance.medium.com/meet-the-amazing-team-behind-xade-9f1c4f026649',
+    },
 
   ];
 
