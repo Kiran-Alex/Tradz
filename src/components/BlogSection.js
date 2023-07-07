@@ -31,42 +31,49 @@ const BlogSection = () => {
       title: 'Sabex: Let’s beat inflation',
       description: 'Learn more about how our money protocol works and what benefits our users can get from using SabeX features',
       buttonText: 'Read now',
+      buttonLink: 'https://xadefinance.medium.com/sabex-lets-beat-inflation-8d8fe9a5e2a1',
     },
     {
       title: 'Derivex: Trading unleashed',
       description:
         'At last - our revolutional perpetual future protocol is live! Learn more about its features and why it’s the best solution for trading in DeFi at this moment',
       buttonText: 'Read now ',
+      buttonLink: 'https://xadefinance.medium.com/derivex-trading-unleashed-23650b84a0a',
     },
     {
       title: 'Introducing: Xade Star',
       description:
         'The Xade Finance Affiliate Program allows individuals to earn tokens and cash prizes by completing various content creation tasks.',
       buttonText: 'Read now',
+      buttonLink: 'https://xadefinance.medium.com/introducing-xade-star-and-xade-affiliate-program-707cadc27f4',
     },
     {
       title: 'RemmiteX: Payments Reimagined',
       description:
         'Effortlessly send global payments with RemmiteX: the gasless, fiat-pegged stablecoin protocol powered by Biconomy.',
       buttonText: 'Read now',
+      buttonLink: 'https://xadefinance.medium.com/remmitex-payments-reimagined-8b4b10996c1c',
     },
     {
       title: 'What is Xade and why do you need it?',
       description:
         'Xade is a DeFi-powered platform serving as a bridge between traditional banking and DeFi protocols, offering on-chain banking services.',
       buttonText: 'Read now',
+      buttonLink: 'https://xadefinance.medium.com/what-is-xade-and-why-do-you-need-it-b483f46ba5a1',
     },
     {
       title : "The Xade Explorers are here",
       description : "Xade Explorers: Unleash finance's new era in the Xade Mobile App with reduced fees, increased rewards, liquidation bots, events, private sales, and more!",
       buttonText: 'Read now',
+      buttonLink: 'https://xadefinance.medium.com/xade-explorers-utility-collection-by-xade-24758e3a42e4',
     },
-    {
-      title : "Meet Our Team",
-      description : "Xade Explorers: Unleash finance's new era in the Xade Mobile App with reduced fees, increased rewards, liquidation bots, events, private sales, and more!",
-      buttonText: 'Read now',
-    }
+
   ];
+
+  const handleButtonClick = (link) => {
+    // Navigate to the custom link
+    window.open(link, '_blank');
+  };
 
   return (
     <div className="lol">
@@ -101,7 +108,8 @@ const BlogSection = () => {
             <br />
             <div className="readNow">
               <div className="readNowBtn">
-                <button>{blogs[currentIndex].buttonText}</button>
+              <button onClick={() => window.open(blogs[currentIndex].buttonLink, '_blank')}>{blogs[currentIndex].buttonText}</button>
+
               </div>
             </div>
           </div>
@@ -121,7 +129,7 @@ const BlogSection = () => {
             <br />
             <div className="readNow">
               <div className="readNowBtn">
-                <button>{blogs[currentIndex === blogs.length - 1 ? 0 : currentIndex + 1].buttonText}</button>
+                <button onClick={() => handleButtonClick(blogs[currentIndex === blogs.length - 1 ? 0 : currentIndex + 1].buttonLink,'_blank')}>{blogs[currentIndex === blogs.length - 1 ? 0 : currentIndex + 1].buttonText}</button>
               </div>
             </div>
           </div>

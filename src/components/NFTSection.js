@@ -30,7 +30,7 @@ const App = () => {
       Offering you our unique NFT-based subscriptions that give their owners reduced fees, Xade Tokens, exclusive collectibles, a free card and much more </div>
       <br></br>
       <div className="CardbuttonContainer">
-	  <button onClick={(e)=>{e.preventDefault();window.open("https://xade-finance.gitbook.io/introducing-xade/xade-premium-subscriptions", '_blank')}}>Set Reminder</button>
+      <button onClick={(e)=>{e.preventDefault();window.open("https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGtibGlvZ2hhaGw4c2xvN2xhODliMm5ybGcga2lyYW5hbGV4Y0Bt&tmsrc=kiranalexc%40gmail.com ", '_blank')}}>Set Reminder</button>
 	  </div>
     <br/>
     </div>
