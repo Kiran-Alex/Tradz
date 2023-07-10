@@ -214,11 +214,68 @@
 .tvwns {
   height: 40%;
   width: 100%;
+  border-right: 1px solid #363C4E;
 }
 .twp {
   width: 25%;
   height: 100%;
 }
+
+.tvwnsh {
+  width: 100%; 
+  height: 20%;
+  border-bottom:1px solid #363C4E;
+}
+
+.tvwnshl {
+  width: 18%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 8px 0 16px;
+  justify-content: space-around;
+}
+.tvwnshl button {
+  color: #ADADBB;
+  background-color: black;
+  border-style: solid;
+}
+
+.tvwnshl button:hover {
+  color: #d8d8e5;
+  cursor: pointer;
+}
+
+.tvwnshl button:focus {
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+.tvwp {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 25%;
+}
+.tvwpht {
+  width: 100%; 
+  height: 6.7%;
+  border-bottom:1px solid #363C4E;
+  border-top:1px solid #363C4E;
+  display: flex;
+  flex-direction: row;
+}
+
+.tvwpht  button {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-style: solid;
+  outline: none;
+}
+
 
 .image {
   width: 50%;

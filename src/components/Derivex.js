@@ -11,11 +11,23 @@ const Derivex = () => {
                     <div className='tvw'>
                         <TradingViewWidget />
                         <div className="tvwns">
-                            
+                            <div className="tvwnsh">
+                                <div className='tvwnshl'>
+                                    <button>Trades</button>
+                                    <button>Orders</button>
+                                    <button>History</button>
+                                </div>
+                                <div className='tvwnshr'>
+                                    
+                                    </div>
+                            </div>
                         </div>
                     </div>
                     <div className='tvwp'>
-
+                    <div className='tvwpht'>
+                        <button>LONG</button>
+                        <button>SHORT</button>
+                    </div>
                     </div>
                 </div>
             </div>
