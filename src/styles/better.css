@@ -185,6 +185,41 @@
   flex-direction: row;
 }
 
+.tradingview-widget-container {
+  height: 60%;
+}
+
+#tradingview_159b9 {
+  height: 100%;
+}
+
+.tradingview-widget-copyright {
+  display: none;
+}
+
+#derivexlol {
+  height: 39.5vw;
+}
+
+.tvwap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.tvw {
+  width: 75%;
+  height: 100%;
+}
+.tvwns {
+  height: 40%;
+  width: 100%;
+}
+.twp {
+  width: 25%;
+  height: 100%;
+}
+
 .image {
   width: 50%;
 }

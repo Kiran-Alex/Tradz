@@ -14,6 +14,7 @@ import CardSection from './components/CardSection'
 import CoinSection from './components/CoinsSection'
 import Stats from './components/Stats'
 import Security from "./components/Security";
+import Derivex from "./components/Derivex";
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -33,28 +34,7 @@ function App() {
     <div>
       
       <Header />
-      <TopSection />
-      <div className="header3" id="apph3" style = {{marginTop:"5%",fontFamily: 'Benzin-Medium',color:'#ddd'}}>RESHAPING FINANCE </div>
-      <div className="header" id="apph" style = {{fontFamily: 'Benzin-Bold', color:'#fff'}}>
-      The Decentralised Bank
-      </div>
-      <br />
-      <div className="topText" id="apptt" style = {{fontFamily: 'Regular',color: '#B3C5BB'}}>
-      Xade is the only DeFi powered alternative to banks which provides all banking services on chain with the user experience indistinguishable from a digital bank powered by our own in-house DeFi Protocols.
-      </div>
- <CredSection />
-           <CardSection></CardSection>
-
-      <BetterSection />
-      <CoinSection />
-      <NFT />
-
-      <Stats />
-      <Security />	
-      <FAQ />
-    
-      {/* <BottomSection /> */}
-      
+      <Derivex/>
      <Footer />
     </div>
   );
