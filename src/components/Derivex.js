@@ -150,7 +150,40 @@ const Derivex = () => {
                                         </div>
                                     </div>
                                     <div className='tvwpht2-s2'>
+                                            
+                                                <div className='tvwpht2-s2-1'>
+                                                    
+                                                <button className='tvwpht2-s2-1-c' >NONE</button>
+                                                <button className='tvwpht2-s2-1-c' >-10%</button>
+                                                <button className='tvwpht2-s2-1-c' >-25%</button>
+                                                <button className='tvwpht2-s2-1-c' >-50%</button>
+                                                <button className='tvwpht2-s2-1-c' >-75%</button>
+                                                <input className='tvwpht2-s2-1-c' type='text' placeholder='PRICE'/>
+                                            </div>
+                                    </div>
+                                    
+                                </div>
+                                <div className='tvwpht2-t'>
 
+                                    <div className='tvwpht2-t1'>
+                                        <div className='tvwpht2-t1-1'>
+                                            Take Profit <span className='tvwpht2-t1-span'>(168166)</span>
+                                        </div>
+                                        <div className='tvwpht2-t1-2'>
+                                        <span className='tvwpht2-t1-span'>None</span>
+                                        </div>
+                                    </div>
+                                    <div className='tvwpht2-t2'>
+                                            
+                                                <div className='tvwpht2-t2-1'>
+                                                    
+                                                <button className='tvwpht2-t2-1-c' >25%</button>
+                                                <button className='tvwpht2-t2-1-c' >50%%</button>
+                                                <button className='tvwpht2-t2-1-c' >100%</button>
+                                                <button className='tvwpht2-t2-1-c' >300%</button>
+                                                <button className='tvwpht2-t2-1-c' >900%</button>
+                                                <input className='tvwpht2-t2-1-c' type='text' placeholder='PRICE'/>
+                                            </div>
                                     </div>
                                     
                                 </div>
