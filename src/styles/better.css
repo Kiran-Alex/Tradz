@@ -383,7 +383,7 @@
 .tvwnshl button {
   color: #ADADBB;
   background-color: black;
-  border-style: solid;
+  border-style: none;
 }
 
 .tvwnshl button:hover {
@@ -395,6 +395,10 @@
   color: #ffffff;
   cursor: pointer;
   outline: none;
+}
+
+#tvwp1 {
+  display: none;
 }
 .tvwp {
   display: flex;
@@ -423,7 +427,7 @@
   color: #d8d8e5;
   cursor: pointer;
   font-weight: bold;
-  border-style: solid;
+  border-style: none;
   outline: none;
   font-size:small;
 }
