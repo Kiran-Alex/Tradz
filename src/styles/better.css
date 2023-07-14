@@ -597,6 +597,7 @@
   flex-direction: column;
   justify-content: center;
   width: 90%;
+  height: 60%;
   align-self: center;
 }
 
@@ -1264,6 +1265,8 @@ input.tvwpht2-t2-1-c::placeholder {
 }
 
 @media (max-width : 804px) {
+
+  
   #tvwp2 {
     display: none;
   }

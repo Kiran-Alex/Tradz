@@ -3,18 +3,32 @@ import TradingViewWidget from './TradingViewWidget'
 import "../styles/better.css"
 import { Col, InputNumber, Row, Space } from "antd";
 import { useState } from "react";
-import { Margin, Translate } from '@mui/icons-material';
+import { Margin, Padding, Translate } from '@mui/icons-material';
 import { background, border, color } from '@chakra-ui/react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Tooltip from "@mui/material/Tooltip";
 import PropTypes from "prop-types";
+import { styled } from '@mui/material/styles';
+import MuiInput from '@mui/material/Input';
 
 const Derivex = () => {
     const [inputValue, setInputValue] = useState(1);
+    const [value, setValue] = React.useState(2);
     const [tab, setTab] = useState(true);
     const [Menu, setMenu] = useState(1)
+    const Input = styled(MuiInput)`
+  width: 42px;
 
+  
+`;
+    const handleBlur = () => {
+        if (value < 0) {
+            setValue(0);
+        } else if (value > 100) {
+            setValue(100);
+        }
+    };
 
 
     function ValueLabelComponent(props) {
@@ -79,6 +93,14 @@ const Derivex = () => {
 
         )
     }
+
+    const handleSliderChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    const handleInputChange = (event) => {
+        setValue(event.target.value === '' ? '' : Number(event.target.value));
+    };
 
     return (
         <>
@@ -170,68 +192,97 @@ const Derivex = () => {
                                             </div>
                                         </div>
                                         <div className='tvwpht2-r'>
-                                            <div className='tvwpht2-r1' >
-                                                <div className='tvwpht2-r1-1' >
-                                                    Leverage{" "}<span> (50-250k)</span>
-                                                </div>
-                                                <div className='tvwpht2-r1-2'>
-                                                    <Col span={4}>
-                                                        <InputNumber
-                                                            id='r1-2i'
-                                                            min={1}
-                                                            max={20}
-                                                            style={{
-                                                                marginRight: 6,
-                                                                marginTop: 3,
-                                                                backgroundColor: "black",
-                                                                outline: "none",
-                                                                borderStyle: "none"
-                                                            }}
-                                                            value={inputValue}
-                                                            onChange={onChange}
-                                                        />
-                                                    </Col>
-                                                </div>
-                                            </div>
-                                            <div className="tvwpht2-r2">
-                                                <Col span={12}>
-                                                    <Slider
-                                                        aria-label="Custom marks"
-                                                        defaultValue={2}
-                                                        max={150}
-                                                        getAriaValueText={valuetext}
-                                                        onChange={onChange}
-
-                                                        valueLabelDisplay="auto"
-                                                        marks={marks}
-                                                        sx={{
-                                                            ' .MuiSlider-markLabel': {
-                                                                color: '#82828F', // Set the desired mark label color here
-                                                            },
-                                                            ".MuiSlider-rail": {
-                                                                color: "#282C3B",
-                                                                height: "10px",
-                                                            },
-                                                            '& .MuiSlider-thumb': {
-                                                                width: 15,
-                                                                height: 15,
-                                                                border: " 2px solid white",
-                                                                color: "#282C3B",
-                                                            },
-                                                            "	.MuiSlider-track": {
-                                                                backgroundColor: 'linear-gradient(270deg, #10A4CC 10%, #3DECA7 100%)',
-                                                                height: '10px',
-
-                                                            }
-
-
-                                                        }}
-
-                                                    />
-
-                                                </Col>
-                                            </div>
+                                    <div className='tvwpht2-r1' >
+                                        <div className='tvwpht2-r1-1' >
+                                            Leverage<span> (50-250k)</span>
                                         </div>
+                                        <div className='tvwpht2-r1-2'>
+                                            <Col span={4}>
+                                                <Input
+                                                    value={value}
+                                                    size="small"
+                                                    onChange={onChange}
+                                                    onBlur={handleBlur}
+                                                    inputProps={{
+                                                        min: 0,
+                                                        max: 150,
+                                                        type: 'number',
+                                                        'aria-labelledby': 'Custom marks',
+                                                    }}
+                                                    sx={{
+                                                        "& .MuiInput-input": {
+                                                            color: "white",
+                                                            backgroundColor: "black",
+                                                            width: 82,
+                                                            height: 20,  // Update the height here
+                                                            borderRadius:1,
+                                                            
+                                                        },
+                                                        ".MuiInputBase-input": {
+                                                            width: 91,
+                                                            paddingLeft: 1.8
+                                                        },
+                                                        "&.MuiInputBase-root": {
+                                                            width: 101,
+                                                            marginTop : 0.5
+                                                           
+                                                          }
+                                                    }}
+                                                />
+
+                                            </Col>
+                                        </div>
+                                    </div>
+                                    <div className="tvwpht2-r2">
+                                        <Slider
+                                            aria-label="Custom marks"
+                                            defaultValue={2}
+                                            max={150}
+                                            getAriaValueText={valuetext}
+                                            onChange={handleSliderChange}
+
+                                            valueLabelDisplay="auto"
+                                            marks={marks}
+                                            sx={{
+                                                ' .MuiSlider-markLabel': {
+                                                    color: '#82828F', // Set the desired mark label color here
+                                                },
+                                                ".MuiSlider-rail": {
+                                                    color: "#282C3B",
+                                                    height: "10px",
+                                                },
+                                                '& .MuiSlider-thumb': {
+                                                    width: 15,
+                                                    height: 15,
+                                                    border: " 2px solid white",
+                                                    color: "#282C3B",
+                                                },
+                                                "	.MuiSlider-track": {
+                                                    backgroundColor: 'linear-gradient(270deg, #10A4CC 10%, #3DECA7 100%)',
+                                                    height: '10px',
+
+                                                },
+                                                ".MuiSlider-valueLabel:before"
+                                                    : {
+                                                    width: "0px",
+
+
+
+                                                },
+                                                ".MuiSlider-valueLabel"
+                                                    : {
+
+                                                    transform: "translateY(110%) scale(1)",
+
+
+                                                }
+
+
+                                            }}
+
+                                        />
+                                    </div>
+                                </div>
 
                                         <div className='tvwpht2-p'>
                                             <div className='tvwpht2-p1'>
@@ -412,20 +463,38 @@ const Derivex = () => {
                                         </div>
                                         <div className='tvwpht2-r1-2'>
                                             <Col span={4}>
-                                                <InputNumber
-                                                    id='r1-2i'
-                                                    min={1}
-                                                    max={150}
-                                                    style={{
-                                                        marginRight: 6,
-                                                        marginTop: 3,
-                                                        backgroundColor: "black",
-                                                        outline: "none",
-                                                        borderStyle: "none"
-                                                    }}
-                                                    value={typeof inputValue == "number" ? inputValue : ""}
+                                                <Input
+                                                    value={value}
+                                                    size="small"
                                                     onChange={onChange}
+                                                    onBlur={handleBlur}
+                                                    inputProps={{
+                                                        min: 0,
+                                                        max: 150,
+                                                        type: 'number',
+                                                        'aria-labelledby': 'Custom marks',
+                                                    }}
+                                                    sx={{
+                                                        "& .MuiInput-input": {
+                                                            color: "white",
+                                                            backgroundColor: "black",
+                                                            width: 82,
+                                                            height: 20,  // Update the height here
+                                                            borderRadius:1,
+                                                            
+                                                        },
+                                                        ".MuiInputBase-input": {
+                                                            width: 91,
+                                                            paddingLeft: 1.8
+                                                        },
+                                                        "&.MuiInputBase-root": {
+                                                            width: 101,
+                                                            marginTop : 0.5
+                                                           
+                                                          }
+                                                    }}
                                                 />
+
                                             </Col>
                                         </div>
                                     </div>
@@ -435,10 +504,8 @@ const Derivex = () => {
                                             defaultValue={2}
                                             max={150}
                                             getAriaValueText={valuetext}
-                                            onChange={onChange}
-                                            slots={{
-                                                valueLabel: ValueLabelComponent
-                                            }}
+                                            onChange={handleSliderChange}
+
                                             valueLabelDisplay="auto"
                                             marks={marks}
                                             sx={{
@@ -458,6 +525,20 @@ const Derivex = () => {
                                                 "	.MuiSlider-track": {
                                                     backgroundColor: 'linear-gradient(270deg, #10A4CC 10%, #3DECA7 100%)',
                                                     height: '10px',
+
+                                                },
+                                                ".MuiSlider-valueLabel:before"
+                                                    : {
+                                                    width: "0px",
+
+
+
+                                                },
+                                                ".MuiSlider-valueLabel"
+                                                    : {
+
+                                                    transform: "translateY(110%) scale(1)",
+
 
                                                 }
 
