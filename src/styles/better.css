@@ -1,3 +1,10 @@
+@font-face {
+  font-family: Medium;
+  src: url("https://res.cloudinary.com/xade-finance/raw/upload/v1684691512/Euclid_Circular_A_Medium_tq5qyw.ttf");
+}
+
+
+
 .header {
   font-size: 2.7rem;
   font-family: NeueMontreal-Bold;
@@ -188,6 +195,7 @@
 
 .tradingview-widget-container {
   height: 85%;
+  border-right: 1px solid #232325;
 }
 
 .tvwch {
@@ -195,7 +203,7 @@
   height: 15%;
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #363C4E;
+  border-top: 1px solid #232325;
   align-items: center;
 }
 
@@ -207,7 +215,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-right: 1px solid #363C4E;
+  border-right: 1px solid #232325;
 }
 
 .tvwch-1c {
@@ -236,7 +244,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid #363C4E;
+  border-right: 1px solid #232325;
   justify-content: center;
 }
 
@@ -340,7 +348,8 @@
 
 #derivexlol {
   height: 39.5vw;
-  margin-top: 7em;
+  margin-top: 6.4em;
+  font-family: "Medium";
 }
 
 .tvwc {
@@ -356,8 +365,9 @@
 
 .tvw {
   width: 75%;
-  height: 100%;
-  border-right: 1px solid #363C4E;
+  height: 102%;
+  border-right: 1px solid #232325;
+  border-bottom: 1px solid #232325;
   display: flex;
   flex-direction: column;
 }
@@ -365,7 +375,7 @@
 .tvwns {
   height: 40%;
   width: 100%;
-  border-right: 1px solid #363C4E;
+  border-right: 1px solid #232325;
 }
 
 .twp {
@@ -376,7 +386,8 @@
 .tvwnsh {
   width: 100%;
   height: 20%;
-  border-bottom: 1px solid #363C4E;
+  border-bottom: 1px solid #232325;
+  border-top: 1px solid #232325;
 }
 
 .tvwnshl {
@@ -416,10 +427,12 @@
   width: 25%;
 }
 
+
+
 .tvwpht {
   width: 100%;
   height: 100%;
-  border-top: 1px solid #363C4E;
+  border-top: 1px solid #232325;
   display: flex;
   flex-direction: column;
 }
@@ -428,7 +441,7 @@
   width: 100%;
   height: 6.7%;
   display: flex;
-  border-bottom: 1px solid #363C4E;
+  border-bottom: 1px solid #232325;
   flex-direction: row;
 }
 
@@ -436,7 +449,7 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  color: #d8d8e5;
+  color: #adadbb;
   cursor: pointer;
   font-weight: bold;
   border-style: none;
@@ -444,25 +457,28 @@
   font-size: small;
 }
 
-.tvwpht1 button:nth-of-type(1):focus {
+#tvwphtll {
   border-bottom: 3px solid #3DECA7;
   color: white;
   background-color: rgb(17, 17, 17);
 }
 
+.tvwpht1 button:hover {
+  color: #ffffff;
+}
 
-
-
-.tvwpht1 button:nth-of-type(2):focus {
+#tvwphtls {
   border-bottom: 3px solid #D34A4A;
   color: white;
   background-color: rgb(17, 17, 17);
 }
 
+
+
 .tvwpht2 {
   height: 93.3%;
   width: 100%;
-  padding: 12px 16px 4px;
+  padding: 12px 16px 0px;
 }
 
 .tvwpht2-m {
@@ -474,6 +490,8 @@
   display: flex;
   flex-direction: row;
 }
+
+
 
 .tvwpht2-m button {
   width: 98%;
@@ -492,7 +510,7 @@
   cursor: pointer;
 }
 
-.tvwpht2-m button:focus {
+#tvwpht2-mb{
   background-color: #282C3B;
   border-radius: 4px;
   color: white;
@@ -564,6 +582,7 @@
 .tvwpht2-r1-1 span {
   font-size: small;
   color: #82828F;
+  margin-left: 4px;
 }
 
 .tvwpht2-r1-1 {
@@ -577,6 +596,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90%;
+  align-self: center;
 }
 
 .tvwpht2-p {
@@ -586,6 +607,11 @@
   display: flex;
   flex-direction: column;
   background-color: #101010ad;
+}
+
+.active {
+  background: #05f;
+  color: #fff; 
 }
 
 #r1-2i {
@@ -751,6 +777,8 @@ input.tvwpht2-s2-1-c::placeholder {
   display: flex;
   flex-direction: column;
   background-color: #101010ad;
+  margin-bottom: 4px;
+  margin-top: 8px;
 }
 
 .tvwpht2-t1 {
