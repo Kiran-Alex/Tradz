@@ -11,8 +11,20 @@
   text-align: center;
 }
 
+div.tvwhm {
+  display: flex;
+  flex-direction: row;
+ overflow-x: auto;
+ overflow-y: hidden;
+  align-items: center;
+  
+  width: 100%;
+  height: 100%;
+}
 
-
+.tvwnshr {
+  height: 82%;
+}
 
 
 .topText {
@@ -194,13 +206,13 @@
 }
 
 .tradingview-widget-container {
-  height: 85%;
+  height: 350px;
   border-right: 1px solid #232325;
 }
 
 .tvwch {
   width: 100%;
-  height: 15%;
+  height: 62px;
   display: flex;
   flex-direction: row;
   border-top: 1px solid #232325;
@@ -209,13 +221,14 @@
 
 .tvwch-1 {
   height: 80%;
-  width: 14%;
-  margin-left: 10px;
+  width: 240px;
+  margin-left: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-right: 1px solid #232325;
+  padding: 0px 15px;
 }
 
 .tvwch-1c {
@@ -238,14 +251,37 @@
   text-align: center;
 }
 
+.tvwch-2 span {
+  font-size: 12px;
+
+}
+
+.tvwch-2 .oi {
+
+  color: #82828F;
+  width : 93px;
+  border-bottom: 0.5px dashed #82828F;
+}
+
+.tvwch-2 .oid {
+  width: 80%;
+  line-height: 25px;
+}
+
+.tvwch-2:nth-of-type(7) {
+  width: 8%;
+  border: none;
+}
+
 .tvwch-2 {
-  height: 80%;
-  width: 10%;
+  height: 51px;
+  width: 133px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-right: 1px solid #232325;
   justify-content: center;
+  padding: 0px 10px;
 }
 
 .tvwch-2-1 {
@@ -269,8 +305,10 @@
   width: 100%;
   height: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  padding-right: 12px;
 }
+
 
 .tvwch-2-2 span {
   margin-left: 20px;
@@ -289,10 +327,17 @@
   align-items: center;
 }
 
+
+
 .tvwch-3-1 span {
   font-size: small;
+  width: 81px;
   color: #82828F;
   border-bottom: 0.5px dashed #82828F;
+}
+
+#vq1{
+  width: 51px;
 }
 
 .tvwch-3-2 {
@@ -317,7 +362,7 @@
 
 .tvwch-4-2 span {
   font-size: small;
-  padding-left: 29px;
+  width: 69%;
   color: #D33E2C;
 }
 
@@ -347,7 +392,7 @@
 }
 
 #derivexlol {
-  height: 39.5vw;
+  height: 60vw;
   margin-top: 6.4em;
   font-family: "Medium";
 }
@@ -358,22 +403,21 @@
 
 .tvwap {
   width: 100%;
-  height: 100%;
+  height: 45vw;
   display: flex;
   flex-direction: row;
 }
 
 .tvw {
-  width: 75%;
-  height: 102%;
-  border-right: 1px solid #232325;
-  border-bottom: 1px solid #232325;
+  width: 77%;
+  height: 695px;
+  /* border-right: 1px solid #232325; */
   display: flex;
   flex-direction: column;
 }
 
 .tvwns {
-  height: 40%;
+  height: 280px;
   width: 100%;
   border-right: 1px solid #232325;
 }
@@ -391,7 +435,7 @@
 }
 
 .tvwnshl {
-  width: 18%;
+  width: 177px;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -424,7 +468,13 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: 25%;
+  width: 362px;
+  border-left: 1px solid #232325;
+}
+
+#tvwp2 {
+  height: 743px;
+  
 }
 
 
@@ -438,8 +488,8 @@
 }
 
 .tvwpht1 {
-  width: 100%;
-  height: 6.7%;
+  width: 358px;
+  height: 50px;
   display: flex;
   border-bottom: 1px solid #232325;
   flex-direction: row;
@@ -478,12 +528,12 @@
 .tvwpht2 {
   height: 93.3%;
   width: 100%;
-  padding: 12px 16px 0px;
+  padding: 12px 20px 0px;
 }
 
 .tvwpht2-m {
-  height: 6%;
-  width: 100%;
+  height: 43px;
+  width: 318px;
   background-color: #1A1A22;
   border-radius: 5px;
   padding: 4px;
@@ -510,17 +560,17 @@
   cursor: pointer;
 }
 
-#tvwpht2-mb{
+#tvwpht2-mb {
   background-color: #282C3B;
   border-radius: 4px;
   color: white;
 }
 
 .tvwpht2-c {
-  height: 12%;
-  width: 100%;
+  height: 81px;
+  width: 318px;
   background-color: #101010ad;
-  margin: 12px 0px;
+  margin: 8px 0px;
   display: flex;
   flex-direction: column;
 }
@@ -558,9 +608,9 @@
 }
 
 .tvwpht2-r {
-  height: 13%;
-  width: 100%;
-  margin: 12px 0px;
+  height: 106px;
+  width: 318px;
+  margin: 8px 0px;
   display: flex;
   flex-direction: column;
   background-color: #101010ad;
@@ -602,9 +652,9 @@
 }
 
 .tvwpht2-p {
-  height: 13%;
-  width: 100%;
-  margin: 12px 0px;
+  height: 83px;
+  width: 318px;
+  margin: 8px 0px;
   display: flex;
   flex-direction: column;
   background-color: #101010ad;
@@ -612,7 +662,7 @@
 
 .active {
   background: #05f;
-  color: #fff; 
+  color: #fff;
 }
 
 #r1-2i {
@@ -676,8 +726,8 @@
 }
 
 .tvwpht2-s {
-  height: 12%;
-  width: 100%;
+  height: 83px;
+  width: 318px;
   display: flex;
   flex-direction: column;
   background-color: #101010ad;
@@ -773,13 +823,13 @@ input.tvwpht2-s2-1-c::placeholder {
 /*  */
 
 .tvwpht2-t {
-  height: 12%;
-  width: 100%;
+  height: 83px;
+  width: 318px;
   display: flex;
   flex-direction: column;
   background-color: #101010ad;
-  margin-bottom: 4px;
-  margin-top: 8px;
+  margin: 8px 0px;
+
 }
 
 .tvwpht2-t1 {
@@ -870,8 +920,8 @@ input.tvwpht2-t2-1-c::placeholder {
 }
 
 .tvwphyt2-mc {
-  height: 23%;
-  width: 100%;
+  height: 147px;
+  width: 318px;
   display: flex;
   flex-direction: column;
   display: flex;
@@ -882,7 +932,7 @@ input.tvwpht2-t2-1-c::placeholder {
   width: 100%;
   height: 100%;
   display: flex;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -891,7 +941,6 @@ input.tvwpht2-t2-1-c::placeholder {
   text-align: center;
   align-items: center;
   color: #82828F;
-  font-weight: bold;
   border-bottom: 0.5px dashed #82828F;
 
 }
@@ -1150,22 +1199,13 @@ input.tvwpht2-t2-1-c::placeholder {
   left: 0px;
 }
 
-@media (max-width : 1200px) {
+/* @media (max-width : 1200px) {
   #derivexlol {
     height: 39.5vw;
     margin-top: 9em;
   }
 
-  .tvwch-1 {
-    height: 80%;
-    width: 16%;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-right: 1px solid #363C4E;
-  }
+
 
   .tvwch-2-1 span {
     color: white;
@@ -1179,15 +1219,6 @@ input.tvwpht2-t2-1-c::placeholder {
     font-size: small;
   }
 
-  .tvwch-2 {
-    height: 80%;
-    width: 14%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-right: 1px solid #363C4E;
-    justify-content: center;
-  }
 
   .tvwpht2-m {
     height: 9%;
@@ -1226,9 +1257,17 @@ input.tvwpht2-t2-1-c::placeholder {
 
 
 
+} */
+
+@media (max-width :1260px) {
+  #derivexlol {
+    margin-top: 7.7rem;
+    height: 88vw;
+  }
+
 }
 
-@media (max-width : 1025px) {
+/* @media (max-width : 1025px) {
   #tvwp2 {
     display: flex;
     flex-direction: row;
@@ -1262,11 +1301,130 @@ input.tvwpht2-t2-1-c::placeholder {
     margin: 0 8px 0 31px;
     justify-content: space-around;
   }
+} */
+
+@media (max-width : 1025px) {
+  #tvwp2 {
+    display: none;
+  }
+  .tvwc {
+    height: 1192px;
+  }
+
+  #tvwp1 {
+    display: block;
+    width: 100%;
+  }
+  .tvwpht2-m {
+    width: 100%;
+  }
+  .tvwpht2-c {
+    width: 100%;
+  }
+
+  .tvwpht2-r {
+    width: 100%;
+  }
+
+  .tvwpht2-p {
+    width: 100%;
+  }
+  .tvwpht2-s {
+    width: 100%;
+  }
+  .tvwpht2-t {
+    width: 100%;
+  }
+  .tvwphyt2-mc 
+  {
+    width: 100%;
+  }
+  .tvw {
+    width: 100%;
+  }
+  #derivexlol {
+    margin-top: 7.7rem;
+    height: 146vw;
+}
+
+
+.tvwap {
+    width: 100%;
+    height: 45vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.tvw {
+    width: 100%;
+}
+
+.tvwch {
+    width: 100%;
+    height: 62px;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #232325;
+    align-items: center;
+}
+
+.tradingview-widget-container {
+    height: 350px;
+    border-right: 1px solid #232325;
+}
+
+
+.tvwpht {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #232325;
+    display: flex;
+    flex-direction: column;
+}
+
+.tvwpht1 {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-bottom: 1px solid #232325;
+    flex-direction: row;
+}
+
+.tvwpht2 {
+    height: 93.3%;
+    width: 100%;
+    padding: 12px 20px 0px;
+}
+
+.tvwns {
+    height: 305px;
+    width: 100%;
+    border-right: 1px solid #232325;
+    padding-top: 20px;
+}
+
+.tvwnsh {
+    width: 100%;
+    height: 43px;
+    border-bottom: 1px solid #232325;
+    border-top: 1px solid #232325;
+    /* padding-top: 20px; */
+}
+
+.tvwnshl {
+    width: 177px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 8px 0 16px;
+    justify-content: space-around;
+}
+
 }
 
 @media (max-width : 804px) {
 
-  
+
   #tvwp2 {
     display: none;
   }
@@ -1281,7 +1439,7 @@ input.tvwpht2-t2-1-c::placeholder {
   .tvw {
     width: 100%;
     height: 100%;
-    border-right: 1px solid #363C4E;
+ 
     display: flex;
     flex-direction: column;
   }
@@ -1346,7 +1504,7 @@ input.tvwpht2-t2-1-c::placeholder {
   .tvwns {
     height: 100%;
     width: 100%;
-    border-right: 1px solid #363C4E;
+
     margin-top: 38em;
   }
 
