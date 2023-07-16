@@ -12157,17 +12157,20 @@ video {
 }
 
 .webapp {
-  background-color: #fff;
+  background-color: #363cd7;
   color: black;
-  border-radius: 100px;
+  border-radius: 6px;
   padding: 10px 35px;
   font-family: Semi;
   text-align: center;
 }
 
 .greytack {
-  color: #000000;
+  color: #fff;
+  background-color: #363cd7;
   text-align: center;
+  align-items: center;
+  display: flex;
 }
 
 .Community {
@@ -12192,7 +12195,7 @@ video {
   }
 
   .desktop-arrangement-navbar div {
-    display: inherit;
+    display: flex;
   }
 
   .faqhead {

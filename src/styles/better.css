@@ -1182,6 +1182,17 @@ input.tvwpht2-t2-1-c::placeholder {
   touch-action: manipulation;
 }
 
+.scroll-button {
+  position: absolute;
+  background-color: black;
+  border-style: none;
+  height: 46px;
+}
+#sb {
+  position: relative;
+  background-color: black;
+  border-style: none;
+}
 .button-52:after {
   content: "";
   background-color: #ffe54c;

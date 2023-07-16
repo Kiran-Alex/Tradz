@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/style.css";
+import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 
 export default function Header() {
   return (
@@ -58,16 +59,8 @@ export default function Header() {
                   </li>
                 </div>
                 <div>
-                  <li className="Community">
-                    <a
-                      className="nav-link page-scroll"
-                      target="_blank"
-                      href="https://discord.gg/VxuKdRRzmN"
-                      rel="noreferrer"
-                    >
-                      <div className="tack"style={{fontFamily:'Regular'}}>Community</div>
-                    </a>
-                  </li>
+                  
+                   
                   &nbsp; &nbsp;
                   <li className="webapp"style={{fontFamily:'Regular'}}>
                     <a
@@ -76,7 +69,7 @@ export default function Header() {
                       href="https://bit.ly/xadefinance"
                       rel="noreferrer"
                     >
-                      <div className="greytack">Download App</div>
+                      <div className="greytack">Connect  Wallet&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small"/></div>
                     </a>
                   </li>
                 </div>
