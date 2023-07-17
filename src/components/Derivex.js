@@ -3,8 +3,7 @@ import TradingViewWidget from './TradingViewWidget'
 import "../styles/better.css"
 import { Col, InputNumber, Row, Space } from "antd";
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
-import { Margin, Padding, Translate } from '@mui/icons-material';
-import { background, border, color } from '@chakra-ui/react';
+
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Tooltip from "@mui/material/Tooltip";
@@ -21,62 +20,79 @@ const Derivex = () => {
     const [Menu, setMenu] = useState(1)
     const [showLeft, setShowLeft] = useState(false);
     const [showRight, setShowRight] = useState(false);
+    const [Arrow,setArrow] = useState(false)
+    
 
 
     const Input = styled(MuiInput)`
   width: 42px;
 `;
 
-
-
     const innerRef = useRef();
     const outerRef = useRef();
-
-    function LeftButton({show, onClick}) {
-        return show && <button className="scroll-button" onClick={onClick}><KeyboardArrowLeftIcon sx={{color : "white"}} /></button>;
-      }
-      
-      function RightButton({show, onClick}) {
-        return show && <button id='sb' onClick={onClick}><KeyboardArrowRightIcon sx={{color : "white"}} /></button>;
-      }
+    const oRef = useRef();
 
 
+   
 
-      useEffect(() => {
+    function LeftButton({ show, onClick }) {
+        return show && <button className="scroll-button" onClick={onClick}><KeyboardArrowLeftIcon sx={{ color: "white" }} /></button>;
+    }
 
+    function RightButton({ show, onClick }) {
+        return show && <button id='sb' onClick={onClick}><KeyboardArrowRightIcon sx={{ color: "white" }} /></button>;
+    }
+
+
+
+    useEffect(() => {
+
+        const computedStyle = window.getComputedStyle(outerRef.current);
+    const displayStatus = computedStyle.getPropertyValue('display');
+    const bodyWidth = document.body.clientWidth;
+    if (bodyWidth <= 660) {
+        
+      setArrow(true);
+      console.log(displayStatus)
+      console.log(Arrow)
+    } else {
+      setArrow(false);
+      console.log(Arrow)
+      console.log("a"+displayStatus)
+    }
         const handleResize = () => {
             if (innerRef.current.scrollWidth > innerRef.current.clientWidth) {
-              setShowRight(true);  
+                setShowRight(true);
             } else {
-              setShowRight(false);
+                setShowRight(false);
             }
-          }
-    
+        }
+
         const handleScroll = () => {
-          if(innerRef.current.scrollLeft === 0) {
-            setShowLeft(false);
-          } else {
-            setShowLeft(true);
-          }
-    
-          if(innerRef.current.scrollLeft + innerRef.current.clientWidth === innerRef.current.scrollWidth  || innerRef.current.scrollLeft !== 0) {
-            setShowRight(false);
-          } else {
-            setShowRight(true);
-          }
+            if (innerRef.current.scrollLeft === 0) {
+                setShowLeft(false);
+            } else {
+                setShowLeft(true);
+            }
+
+            if (innerRef.current.scrollLeft + innerRef.current.clientWidth === innerRef.current.scrollWidth || innerRef.current.scrollLeft !== 0) {
+                setShowRight(false);
+            } else {
+                setShowRight(true);
+            }
         };
-    
+
         innerRef.current.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
-    
+
         handleResize();
-        
+
         return () => {
-          innerRef.current.removeEventListener('scroll', handleScroll);
-          window.removeEventListener('resize', handleResize);
+            innerRef.current.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         }
-    
-      }, []);
+
+    }, [Arrow]);
 
 
 
@@ -162,17 +178,17 @@ const Derivex = () => {
 
     const handleLeftScroll = () => {
         innerRef.current.scrollTo({
-          left: innerRef.current.scrollLeft - 100,
-          behavior: 'smooth'
+            left: innerRef.current.scrollLeft - 100,
+            behavior: 'smooth'
         });
-      }  
-    
-      const handleRightScroll = () => {
+    }
+
+    const handleRightScroll = () => {
         innerRef.current.scrollTo({
-          left: innerRef.current.scrollLeft + 100,
-          behavior: 'smooth'
+            left: innerRef.current.scrollLeft + 100,
+            behavior: 'smooth'
         });
-      }
+    }
 
     return (
         <>
@@ -181,7 +197,7 @@ const Derivex = () => {
                 <div className='tvwap'>
                     <div className='tvw'>
                         <div className="tvwc">
-                            <div ref={outerRef} className='tvwch'>
+                            <div  className='tvwch'>
                                 <div className=' tvwch-1'>
                                     <div className='tvwch-1c'>
                                         <img src='https://gains.trade//_next/static/media/btc.fdaa3ece.svg' />
@@ -197,8 +213,8 @@ const Derivex = () => {
                                     </div>
                                 </div>
 
-                                <div className='tvwhm' ref={innerRef}>
-                                <LeftButton show={showLeft} onClick={handleLeftScroll}/>
+                                <div className='tvwhm' ref={Arrow === false ?innerRef:oRef}>
+                                    <LeftButton show={showLeft} onClick={handleLeftScroll} />
                                     <div className=' tv tvwch-2'>
 
                                         <span className='oi'>Open Interest(L)</span>
@@ -244,10 +260,61 @@ const Derivex = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <RightButton show={showRight} onClick={handleRightScroll} />
+                               {Arrow === false ? <RightButton  show={showRight} onClick={handleRightScroll}/> : null}
 
                             </div>
                             <TradingViewWidget />
+                            <div className='tvhmn' ref={outerRef}>
+                                <div className='tvwhm'  ref={Arrow === true ?innerRef:oRef}>
+                                    <LeftButton show={showLeft} onClick={handleLeftScroll} />
+                                    <div className=' tv tvwch-2'>
+
+                                        <span className='oi'>Open Interest(L)</span>
+
+
+                                        <span className="oid">14.6M / 22M</span>
+
+                                    </div>
+
+                                    <div className=' tv tvwch-2'>
+
+                                        <span className='oi'>Open Interest(S)</span>
+
+
+                                        <span className="oid">361.6k / 22M</span>
+
+                                    </div>
+
+                                    <div className='tv tvwch-2'>
+                                        <div className='tvwch-3-1'>
+                                            <span>Borrowing (L)</span>
+                                        </div>
+                                        <div className='tvwch-4-2'>
+                                            <span>0.0067%</span>
+                                        </div>
+                                    </div>
+
+                                    <div className='tv tvwch-2'>
+                                        <div className='tvwch-3-1'>
+                                            <span>Borrowing (S)</span>
+                                        </div>
+                                        <div className='tvwch-4-2'>
+                                            <span>0.0000%</span>
+                                        </div>
+                                    </div>
+
+                                    <div className='tv tvwch-2'>
+                                        <div className='tvwch-3-1'>
+                                            <span id="vq1">Rollover</span>
+                                        </div>
+                                        <div className='tvwch-5-2'>
+                                            <span >0.0033%</span>
+                                        </div>
+                                    </div>
+                                    <RightButton show={showRight} onClick={handleRightScroll} />
+                                </div>
+                                
+                            </div>
                             <div className='tvwp' id='tvwp1'>
                                 <div className='tvwpht'>
                                     <div className='tvwpht1'>
@@ -501,7 +568,7 @@ const Derivex = () => {
                                     <button>History</button>
                                 </div>
                                 <div className='tvwnshr'>
-
+                                        <span style={{color : "#82828F"}}>Wallet not connected</span> &nbsp;&nbsp; <button>Connect</button>
                                 </div>
                             </div>
                         </div>

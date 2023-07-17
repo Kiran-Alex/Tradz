@@ -31,6 +31,10 @@ body {
   }
 }
 
+.wap {
+  display: none;
+}
+
 .smart-scroll {
   overflow-y: hidden;
 }
@@ -699,6 +703,14 @@ pre code {
   .container {
     max-width: 540px;
   }
+  div.greytack span {
+    display: none;
+  }
+
+  .webapp {
+    padding: 0px;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -11975,6 +11987,8 @@ p {
 
 
 @media (max-width: 800px) {
+
+
   .inner {
     width: 90%;
     height: 20%;
@@ -12128,6 +12142,22 @@ video {
 }
 
 @media (min-width: 800px) {
+
+  
+
+
+
+  .greytack {
+    color: #fff;
+    background-color: #363cd7;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    width: 143px;
+    height: 32px;
+}
+
+
   .video-container .leftsection {
     /* margin-top: 20%; */
     z-index: 1;
@@ -12710,12 +12740,29 @@ video {
 }
 
 @media screen and (max-width: 800px) {
+
+  div.greytack span {
+    display: none;
+  }
+
+  .webapp {
+    padding: 0px;
+  }
+  
   .video-container {
     margin-top: 20%;
   }
 
   .subhead2 {
     width: auto;
+  }
+    .wb {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .wap {
+    display: block;
   }
 }
 
@@ -12727,6 +12774,9 @@ div#he3 {
   .button89 {
     transform: scale(0.8);
     margin-left: -6px;
+  }
+  .wap {
+    display: block;
   }
 
   .header3:nth-of-type(2) {
@@ -12761,6 +12811,20 @@ div#he3 {
   div#cardtt {
     text-align: left;
     padding-left: 5%;
+  }
+  div.greytack span {
+    display: none;
+  }
+
+  .webapp {
+    padding: 0px;
+  }
+
+  .border-0 div{
+    display: flex;
+  }
+  .wap {
+    display: block;
   }
 
 }
