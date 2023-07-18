@@ -12,6 +12,16 @@ import { styled } from '@mui/material/styles';
 import MuiInput from '@mui/material/Input';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+
+
 
 const Derivex = () => {
     const [inputValue, setInputValue] = useState(1);
@@ -20,8 +30,54 @@ const Derivex = () => {
     const [Menu, setMenu] = useState(1)
     const [showLeft, setShowLeft] = useState(false);
     const [showRight, setShowRight] = useState(false);
-    const [Arrow,setArrow] = useState(false)
-    
+    const [Arrow, setArrow] = useState(false)
+
+
+    const createData = (size, time, price) => {
+        return { size, time, price };
+    };
+
+    const rows = [
+        createData('Frozen yoghurt', 159, 6.0),
+        createData('Ice cream sandwich', 237, 9.0),
+        createData('Eclair', 262, 16.0),
+        createData('Cupcake', 305, 3.7),
+        createData('Gingerbread', 356, 16.0),
+        createData('Gingerbread', 356, 16.0),
+        createData('Gingerbread', 356, 16.0),
+        createData('Gingerbread', 356, 16.0),
+        createData('Gingerbread', 356, 16.0),
+        createData('Gingerbread', 356, 16.0),
+        createData('Gingerbread', 356, 16.0),
+        createData('Gingerbread', 356, 16.0),
+    ];
+
+    const Table = ({ data }) => {
+        return (
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Time</th>
+                        <th>Price</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.size}</td>
+                            <td>{item.time}</td>
+                            <td>{item.price}</td>
+                            {/* Add your Market Trade data here, e.g., <td>{item.marketTrade}</td> */}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        );
+    };
+
 
 
     const Input = styled(MuiInput)`
@@ -33,7 +89,7 @@ const Derivex = () => {
     const oRef = useRef();
 
 
-   
+
 
     function LeftButton({ show, onClick }) {
         return show && <button className="scroll-button" onClick={onClick}><KeyboardArrowLeftIcon sx={{ color: "white" }} /></button>;
@@ -48,18 +104,18 @@ const Derivex = () => {
     useEffect(() => {
 
         const computedStyle = window.getComputedStyle(outerRef.current);
-    const displayStatus = computedStyle.getPropertyValue('display');
-    const bodyWidth = document.body.clientWidth;
-    if (bodyWidth <= 660) {
-        
-      setArrow(true);
-      console.log(displayStatus)
-      console.log(Arrow)
-    } else {
-      setArrow(false);
-      console.log(Arrow)
-      console.log("a"+displayStatus)
-    }
+        const displayStatus = computedStyle.getPropertyValue('display');
+        const bodyWidth = document.body.clientWidth;
+        if (bodyWidth <= 660) {
+
+            setArrow(true);
+            console.log(displayStatus)
+            console.log(Arrow)
+        } else {
+            setArrow(false);
+            console.log(Arrow)
+            console.log("a" + displayStatus)
+        }
         const handleResize = () => {
             if (innerRef.current.scrollWidth > innerRef.current.clientWidth) {
                 setShowRight(true);
@@ -197,7 +253,7 @@ const Derivex = () => {
                 <div className='tvwap'>
                     <div className='tvw'>
                         <div className="tvwc">
-                            <div  className='tvwch'>
+                            <div className='tvwch'>
                                 <div className=' tvwch-1'>
                                     <div className='tvwch-1c'>
                                         <img src='https://gains.trade//_next/static/media/btc.fdaa3ece.svg' />
@@ -213,7 +269,7 @@ const Derivex = () => {
                                     </div>
                                 </div>
 
-                                <div className='tvwhm' ref={Arrow === false ?innerRef:oRef}>
+                                <div className='tvwhm' ref={Arrow === false ? innerRef : oRef}>
                                     <LeftButton show={showLeft} onClick={handleLeftScroll} />
                                     <div className=' tv tvwch-2'>
 
@@ -260,12 +316,12 @@ const Derivex = () => {
                                         </div>
                                     </div>
                                 </div>
-                               {Arrow === false ? <RightButton  show={showRight} onClick={handleRightScroll}/> : null}
+                                {Arrow === false ? <RightButton show={showRight} onClick={handleRightScroll} /> : null}
 
                             </div>
                             <TradingViewWidget />
                             <div className='tvhmn' ref={outerRef}>
-                                <div className='tvwhm'  ref={Arrow === true ?innerRef:oRef}>
+                                <div className='tvwhm' ref={Arrow === true ? innerRef : oRef}>
                                     <LeftButton show={showLeft} onClick={handleLeftScroll} />
                                     <div className=' tv tvwch-2'>
 
@@ -313,7 +369,7 @@ const Derivex = () => {
                                     </div>
                                     <RightButton show={showRight} onClick={handleRightScroll} />
                                 </div>
-                                
+
                             </div>
                             <div className='tvwp' id='tvwp1'>
                                 <div className='tvwpht'>
@@ -563,12 +619,21 @@ const Derivex = () => {
                         <div className="tvwns">
                             <div className="tvwnsh">
                                 <div className='tvwnshl'>
+                                    &nbsp;&nbsp;&nbsp;
                                     <button>Trades</button>
                                     <button>Orders</button>
                                     <button>History</button>
                                 </div>
                                 <div className='tvwnshr'>
-                                        <span style={{color : "#82828F"}}>Wallet not connected</span> &nbsp;&nbsp; <button>Connect</button>
+                                    <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button>Connect</button>
+                                </div>
+                            </div>
+                            <div className="tvwnshm">
+                                <div className='tvwnshl' id='tvwnshm1' style={{ textAlign: "center", alignItems: "center" }}>
+                                    Market Trades
+                                </div>
+                                <div className='tablecontainer'>
+                                    <Table data={rows} />
                                 </div>
                             </div>
                         </div>
