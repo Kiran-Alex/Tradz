@@ -168,6 +168,7 @@ div.tvwhm {
   flex-direction: column;
   border-left: 1px solid #232325;
   border-bottom: 1px solid #232325;
+  border-top: 1px solid #232325;
 }
 
 .tablecontainer {
@@ -517,9 +518,36 @@ thead {
 
 .tvwnshr1 {
  height: 266.86px;
+ padding-left: 6px;
   width: 100%;
 }
 
+.tdclose {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.tdclose button {
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.table1 tbody {
+  font-size: 14px;
+}
+
+.table1 th {
+  font-size: 15px;
+  font-weight: normal;
+  color: rgb(116, 118, 119);
+}
 
 
 .tvwnshl {
@@ -909,6 +937,27 @@ input.tvwpht2-s2-1-c::placeholder {
 }
 
 /*  */
+
+.table1 {
+  width:100%;
+}
+.tvwpht2-btn {
+  height: 49px;
+  width: 318px;
+  display: flex;
+  flex-direction: column;
+  background-color: #101010ad;
+}
+
+.tvwpht2-btn button {
+  height: 37px;
+  border-radius: 6px;
+  background-color: #404046;
+  outline: none;
+  border-style: none;
+  color: #8D8D9C;
+  border: 0.5px solid #5C5B64;
+}
 
 .tvwpht2-t {
   height: 83px;

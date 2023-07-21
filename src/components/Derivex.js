@@ -35,19 +35,55 @@ const Derivex = () => {
 
     const [rows1, setRows] = useState([
         {
-          type: 'Buy',
-          pair: 'BTC/USD',
-          leverage: '1:100',
-          collateral: '$1000',
-          openPrice: '$45000',
-          price: '$45500',
-          liqSl: '45000/43000',
-          takeProfit: '46000',
-          netPnl: '$200',
-          icon: 'custom-icon.png', // Replace with the path to your custom icon
+            type: 'Buy',
+            pair: 'BTC/USD',
+            leverage: '1:100',
+            collateral: '$1000',
+            openPrice: '$45000',
+            price: '$45500',
+            liqSl: '45000/43000',
+            takeProfit: '46000',
+            netPnl: '$200',
+            icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
+        },
+        {
+            type: 'Buy',
+            pair: 'BTC/USD',
+            leverage: '1:100',
+            collateral: '$1000',
+            openPrice: '$45000',
+            price: '$45500',
+            liqSl: '45000/43000',
+            takeProfit: '46000',
+            netPnl: '$200',
+            icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
+        },
+        {
+            type: 'Buy',
+            pair: 'BTC/USD',
+            leverage: '1:100',
+            collateral: '$1000',
+            openPrice: '$45000',
+            price: '$45500',
+            liqSl: '45000/43000',
+            takeProfit: '46000',
+            netPnl: '$200',
+            icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
+        },
+        {
+            type: 'Buy',
+            pair: 'BTC/USD',
+            leverage: '1:100',
+            collateral: '$1000',
+            openPrice: '$45000',
+            price: '$45500',
+            liqSl: '45000/43000',
+            takeProfit: '46000',
+            netPnl: '$200',
+            icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
         },
         // Add more data objects here if needed
-      ]);
+    ]);
 
     const createData = (size, time, price) => {
         return { size, time, price };
@@ -70,9 +106,9 @@ const Derivex = () => {
 
     const handleDeleteRow = (index) => {
         // Create a new array without the row to be deleted
-        const updatedRows = rows.filter((_, i) => i !== index);
+        const updatedRows = rows1.filter((_, i) => i !== index);
         setRows(updatedRows);
-      };
+    };
 
 
 
@@ -115,7 +151,7 @@ const Derivex = () => {
                 liqSl: '45000/43000',
                 takeProfit: '46000',
                 netPnl: '$200',
-                icon: 'custom-icon.png', // Replace with the path to your custom icon
+                icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
             },
             // Add more data objects here if needed
         ];
@@ -595,6 +631,11 @@ const Derivex = () => {
 
                                         </div>
 
+                                        <div className="tvwpht2-btn">
+                                          
+                                            <button>MARKET (LONG)</button>
+                                        </div>
+
                                         <div className="tvwphyt2-mc">
                                             <div className='tvwphyt2-m'>
                                                 <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
@@ -674,6 +715,7 @@ const Derivex = () => {
                                     <table className="table1">
                                         <thead>
                                             <tr>
+                                               
                                                 <th>Type</th>
                                                 <th>Pair</th>
                                                 <th>Leverage</th>
@@ -688,11 +730,11 @@ const Derivex = () => {
                                         </thead>
                                         <tbody>
                                             {rows1.map((item, index) => (
-                                                <tr key={index}>
+                                           <tr key={index}>
                                                     <td>{item.type}</td>
                                                     <td>
                                                         <span>
-                                                            {item.icon && <img src={item.icon} alt="Icon" />}
+                                                            {item.icon && <img style={{ width: "15px", marginRight: "5px" }} src={item.icon} alt="Icon" />}
                                                         </span>
                                                         {item.pair}
                                                     </td>
@@ -703,7 +745,7 @@ const Derivex = () => {
                                                     <td>{item.liqSl}</td>
                                                     <td>{item.takeProfit}</td>
                                                     <td>{item.netPnl}</td>
-                                                    <td>
+                                                    <td className='tdclose'>
                                                         <button onClick={() => handleDeleteRow(index)}>x</button>
                                                     </td>
                                                 </tr>
@@ -903,7 +945,10 @@ const Derivex = () => {
                                     </div>
 
                                 </div>
-
+                                <div className="tvwpht2-btn">
+                                   
+                                    <button >MARKET (LONG)</button>
+                                </div>
                                 <div className="tvwphyt2-mc">
                                     <div className='tvwphyt2-m'>
                                         <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
