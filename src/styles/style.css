@@ -11255,6 +11255,9 @@ body {
   transform: translateY(0);
   transition: all 0.3s ease-out;
 }
+section#smart-scrollweb3 {
+  z-index: 1;
+}
 
 /**dividers */
 .divider {
@@ -12193,6 +12196,7 @@ video {
   padding: 10px 35px;
   font-family: Semi;
   text-align: center;
+  cursor: pointer;
 }
 
 .greytack {

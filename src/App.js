@@ -15,6 +15,22 @@ import CoinSection from './components/CoinsSection'
 import Stats from './components/Stats'
 import Security from "./components/Security";
 import Derivex from "./components/Derivex";
+import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
+import { Web3Modal } from '@web3modal/react'
+import { configureChains, createConfig, WagmiConfig } from 'wagmi'
+import { arbitrum, mainnet, polygon } from 'wagmi/chains'
+
+const chains = [arbitrum, mainnet, polygon]
+const projectId = '397a95937ac0b7fce6cedb9aea9665f6'
+
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors: w3mConnectors({ projectId, chains }),
+  publicClient
+})
+const ethereumClient = new EthereumClient(wagmiConfig, chains)
+
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -32,10 +48,14 @@ function App() {
   }, []);
   return (
     <div>
-      
+       <WagmiConfig config={wagmiConfig}>
       <Header />
       <Derivex/>
      <Footer />
+     </WagmiConfig>
+     <Web3Modal themeVariables={{
+      "--w3m-z-index" : "1"
+     }} projectId={projectId} ethereumClient={ethereumClient} />
     </div>
   );
 }

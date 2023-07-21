@@ -23,21 +23,23 @@ div.tvwhm {
 }
 
 .tvwnshr {
+ 
   height: 59px;
-  display : flex ;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
 }
 
-.tvwnshr  span {
+.tvwnshr span {
   font-size: 15px;
 }
+
 .tvwnshr button {
-  color : #82828F;
+  color: #82828F;
   background-color: black;
-  border:0.4px solid #232325;
+  border: 0.4px solid #232325;
   border-radius: 5px;
   font-size: 14px;
   padding: 5px 7px;
@@ -160,32 +162,58 @@ div.tvwhm {
 }
 
 .tvwnshm {
-  width: 40%;
-  height: 320.86px;
+  width: 25%;
+  max-height: 320.86px;
   display: flex;
   flex-direction: column;
-  border-left : 1px solid #232325;
+  border-left: 1px solid #232325;
+  border-bottom: 1px solid #232325;
 }
+
 .tablecontainer {
   width: 100%;
   max-height: 320.86px;
-  overflow-y: scroll;
+  overflow-y: scroll !important;
   scrollbar-width: thin;
   scrollbar-color: red;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-table {
+
+.table2 {
   width: 100%;
+  overflow-y: scroll !important;
 }
 
-tr,
+.table2 thead tr th {
+  padding: 7px 15px;
+  font-size: smaller;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: rgba(145, 153, 167, 1);
+}
+
+.table2 tr,
 thead {
-  border-bottom : 1px solid #232325;
+  border-bottom: 1px solid #232325;
 }
 
+.table2 tr td {
+  font-size: small;
+  padding: 7px 15px;
+
+}
+
+.table2 tr {
+  padding: 5px 28px;
+}
 
 #tvwnshm1 {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
+  height: 93px;
 }
 
 
@@ -443,7 +471,7 @@ justify-content: center;
 
 #derivexlol {
   height: 60vw;
-  margin-top: 6.4em;
+  margin-top: 6.8em;
   font-family: "Medium";
 }
 
@@ -482,15 +510,20 @@ justify-content: center;
 }
 
 .tvwnsh {
-  width:60%;
-  height: 177px;
+  width: 75%;
+  height: 320.86px;
   border-top: 1px solid #232325;
+}
+
+.tvwnshr1 {
+ height: 266.86px;
+  width: 100%;
 }
 
 
 
 .tvwnshl {
-  width:100%;
+  width: 100%;
   height: 54px;
   border-bottom: 1px solid #232325;
   display: flex;
@@ -1185,7 +1218,7 @@ input.tvwpht2-t2-1-c::placeholder {
   transform: scaleX(-1);
 }
 
-.tvhmn div.tvwhm{
+.tvhmn div.tvwhm {
   display: none;
 }
 
@@ -1496,12 +1529,12 @@ input.tvwpht2-t2-1-c::placeholder {
   .tvwnshl {
     width: 177px;
     height: 100%;
-    
+
     display: flex;
     flex-direction: row;
     margin: 0 8px 0 16px;
     justify-content: space-around;
-    
+
   }
 
 }
@@ -1680,11 +1713,13 @@ input.tvwpht2-t2-1-c::placeholder {
     right: 0;
     height: 46px;
   }
+
   #sb:focus {
     outline: none;
   }
+
   .scroll-button {
-     outline: none;
+    outline: none;
   }
 }
 

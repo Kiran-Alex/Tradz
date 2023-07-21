@@ -33,28 +33,52 @@ const Derivex = () => {
     const [Arrow, setArrow] = useState(false)
 
 
+    const [rows1, setRows] = useState([
+        {
+          type: 'Buy',
+          pair: 'BTC/USD',
+          leverage: '1:100',
+          collateral: '$1000',
+          openPrice: '$45000',
+          price: '$45500',
+          liqSl: '45000/43000',
+          takeProfit: '46000',
+          netPnl: '$200',
+          icon: 'custom-icon.png', // Replace with the path to your custom icon
+        },
+        // Add more data objects here if needed
+      ]);
+
     const createData = (size, time, price) => {
         return { size, time, price };
     };
 
     const rows = [
-        createData('Frozen yoghurt', 159, 6.0),
-        createData('Ice cream sandwich', 237, 9.0),
-        createData('Eclair', 262, 16.0),
-        createData('Cupcake', 305, 3.7),
-        createData('Gingerbread', 356, 16.0),
-        createData('Gingerbread', 356, 16.0),
-        createData('Gingerbread', 356, 16.0),
-        createData('Gingerbread', 356, 16.0),
-        createData('Gingerbread', 356, 16.0),
-        createData('Gingerbread', 356, 16.0),
-        createData('Gingerbread', 356, 16.0),
-        createData('Gingerbread', 356, 16.0),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
+        createData(0.0904743, "7/19 15:17", "30,020.9"),
     ];
+
+    const handleDeleteRow = (index) => {
+        // Create a new array without the row to be deleted
+        const updatedRows = rows.filter((_, i) => i !== index);
+        setRows(updatedRows);
+      };
+
+
 
     const Table = ({ data }) => {
         return (
-            <table>
+            <table className='table2'>
 
                 <thead>
                     <tr>
@@ -67,8 +91,8 @@ const Derivex = () => {
                 <tbody>
                     {data.map((item, index) => (
                         <tr key={index}>
-                            <td>{item.size}</td>
-                            <td>{item.time}</td>
+                            <td style={{ color: "rgba(94,217,151,1)" }}>{item.size}</td>
+                            <td style={{ color: "#747677" }}>{item.time}</td>
                             <td>{item.price}</td>
                             {/* Add your Market Trade data here, e.g., <td>{item.marketTrade}</td> */}
                         </tr>
@@ -77,6 +101,25 @@ const Derivex = () => {
             </table>
         );
     };
+
+    const CustomIconTable = () => {
+        // Sample data for demonstration purposes
+        const rows = [
+            {
+                type: 'Buy',
+                pair: 'BTC/USD',
+                leverage: '1:100',
+                collateral: '$1000',
+                openPrice: '$45000',
+                price: '$45500',
+                liqSl: '45000/43000',
+                takeProfit: '46000',
+                netPnl: '$200',
+                icon: 'custom-icon.png', // Replace with the path to your custom icon
+            },
+            // Add more data objects here if needed
+        ];
+    }
 
 
 
@@ -627,8 +670,49 @@ const Derivex = () => {
                                 <div className='tvwnshr'>
                                     <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button>Connect</button>
                                 </div>
+                                <div className="tvwnshr1">
+                                    <table className="table1">
+                                        <thead>
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Pair</th>
+                                                <th>Leverage</th>
+                                                <th>Collateral</th>
+                                                <th>Open Price</th>
+                                                <th>Price</th>
+                                                <th>Liq/SL</th>
+                                                <th>Take Profit</th>
+                                                <th>Net Pnl</th>
+                                                <th>Close</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {rows1.map((item, index) => (
+                                                <tr key={index}>
+                                                    <td>{item.type}</td>
+                                                    <td>
+                                                        <span>
+                                                            {item.icon && <img src={item.icon} alt="Icon" />}
+                                                        </span>
+                                                        {item.pair}
+                                                    </td>
+                                                    <td>{item.leverage}</td>
+                                                    <td>{item.collateral}</td>
+                                                    <td>{item.openPrice}</td>
+                                                    <td>{item.price}</td>
+                                                    <td>{item.liqSl}</td>
+                                                    <td>{item.takeProfit}</td>
+                                                    <td>{item.netPnl}</td>
+                                                    <td>
+                                                        <button onClick={() => handleDeleteRow(index)}>x</button>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div className="tvwnshm">
+                            <div className="tvwnshm" >
                                 <div className='tvwnshl' id='tvwnshm1' style={{ textAlign: "center", alignItems: "center" }}>
                                     Market Trades
                                 </div>
