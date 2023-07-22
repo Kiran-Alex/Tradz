@@ -1419,6 +1419,10 @@ input.tvwpht2-t2-1-c::placeholder {
     height: 88vw;
   }
 
+  #tvwnshm1 {
+    margin: 0px;
+  }
+
 }
 
 /* @media (max-width : 1025px) {
@@ -1460,6 +1464,10 @@ input.tvwpht2-t2-1-c::placeholder {
 @media (max-width : 1025px) {
   #tvwp2 {
     display: none;
+  }
+
+  .py-6 {
+    padding-top: 48rem !important;
   }
 
   .tvwc {
@@ -1534,6 +1542,10 @@ input.tvwpht2-t2-1-c::placeholder {
     border-right: 1px solid #232325;
   }
 
+  .tvwnshm1 {
+    margin: 0px;
+  }
+
 
   .tvwpht {
     width: 100%;
@@ -1586,6 +1598,11 @@ input.tvwpht2-t2-1-c::placeholder {
 
   }
 
+  #tvwnshm1 {
+    width: 100%;
+    margin: 0px;
+  }
+
 }
 
 @media (max-width : 804px) {
@@ -1609,6 +1626,13 @@ input.tvwpht2-t2-1-c::placeholder {
     display: flex;
     flex-direction: column;
   }
+
+  .tvwnshm {
+    margin-top: 16em;
+    width : 100%
+  }
+
+
 
 
   #derivexlol {
@@ -1665,13 +1689,15 @@ input.tvwpht2-t2-1-c::placeholder {
     height: 53px;
     border-bottom: 1px solid #363C4E;
     border-top: 1px solid #363C4E;
+    margin-top: 12em;
   }
 
   .tvwns {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 
-    margin-top: 8em;
   }
 
   .tvwnshl {
@@ -1679,7 +1705,7 @@ input.tvwpht2-t2-1-c::placeholder {
     height: 100%;
     display: flex;
     flex-direction: row;
-    margin: 0 8px 0 0px;
+    margin:  0px;
     justify-content: space-around;
   }
 
@@ -1687,6 +1713,22 @@ input.tvwpht2-t2-1-c::placeholder {
   .py-6 {
     padding-top: 86rem !important;
   }
+  #tvwnshm1 {
+    width: 100%;
+  }
+
+  .table2 tr td {
+    font-size: small;
+    padding: 7px 56px;
+}
+
+.table2 thead tr th {
+  padding: 7px 56px;
+  font-size: smaller;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: rgba(145, 153, 167, 1);
+}
 }
 
 @media(max-width : 768px) {
@@ -1696,6 +1738,9 @@ input.tvwpht2-t2-1-c::placeholder {
 
   .tradingview-widget-container {
     height: 478px;
+  }
+  #tvwnshm1 {
+    width: 100%;
   }
 }
 
@@ -1711,7 +1756,7 @@ input.tvwpht2-t2-1-c::placeholder {
 
   .pt-6,
   .py-6 {
-    padding-top: 82rem !important;
+    padding-top: 117rem !important;
   }
 
   .tvwnshl {

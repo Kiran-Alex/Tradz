@@ -2,15 +2,37 @@ import React, { useEffect, useRef } from "react";
 import "../styles/style.css";
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 import { useWeb3Modal } from '@web3modal/react'
+import { useAccount } from 'wagmi'
 import { useState } from "react";
 import { Web3Button } from '@web3modal/react'
 
 export default function Header() {
   const { open, close } = useWeb3Modal()
   const [ trackindex, setTrackindex ] = useState(false)
+  const { address, connector: activeConnector, isConnected} = useAccount()
   const toggleIndex =()=>{
     open();
     setTrackindex(true)
+  }
+  
+  let truncatedAddress;
+
+  if (address) {
+   truncatedAddress =  
+     address.substring(0, 8) + "..." +  
+     address.substring(address.length - 4);
+  }
+
+  
+  const WalletInfo = () => {
+    // Get account info after wallet connect
+    const account = useAccount();
+    return (
+      <div>
+        Address: {account.address} <br/>      
+        Balance: {account.balance}
+      </div> 
+    );
   }
   
   return (
@@ -24,14 +46,9 @@ export default function Header() {
 
             <div className="wb">
               <div className="webapp wap" onClick={toggleIndex} style={{ fontFamily: 'Regular' }}>
-              {/* <a
-                  className="nav-link page-scroll"
-                  target="_blank"
-                  href="https://bit.ly/xadefinance"
-                  rel="noreferrer"
-                > */}
+              
               <div className="greytack"><span>Connect  Wallet</span>&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small" /></div>
-              {/* </a> */}
+         
             </div>
 
 
@@ -88,14 +105,8 @@ export default function Header() {
 
               &nbsp; &nbsp;
               <li className="webapp" style={{ fontFamily: 'Regular' }} onClick={() => open()} >
-                {/* <a
-                      className="nav-link page-scroll"
-                      target="_blank"
-                      href="https://bit.ly/xadefinance"
-                      rel="noreferrer"
-                    > */}
-                <div className="greytack">Connect  Wallet&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small" /></div>
-                {/* </a> */}
+
+                <div className="greytack">{isConnected ? truncatedAddress : "Connect Wallet"}&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small" /></div>
               </li>
             </div>
           </ul>
