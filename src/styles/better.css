@@ -517,7 +517,7 @@ thead {
 }
 
 .tvwnshr1 {
- height: 266.86px;
+ height: 259.86px;
  padding-left: 6px;
   width: 100%;
 }
@@ -1751,6 +1751,9 @@ input.tvwpht2-t2-1-c::placeholder {
     display: flex;
     flex-direction: row;
   }
+  table.table1 td {
+      padding: 7px 0px;
+  }
 
 
 
@@ -1825,6 +1828,8 @@ input.tvwpht2-t2-1-c::placeholder {
     flex-direction: row;
   }
 
+  
+
 
   .container-fluid {
     padding-right: 0px;
@@ -1857,8 +1862,14 @@ input.tvwpht2-t2-1-c::placeholder {
 
   .pt-6,
   .py-6 {
-    padding-top: 85rem !important;
+    padding-top: 131rem !important;
   }
 
+  .tvwpht2-btn {
+    width: 100%;
+  }
+  .tvwnsh {
+    margin-top: 5em;
+  }
 
 }
