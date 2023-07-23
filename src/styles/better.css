@@ -162,8 +162,18 @@ div.tvwhm {
 }
 
 .tvwnshm {
-  width: 25%;
+
+  width: 18em;
   max-height: 320.86px;
+  display: none;
+  flex-direction: column;
+  border-left: 1px solid #232325;
+  border-bottom: 1px solid #232325;
+  border-top: 1px solid #232325;
+}
+.tvwnshmt1 {
+  width: 25%;
+  max-height: 348px;
   display: flex;
   flex-direction: column;
   border-left: 1px solid #232325;
@@ -358,8 +368,15 @@ thead {
   flex-direction: row;
 }
 
+.tvwamtc {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 .tradingview-widget-container {
   height: 350px;
+  width: 55em;
   border-right: 1px solid #232325;
 }
 
@@ -585,7 +602,7 @@ thead {
 }
 
 .tvwnsh {
-  width: 75%;
+  width: 100%;
   height: 320.86px;
   border-top: 1px solid #232325;
 }
@@ -1617,6 +1634,7 @@ input.tvwpht2-t2-1-c::placeholder {
 
   .tradingview-widget-container {
     height: 350px;
+    width: 100%;
     border-right: 1px solid #232325;
   }
 
@@ -1679,6 +1697,14 @@ input.tvwpht2-t2-1-c::placeholder {
   #tvwnshm1 {
     width: 100%;
     margin: 0px;
+  }
+
+  .tvwnshm {
+    display: flex;
+  }
+
+  .tvwnshmt1 {
+    display:none;
   }
 
 }

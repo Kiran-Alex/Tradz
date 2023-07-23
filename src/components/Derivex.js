@@ -389,7 +389,17 @@ const Derivex = () => {
                                 {Arrow === false ? <RightButton show={showRight} onClick={handleRightScroll} /> : null}
 
                             </div>
+                            <div className = "tvwamtc">
+                            <div className="tvwnshmt1" >
+                                <div className='tvwnshl' id='tvwnshm1' style={{ textAlign: "center", alignItems: "center" }}>
+                                    Market Trades
+                                </div>
+                                <div className='tablecontainer'>
+                                    <Table data={rows} />
+                                </div>
+                            </div>
                             <TradingViewWidget />
+                            </div>
                             <div className='tvhmn' ref={outerRef}>
                                 <div className='tvwhm' ref={Arrow === true ? innerRef : oRef}>
                                     <LeftButton show={showLeft} onClick={handleLeftScroll} />
