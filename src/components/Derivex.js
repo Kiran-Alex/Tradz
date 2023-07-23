@@ -785,7 +785,7 @@ const Derivex = () => {
                                           // Your other styles for the drawer paper go here
                                         },
                                       }} >
-                                        <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: "#121216", width: '100%', padding: 16, paddingBottom:6 ,height: '80vh' }}>
+                                        <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: "#121216", width: '100%', padding: 16, paddingBottom:6 ,height: '70vh' }}>
                                             <div className='drawerheader'>
                                                 <div className='dh1'>
                                                     <div><img src='https://gains.trade//_next/static/media/btc.fdaa3ece.svg'/>&nbsp;<span>BTC/USD</span></div>
