@@ -263,8 +263,7 @@ thead {
   width: 100%;
 }
 
-.drawertable  td{
-  padding-left: 23%;
+.drawertable td{
   text-align: right;
   width : 100%
 }
@@ -276,6 +275,7 @@ thead {
 .drawertable tbody tr th {
   font-weight: normal;
   color:  #ADADBB;
+  width: 100%;
 }
 
 .drawerheader {
