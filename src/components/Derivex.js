@@ -12,13 +12,9 @@ import { styled } from '@mui/material/styles';
 import MuiInput from '@mui/material/Input';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+
 
 
 
@@ -32,6 +28,8 @@ const Derivex = () => {
     const [showRight, setShowRight] = useState(false);
     const [Arrow, setArrow] = useState(false)
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [selectedRow, setSelectedRow] = useState(null);
 
 
     const [rows1, setRows] = useState([
@@ -42,7 +40,7 @@ const Derivex = () => {
             collateral: '$1000',
             openPrice: '$45000',
             price: '$45500',
-            liqSl: '45000/43000',
+            liqSl: '45000',
             takeProfit: '46000',
             netPnl: '$200',
             icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
@@ -54,7 +52,7 @@ const Derivex = () => {
             collateral: '$1000',
             openPrice: '$45000',
             price: '$45500',
-            liqSl: '45000/43000',
+            liqSl: '45000',
             takeProfit: '46000',
             netPnl: '$200',
             icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
@@ -66,7 +64,7 @@ const Derivex = () => {
             collateral: '$1000',
             openPrice: '$45000',
             price: '$45500',
-            liqSl: '45000/43000',
+            liqSl: '45000',
             takeProfit: '46000',
             netPnl: '$200',
             icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
@@ -78,7 +76,7 @@ const Derivex = () => {
             collateral: '$1000',
             openPrice: '$45000',
             price: '$45500',
-            liqSl: '45000/43000',
+            liqSl: '45000',
             takeProfit: '46000',
             netPnl: '$200',
             icon: 'https://gains.trade//_next/static/media/btc.fdaa3ece.svg', // Replace with the path to your custom icon
@@ -109,6 +107,15 @@ const Derivex = () => {
         // Create a new array without the row to be deleted
         const updatedRows = rows1.filter((_, i) => i !== index);
         setRows(updatedRows);
+    };
+
+    const handleRowClick = (row) => {
+        setSelectedRow(row);
+        setIsDrawerOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+        setIsDrawerOpen(false);
     };
 
 
@@ -725,7 +732,7 @@ const Derivex = () => {
                                         </thead>
                                         <tbody>
                                             {rows1.map((item, index) => (
-                                                <tr key={index}>
+                                                <tr key={index} onClick={() => handleRowClick(item)} >
                                                     {isNarrowScreen ? (
                                                         <>
                                                             <td>{item.type}</td>
@@ -767,6 +774,69 @@ const Derivex = () => {
                                         </tbody>
                                     </table>
                                 </div>
+                                {isNarrowScreen && (
+                                    <Drawer anchor="bottom" open={isDrawerOpen} onClose={handleDrawerClose} sx={{
+                                        '& .MuiDrawer-paper': {
+                                          borderRadius: '15px 15px 0 0',
+                                          borderColor : "#121216",
+                                          outline : "none",
+                                          borderTop : 
+                                          "0.5px solid #3deca7;"
+                                          // Your other styles for the drawer paper go here
+                                        },
+                                      }} >
+                                        <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: "#121216", width: '100%', padding: 16, paddingBottom:6 ,height: '80vh' }}>
+                                            <div className='drawerheader'>
+                                                <div className='dh1'>
+                                                    <div><img src='https://gains.trade//_next/static/media/btc.fdaa3ece.svg'/>&nbsp;<span>BTC/USD</span></div>
+                                                </div>
+                                                <span>LONG</span>
+                                            </div>
+                                            <div className='maincontentdrawer'>
+                                            <table className="drawertable">
+
+                                                <tbody>
+                                                    {selectedRow && (
+                                                        <>
+
+                                                            <tr>
+                                                                <th>Type</th>  <td>{selectedRow.type}</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th>Leverage</th>  <td>{selectedRow.leverage}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Collateral</th> <td>{selectedRow.collateral}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Open Price</th>  <td>{selectedRow.openPrice}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Price</th> <td>{selectedRow.price}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Liq/SL</th> <td>{selectedRow.liqSl}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Take Profit</th>   <td>{selectedRow.takeProfit}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Net Pnl</th>   <td>{selectedRow.netPnl}</td>
+                                                            </tr>
+                                                        </>
+
+                                                    )}
+                                                </tbody>
+                                            </table>
+                                            <div className='sharebtn'>
+                                                <button>Share Trade</button>
+                                            </div>
+                                            </div>
+
+                                        </div>
+                                    </Drawer>
+                                )}
                             </div>
                             <div className="tvwnshm" >
                                 <div className='tvwnshl' id='tvwnshm1' style={{ textAlign: "center", alignItems: "center" }}>
