@@ -103,10 +103,12 @@ const Derivex = () => {
         createData(0.0904743, "7/19 15:17", "30,020.9"),
     ];
 
-    const handleDeleteRow = (index) => {
+    const handleDeleteRow = (index,event) => {
         // Create a new array without the row to be deleted
         const updatedRows = rows1.filter((_, i) => i !== index);
+        
         setRows(updatedRows);
+        if (isNarrowScreen) {event.stopPropagation();}
     };
 
     const handleRowClick = (row) => {
@@ -755,7 +757,7 @@ const Derivex = () => {
                                                             <td>SL/TP</td>
                                                             <td>{item.netPnl}</td>
                                                             <td className='tdclose'>
-                                                                <button onClick={() => handleDeleteRow(index)}>x</button>
+                                                                <button onClick={(event) => handleDeleteRow(index,event)}>x</button>
                                                             </td>
                                                         </>
                                                     ) : (
@@ -792,7 +794,7 @@ const Derivex = () => {
                                           outline : "none",
                                           borderTop : 
                                           "0.5px solid #3deca7;"
-                                          // Your other styles for the drawer paper go here
+                                      
                                         },
                                       }} >
                                         <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: "#121216", width: '100%', padding: 16, paddingBottom:6 ,height: '70vh' }}>

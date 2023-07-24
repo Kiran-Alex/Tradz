@@ -4,40 +4,40 @@ import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOu
 import { useWeb3Modal } from '@web3modal/react'
 import { useAccount } from 'wagmi'
 import { useState } from "react";
+
 import { Web3Button } from '@web3modal/react'
 
 export default function Header() {
   const { open, close } = useWeb3Modal()
-  const [ trackindex, setTrackindex ] = useState(false)
-  const { address, connector: activeConnector, isConnected} = useAccount()
-  const toggleIndex =()=>{
+  const [trackindex, setTrackindex] = useState(false)
+  const { address, connector: activeConnector, isConnected } = useAccount()
+  const toggleIndex = () => {
     open();
     setTrackindex(true)
   }
-  
+
   let truncatedAddress;
 
   if (address) {
-   truncatedAddress =  
-     address.substring(0, 8) + "..." +  
-     address.substring(address.length - 4);
+    truncatedAddress =
+      address.substring(0, 7);
   }
 
-  
+
   const WalletInfo = () => {
     // Get account info after wallet connect
     const account = useAccount();
     return (
       <div>
-        Address: {account.address} <br/>      
+        Address: {account.address} <br />
         Balance: {account.balance}
-      </div> 
+      </div>
     );
   }
-  
+
   return (
     <>
-      <section className="smart-scroll" id= {trackindex ? "":"smart-scrollweb3"} style={{ background: "rgba(0,0,0,0.75" }}>
+      <section className="smart-scroll" id={trackindex ? "" : "smart-scrollweb3"} style={{ background: "rgba(0,0,0,0.75" }}>
         <div className="container-fluid" >
           <nav className="navbar navbar-expand-md navbar-dark">
             <a className="navbar-brand heading-black" href="#">
@@ -45,74 +45,111 @@ export default function Header() {
             </a>
 
             <div className="wb">
-              <div className="webapp wap" onClick={toggleIndex} style={{ fontFamily: 'Regular' }}>
-              
-              <div className="greytack"><span>Connect  Wallet</span>&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small" /></div>
-         
-            </div>
 
+              {isConnected ? <> <div className="webappconnectedh wap" onClick={toggleIndex} style={{ fontFamily: 'Regular' }}>
 
-            <button
-              className="navbar-toggler navbar-toggler-right border-0"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarCollapse"
-              aria-controls="navbarCollapse"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              style={{ background: "black" }}
-              onClick={() => {
-                const navbarCollapse = document.getElementById('navbarCollapse');
-                navbarCollapse.classList.toggle('show');
-              }}
-            >
-              <div>
-                <img src={process.env.PUBLIC_URL + "/Media/Menu.svg"} />
+                <span id="balance">0.10tMATIC</span>   &nbsp; &nbsp;
+                <div className="wacd">
+
+                  <span>{truncatedAddress}</span>
+                  &nbsp; &nbsp; &nbsp;
+                  <img src={process.env.PUBLIC_URL + '/Media/pfp.jpeg'} style={{
+                    height: 27,
+                    borderRadius: 30
+                  }} />
+                </div>
+
               </div>
-              {/* <i className="fa-solid fa-bars-sort text-white" /> */}
-              <span data-feather="grid" />
-            </button>
-        </div>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <ul className="navbar-nav ml-auto desktop-arrangement-navbar">
-            <div>
-              <li className="nav-item">
-                <a className="nav-link page-scroll" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="https://docs.xade.finance/" className="nav-link page-scroll">
-                  Docs
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="http://explorers.xade.finance/" className="nav-link page-scroll">
-                  Premium
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link page-scroll"
-                  href="https://medium.com/@XadeFinance/what-is-xade-and-why-do-you-need-it-b483f46ba5a1"
-                >
-                  Blog
-                </a>
-              </li>
+              </>
+                :
+                <> <div className="webapp wap1" onClick={toggleIndex} style={{ fontFamily: 'Regular' }}>
+
+                  <div className="greytack"><span>Connect  Wallet</span>&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small" /></div> </div>
+                </>
+              }
+
+
+
+
+
+
+
+              <button
+                className="navbar-toggler navbar-toggler-right border-0"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarCollapse"
+                aria-controls="navbarCollapse"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                style={{ background: "black" }}
+                onClick={() => {
+                  const navbarCollapse = document.getElementById('navbarCollapse');
+                  navbarCollapse.classList.toggle('show');
+                }}
+              >
+                <div>
+                  <img src={process.env.PUBLIC_URL + "/Media/Menu.svg"} />
+                </div>
+                {/* <i className="fa-solid fa-bars-sort text-white" /> */}
+                <span data-feather="grid" />
+              </button>
             </div>
-            <div>
+            <div className="collapse navbar-collapse" id="navbarCollapse">
+              <ul className="navbar-nav ml-auto desktop-arrangement-navbar">
+                <div>
+                  <li className="nav-item">
+                    <a className="nav-link page-scroll" href="#">
+                      Home
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="https://docs.xade.finance/" className="nav-link page-scroll">
+                      Docs
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="http://explorers.xade.finance/" className="nav-link page-scroll">
+                      Premium
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a
+                      className="nav-link page-scroll"
+                      href="https://medium.com/@XadeFinance/what-is-xade-and-why-do-you-need-it-b483f46ba5a1"
+                    >
+                      Blog
+                    </a>
+                  </li>
+                </div>
+                <div>
 
 
-              &nbsp; &nbsp;
-              <li className="webapp" style={{ fontFamily: 'Regular' }} onClick={() => open()} >
+                  &nbsp; &nbsp;
+                  {isConnected ? <li className="webappconnected" style={{ fontFamily: 'Regular' }} onClick={() => open()} >
+                    <span>0.10tMATIC</span>
+                    <div className="wacd">
 
-                <div className="greytack">{isConnected ? truncatedAddress : "Connect Wallet"}&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small" /></div>
-              </li>
+                      <span>{truncatedAddress}</span>
+
+                      <img src={process.env.PUBLIC_URL + '/Media/pfp.jpeg'} style={{
+                        height: 27,
+                        borderRadius: 30
+                      }} />
+                    </div>
+
+                  </li> : <li className="webapp" style={{ fontFamily: 'Regular' }} onClick={() => open()} >
+
+                    <div className="greytack">Connect Wallet&nbsp;<PowerSettingsNewOutlinedIcon fontSize="small" /></div>
+                  </li>}
+
+
+
+                </div>
+              </ul>
             </div>
-          </ul>
-        </div>
-      </nav>
-    </div >
+          </nav>
+        </div >
       </section >
     </>
   );

@@ -33,6 +33,14 @@ body {
 
 .wap {
   display: none;
+  
+}
+
+.wap1 {
+
+    display: none;
+    
+  
 }
 
 .smart-scroll {
@@ -12197,6 +12205,66 @@ video {
   cursor: pointer;
 }
 
+
+.webappconnected {
+  background-color: black;
+  color:white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: Semi;
+  text-align: center;
+  border :1px solid #6f89fc;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  width: 225px;
+  height: 50px;
+  padding-left: 14px;
+}
+
+.webappconnectedh {
+  background-color: black;
+  color:white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: Semi;
+  text-align: center;
+  border :1px solid #6f89fc;
+  display: none;
+  align-items: center;
+
+  cursor: pointer;
+  width: 225px;
+  height: 50px;
+  padding-left: 14px;
+}
+
+.wacd {
+width: 100px;
+height: 35px;
+border-radius: 6px;
+background-color: #282C3B;
+display: flex;
+flex-direction: row;
+align-items: center;
+color : white;
+justify-content: center;
+padding: 0px 54px;
+margin-left: 10px;
+}
+.wacd img {
+  margin-left: 6px;
+}
+
+.wacd span {
+  font-size: small;
+} 
+
+.webappconnected span {
+  font-size : 15px
+}
+
 .greytack {
   color: #fff;
   background-color: #363cd7;
@@ -12762,7 +12830,18 @@ video {
   }
 
   .wap {
+    display: flex;
+    padding: 6px 9px;
+
+  }
+
+  .wap1 {
     display: block;
+}
+
+  .webappconnected {
+    display: none;
+
   }
 }
 
@@ -12770,13 +12849,21 @@ div#he3 {
   text-align: center;
 }
 
-@media screen and (max-width : 427px) {
+@media screen and (max-width : 450px) {
   .button89 {
     transform: scale(0.8);
     margin-left: -6px;
   }
   .wap {
+
+    padding : 0px;
+  }
+  .wap1 {
     display: block;
+}
+
+  div.wacd {
+    margin-left: 0px;
   }
 
   .header3:nth-of-type(2) {
@@ -12822,7 +12909,12 @@ div#he3 {
     display: flex;
   }
   .wap {
-    display: block;
+    display: flex;
+    width: 133px;
+  }
+
+  .wap #balance{
+    display: none;
   }
 
 }
