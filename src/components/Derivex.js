@@ -3,6 +3,7 @@ import TradingViewWidget from './TradingViewWidget'
 import "../styles/better.css"
 import { Col, InputNumber, Row, Space } from "antd";
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useAccount } from 'wagmi'
 
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
@@ -21,6 +22,7 @@ import Button from '@mui/material/Button';
 
 const Derivex = () => {
     const [inputValue, setInputValue] = useState(1);
+    const { address, connector: activeConnector, isConnected } = useAccount()
     const [value, setValue] = React.useState(2);
     const [tab, setTab] = useState(true);
     const [Menu, setMenu] = useState(1)
@@ -103,12 +105,12 @@ const Derivex = () => {
         createData(0.0904743, "7/19 15:17", "30,020.9"),
     ];
 
-    const handleDeleteRow = (index,event) => {
+    const handleDeleteRow = (index, event) => {
         // Create a new array without the row to be deleted
         const updatedRows = rows1.filter((_, i) => i !== index);
-        
+
         setRows(updatedRows);
-        if (isNarrowScreen) {event.stopPropagation();}
+        if (isNarrowScreen) { event.stopPropagation(); }
     };
 
     const handleRowClick = (row) => {
@@ -391,16 +393,16 @@ const Derivex = () => {
                                 {Arrow === false ? <RightButton show={showRight} onClick={handleRightScroll} /> : null}
 
                             </div>
-                            <div className = "tvwamtc">
-                            <div className="tvwnshmt1" >
-                                <div className='tvwnshl' id='tvwnshm1' style={{ textAlign: "center", alignItems: "center" }}>
-                                    Market Trades
+                            <div className="tvwamtc">
+                                <div className="tvwnshmt1" >
+                                    <div className='tvwnshl' id='tvwnshm1' style={{ textAlign: "center", alignItems: "center" }}>
+                                        Market Trades
+                                    </div>
+                                    <div className='tablecontainer'>
+                                        <Table data={rows} />
+                                    </div>
                                 </div>
-                                <div className='tablecontainer'>
-                                    <Table data={rows} />
-                                </div>
-                            </div>
-                            <TradingViewWidget />
+                                <TradingViewWidget />
                             </div>
                             <div className='tvhmn' ref={outerRef}>
                                 <div className='tvwhm' ref={Arrow === true ? innerRef : oRef}>
@@ -636,7 +638,7 @@ const Derivex = () => {
 
                                         <div className="tvwpht2-btn">
 
-                                            <button>MARKET (LONG)</button>
+                                        {isConnected ? <button>MARKET (LONG)</button>:   <button id='button1'>CONNECT WALLET</button>}
                                         </div>
 
                                         <div className="tvwphyt2-mc">
@@ -644,9 +646,11 @@ const Derivex = () => {
                                                 <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
                                                     BTC/USD
                                                 </span>
-                                                <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                                {isConnected ? <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                                    POSITION SIZE {"<"} {"  "} 1,500 DAI
+                                                </span> : <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
                                                     WALLET NOT CONNECTED
-                                                </span>
+                                                </span>}
                                             </div>
                                             <div className='tvwphyt2-m'>
                                                 <span className='tvwphyt2-m-spanl'>
@@ -711,139 +715,141 @@ const Derivex = () => {
                                     <button>Orders</button>
                                     <button>History</button>
                                 </div>
-                                <div className='tvwnshr'>
-                                    <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button>Connect</button>
-                                </div>
-                                <div className="tvwnshr1">
-                                    <table className="table1">
-                                        <thead>
-                                            <tr>
-                                                {isNarrowScreen ? (
-                                                    <>
-                                                        <th>Type</th>
-                                                        <th>Pair</th>
-                                                        <th>SL/TP</th>
-                                                        <th>Net Pnl</th>
-                                                        <th>Close</th>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <th>Type</th>
-                                                        <th>Pair</th>
-                                                        <th>Leverage</th>
-                                                        <th>Collateral</th>
-                                                        <th>Open Price</th>
-                                                        <th>Price</th>
-                                                        <th>Liq/SL</th>
-                                                        <th>Take Profit</th>
-                                                        <th>Net Pnl</th>
-                                                        <th>Close</th>
-                                                    </>
-                                                )}
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {rows1.map((item, index) => (
-                                                <tr key={index} onClick={() => handleRowClick(item)} >
+
+                                {isConnected ?
+
+                                    <div className="tvwnshr1">
+                                        <table className="table1">
+                                            <thead>
+                                                <tr>
                                                     {isNarrowScreen ? (
                                                         <>
-                                                            <td>{item.type}</td>
-                                                            <td>
-                                                                <span>
-                                                                    {item.icon && <img style={{ width: "15px", marginRight: "5px" }} src={item.icon} alt="Icon" />}
-                                                                </span>
-                                                                {item.pair}
-                                                            </td>
-                                                            <td>SL/TP</td>
-                                                            <td>{item.netPnl}</td>
-                                                            <td className='tdclose'>
-                                                                <button onClick={(event) => handleDeleteRow(index,event)}>x</button>
-                                                            </td>
+                                                            <th>Type</th>
+                                                            <th>Pair</th>
+                                                            <th>SL/TP</th>
+                                                            <th>Net Pnl</th>
+                                                            <th>Close</th>
                                                         </>
                                                     ) : (
                                                         <>
-                                                            <td>{item.type}</td>
-                                                            <td>
-                                                                <span>
-                                                                    {item.icon && <img style={{ width: "15px", marginRight: "5px" }} src={item.icon} alt="Icon" />}
-                                                                </span>
-                                                                {item.pair}
-                                                            </td>
-                                                            <td>{item.leverage}</td>
-                                                            <td>{item.collateral}</td>
-                                                            <td>{item.openPrice}</td>
-                                                            <td>{item.price}</td>
-                                                            <td>{item.liqSl}</td>
-                                                            <td>{item.takeProfit}</td>
-                                                            <td>{item.netPnl}</td>
-                                                            <td className='tdclose'>
-                                                                <button onClick={() => handleDeleteRow(index)}>x</button>
-                                                            </td>
+                                                            <th>Type</th>
+                                                            <th>Pair</th>
+                                                            <th>Leverage</th>
+                                                            <th>Collateral</th>
+                                                            <th>Open Price</th>
+                                                            <th>Price</th>
+                                                            <th>Liq/SL</th>
+                                                            <th>Take Profit</th>
+                                                            <th>Net Pnl</th>
+                                                            <th>Close</th>
                                                         </>
                                                     )}
                                                 </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
+                                            </thead>
+                                            <tbody>
+                                                {rows1.map((item, index) => (
+                                                    <tr key={index} onClick={() => handleRowClick(item)} >
+                                                        {isNarrowScreen ? (
+                                                            <>
+                                                                <td>{item.type}</td>
+                                                                <td>
+                                                                    <span>
+                                                                        {item.icon && <img style={{ width: "15px", marginRight: "5px" }} src={item.icon} alt="Icon" />}
+                                                                    </span>
+                                                                    {item.pair}
+                                                                </td>
+                                                                <td>SL/TP</td>
+                                                                <td>{item.netPnl}</td>
+                                                                <td className='tdclose'>
+                                                                    <button onClick={(event) => handleDeleteRow(index, event)}>x</button>
+                                                                </td>
+                                                            </>
+                                                        ) : (
+                                                            <>
+                                                                <td>{item.type}</td>
+                                                                <td>
+                                                                    <span>
+                                                                        {item.icon && <img style={{ width: "15px", marginRight: "5px" }} src={item.icon} alt="Icon" />}
+                                                                    </span>
+                                                                    {item.pair}
+                                                                </td>
+                                                                <td>{item.leverage}</td>
+                                                                <td>{item.collateral}</td>
+                                                                <td>{item.openPrice}</td>
+                                                                <td>{item.price}</td>
+                                                                <td>{item.liqSl}</td>
+                                                                <td>{item.takeProfit}</td>
+                                                                <td>{item.netPnl}</td>
+                                                                <td className='tdclose'>
+                                                                    <button onClick={() => handleDeleteRow(index)}>x</button>
+                                                                </td>
+                                                            </>
+                                                        )}
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div> : <div className='tvwnshr'>
+                                        <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button>Connect</button>
+                                    </div>}
                                 {isNarrowScreen && (
                                     <Drawer anchor="bottom" open={isDrawerOpen} onClose={handleDrawerClose} sx={{
                                         '& .MuiDrawer-paper': {
-                                          borderRadius: '15px 15px 0 0',
-                                          borderColor : "#121216",
-                                          outline : "none",
-                                          borderTop : 
-                                          "0.5px solid #3deca7;"
-                                      
+                                            borderRadius: '15px 15px 0 0',
+                                            borderColor: "#121216",
+                                            outline: "none",
+                                            borderTop:
+                                                "0.5px solid #3deca7;"
+
                                         },
-                                      }} >
-                                        <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: "#121216", width: '100%', padding: 16, paddingBottom:6 ,height: '70vh' }}>
+                                    }} >
+                                        <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: "#121216", width: '100%', padding: 16, paddingBottom: 6, height: '70vh' }}>
                                             <div className='drawerheader'>
                                                 <div className='dh1'>
-                                                    <div><img src='https://gains.trade//_next/static/media/btc.fdaa3ece.svg'/>&nbsp;<span>BTC/USD</span></div>
+                                                    <div><img src='https://gains.trade//_next/static/media/btc.fdaa3ece.svg' />&nbsp;<span>BTC/USD</span></div>
                                                 </div>
                                                 <span>LONG</span>
                                             </div>
                                             <div className='maincontentdrawer'>
-                                            <table className="drawertable">
+                                                <table className="drawertable">
 
-                                                <tbody>
-                                                    {selectedRow && (
-                                                        <>
+                                                    <tbody>
+                                                        {selectedRow && (
+                                                            <>
 
-                                                            <tr>
-                                                                <th>Type</th>  <td>{selectedRow.type}</td>
-                                                            </tr>
+                                                                <tr>
+                                                                    <th>Type</th>  <td>{selectedRow.type}</td>
+                                                                </tr>
 
-                                                            <tr>
-                                                                <th>Leverage</th>  <td>{selectedRow.leverage}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Collateral</th> <td>{selectedRow.collateral}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Open Price</th>  <td>{selectedRow.openPrice}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Price</th> <td>{selectedRow.price}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Liq/SL</th> <td>{selectedRow.liqSl}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Take Profit</th>   <td>{selectedRow.takeProfit}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Net Pnl</th>   <td>{selectedRow.netPnl}</td>
-                                                            </tr>
-                                                        </>
+                                                                <tr>
+                                                                    <th>Leverage</th>  <td>{selectedRow.leverage}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Collateral</th> <td>{selectedRow.collateral}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Open Price</th>  <td>{selectedRow.openPrice}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Price</th> <td>{selectedRow.price}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Liq/SL</th> <td>{selectedRow.liqSl}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Take Profit</th>   <td>{selectedRow.takeProfit}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Net Pnl</th>   <td>{selectedRow.netPnl}</td>
+                                                                </tr>
+                                                            </>
 
-                                                    )}
-                                                </tbody>
-                                            </table>
-                                            <div className='sharebtn'>
-                                                <button>Share Trade</button>
-                                            </div>
+                                                        )}
+                                                    </tbody>
+                                                </table>
+                                                <div className='sharebtn'>
+                                                    <button>Share Trade</button>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -1042,17 +1048,19 @@ const Derivex = () => {
 
                                 </div>
                                 <div className="tvwpht2-btn">
-
-                                    <button >MARKET (LONG)</button>
+                                {isConnected ? <button>MARKET (LONG)</button>:   <button id='button1'>CONNECT WALLET</button>}
+                                    
                                 </div>
                                 <div className="tvwphyt2-mc">
                                     <div className='tvwphyt2-m'>
                                         <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
                                             BTC/USD
                                         </span>
-                                        <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                        {isConnected ? <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                            POSITION SIZE {"<"} {"  "} 1,500 DAI
+                                        </span> : <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
                                             WALLET NOT CONNECTED
-                                        </span>
+                                        </span>}
                                     </div>
                                     <div className='tvwphyt2-m'>
                                         <span className='tvwphyt2-m-spanl'>
