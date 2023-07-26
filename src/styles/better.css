@@ -1063,13 +1063,21 @@ input.tvwpht2-s2-1-c::placeholder {
 
 .tvwpht2-btn #button1 {
   height: 37px;
-  border-radius: 6px;
   background-color: #000000;
   outline: none;
   border-style: none;
   color: #549cfc;
-  border: 0.5px solid #549cfc;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #FC66FF, #FEC5FF) 1;
+  font-weight: bold;
+  background: linear-gradient(45deg, #FC66FF, #FEC5FF);
+  -webkit-background-clip: text; /* For Safari and older versions of Chrome */
+  background-clip: text;
+  color: transparent;
 }
+
 
 .tvwpht2-t {
   height: 83px;

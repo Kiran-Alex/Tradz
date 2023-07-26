@@ -12196,8 +12196,8 @@ video {
 }
 
 .webapp {
-  background-color: #D65CD9;
-  color: black;
+  background-color: #202020;
+  color: white;
   border-radius: 6px;
   padding: 10px 35px;
   font-family: Semi;
@@ -12267,7 +12267,7 @@ margin-left: 10px;
 
 .greytack {
   color: #fff;
-  background-color:#D65CD9;
+  background-color:#202020;
   text-align: center;
   align-items: center;
   display: flex;

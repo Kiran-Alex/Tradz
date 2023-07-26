@@ -640,7 +640,7 @@ const Derivex = () => {
 
                                         <div className="tvwpht2-btn">
 
-                                        {isConnected ? <button>MARKET (LONG)</button>:   <button id='button1'>CONNECT WALLET</button>}
+                                        {isConnected ? <button>MARKET (LONG)</button>:   <button id='button1'><span>CONNECT WALLET</span></button>}
                                         </div>
 
                                         <div className="tvwphyt2-mc">
