@@ -23,6 +23,7 @@ export default function Header() {
       address.substring(0, 7);
   }
 
+  const account = useAccount();
 
   const WalletInfo = () => {
     // Get account info after wallet connect
@@ -47,7 +48,7 @@ export default function Header() {
             <div className="wb">
 
               {isConnected ? <> <div className="webappconnectedh wap" onClick={toggleIndex} style={{ fontFamily: 'Regular' }}>
-
+              {account.balance}
                 <span id="balance">0.10tMATIC</span>   &nbsp; &nbsp;
                 <div className="wacd">
 

@@ -4,7 +4,7 @@ import "../styles/better.css"
 import { Col, InputNumber, Row, Space } from "antd";
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { useAccount } from 'wagmi'
-
+import { useWeb3Modal } from '@web3modal/react'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Tooltip from "@mui/material/Tooltip";
@@ -32,7 +32,8 @@ const Derivex = () => {
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
-
+      const { open, close } = useWeb3Modal()
+      const [tohmenu,setTohmenu] =useState (1)
 
     const [rows1, setRows] = useState([
         {
@@ -542,8 +543,9 @@ const Derivex = () => {
                                                             color: "#282C3B",
                                                         },
                                                         "	.MuiSlider-track": {
-                                                            backgroundColor: 'linear-gradient(270deg, #10A4CC 10%, #3DECA7 100%)',
+                                                            backgroundColor: '#D65CD9',
                                                             height: '10px',
+                                                            border : "0px",
 
                                                         },
                                                         ".MuiSlider-valueLabel:before"
@@ -711,14 +713,14 @@ const Derivex = () => {
                             <div className="tvwnsh">
                                 <div className='tvwnshl'>
                                     &nbsp;&nbsp;&nbsp;
-                                    <button>Trades</button>
-                                    <button>Orders</button>
-                                    <button>History</button>
+                                    <button onClick={()=>{setTohmenu(1)}}>Trades</button>
+                                    <button onClick={()=>{setTohmenu(2)}}>Orders</button>
+                                    <button onClick={()=>{setTohmenu(3)}}>History</button>
                                 </div>
 
                                 {isConnected ?
 
-                                    <div className="tvwnshr1">
+                                    <div className="tvwnshr1" id={tohmenu === 1 ?'q':"were"}>
                                         <table className="table1">
                                             <thead>
                                                 <tr>
@@ -789,9 +791,10 @@ const Derivex = () => {
                                                 ))}
                                             </tbody>
                                         </table>
-                                    </div> : <div className='tvwnshr'>
-                                        <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button>Connect</button>
+                                    </div> : <div className='tvwnshr' >
+                                        <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button onClick={()=>{open()}}>Connect</button>
                                     </div>}
+
                                 {isNarrowScreen && (
                                     <Drawer anchor="bottom" open={isDrawerOpen} onClose={handleDrawerClose} sx={{
                                         '& .MuiDrawer-paper': {
@@ -954,8 +957,9 @@ const Derivex = () => {
                                                     color: "#282C3B",
                                                 },
                                                 "	.MuiSlider-track": {
-                                                    backgroundColor: 'linear-gradient(270deg, #10A4CC 10%, #3DECA7 100%)',
+                                                    backgroundColor: '#D65CD9',
                                                     height: '10px',
+                                                    border : "0px",
 
                                                 },
                                                 ".MuiSlider-valueLabel:before"
@@ -1048,7 +1052,7 @@ const Derivex = () => {
 
                                 </div>
                                 <div className="tvwpht2-btn">
-                                {isConnected ? <button>MARKET (LONG)</button>:   <button id='button1'>CONNECT WALLET</button>}
+                                {isConnected ? <button>MARKET {tab ? "(LONG)" : "(SHORT)"}</button>:   <button id='button1'>CONNECT WALLET</button>}
                                     
                                 </div>
                                 <div className="tvwphyt2-mc">
