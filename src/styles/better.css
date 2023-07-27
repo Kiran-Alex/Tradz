@@ -1049,6 +1049,7 @@ input.tvwpht2-s2-1-c::placeholder {
   display: flex;
   flex-direction: column;
   background-color: #101010ad;
+  margin: 12px 0px;
 }
 
 .tvwpht2-btn button {
@@ -1076,6 +1077,30 @@ input.tvwpht2-s2-1-c::placeholder {
   -webkit-background-clip: text; /* For Safari and older versions of Chrome */
   background-clip: text;
   color: transparent;
+}
+
+
+.tvwphtcontainer {
+  height: 490px;
+}
+
+
+.tscsn {
+  display: none;
+}
+
+.tscs {
+  width: 100%;
+  display: flex;
+  margin-top: 149px;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+
+.tvwphtcontainer23 {
+  display: none;
 }
 
 

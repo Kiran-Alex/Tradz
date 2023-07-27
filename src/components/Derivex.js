@@ -23,7 +23,7 @@ import Button from '@mui/material/Button';
 const Derivex = () => {
     const [inputValue, setInputValue] = useState(1);
     const { address, connector: activeConnector, isConnected } = useAccount()
-    const [value, setValue] = React.useState(2);
+    const [value, setValue] = React.useState(1);
     const [tab, setTab] = useState(true);
     const [Menu, setMenu] = useState(1)
     const [showLeft, setShowLeft] = useState(false);
@@ -32,8 +32,8 @@ const Derivex = () => {
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
-      const { open, close } = useWeb3Modal()
-      const [tohmenu,setTohmenu] =useState (1)
+    const { open, close } = useWeb3Modal()
+    const [tohmenu, setTohmenu] = useState(1)
 
     const [rows1, setRows] = useState([
         {
@@ -263,33 +263,30 @@ const Derivex = () => {
 
     const marks = [
         {
-            value: 2,
-            label: '2',
+            value: 1,
+            label: '1',
         },
         {
-            value: 25,
-            label: '25',
+            value: 3,
+            label: '3',
         },
         {
-            value: 50,
-            label: '50',
+            value: 5,
+            label: '5',
         },
         {
-            value: 75,
-            label: '75',
+            value: 7,
+            label: '7',
         },
         {
-            value: 100,
-            label: '100',
+            value: 9,
+            label: '9',
         },
         {
             value: 125,
             label: '125',
         },
-        {
-            value: 150,
-            label: '150',
-        },
+
     ];
 
 
@@ -468,128 +465,132 @@ const Derivex = () => {
                                             <button onClick={() => setMenu(2)} id={Menu === 2 ? "tvwpht2-mb" : ""} >Limit</button>
                                             <button onClick={() => setMenu(3)} id={Menu === 3 ? "tvwpht2-mb" : ""} >Stop</button>
                                         </div>
-                                        <div className='tvwpht2-c'>
-                                            <div className='tvwpht2-c1'>
-                                                Collateral <span>(50-250k)</span>
-                                            </div>
-                                            <div className='tvwpht2-c2'>
-                                                <input type='text' value={50}></input>
-                                            </div>
+                                        <div className={Menu !== 1 ? 'tscs' : "tscsn"}>
+                                            <span>Coming Soon</span>
                                         </div>
-                                        <div className='tvwpht2-r'>
-                                            <div className='tvwpht2-r1' >
-                                                <div className='tvwpht2-r1-1' >
-                                                    Leverage<span> (50-250k)</span>
+                                        <div className={Menu === 1 ? 'tvwphtcontainer' : "tvwphtcontainer23"}>
+                                            <div className='tvwpht2-c'>
+                                                <div className='tvwpht2-c1'>
+                                                    Collateral <span>(50-250k)</span>
                                                 </div>
-                                                <div className='tvwpht2-r1-2'>
-                                                    <Col span={4}>
-                                                        <Input
-                                                            value={value}
-                                                            size="small"
-                                                            onChange={onChange}
-                                                            onBlur={handleBlur}
-                                                            inputProps={{
-                                                                min: 0,
-                                                                max: 150,
-                                                                type: 'number',
-                                                                'aria-labelledby': 'Custom marks',
-                                                            }}
-                                                            sx={{
-                                                                "& .MuiInput-input": {
-                                                                    color: "white",
-                                                                    backgroundColor: "black",
-                                                                    width: 82,
-                                                                    height: 20,  // Update the height here
-                                                                    borderRadius: 1,
-
-                                                                },
-                                                                ".MuiInputBase-input": {
-                                                                    width: 77,
-                                                                    paddingLeft: 1.8
-                                                                },
-                                                                "&.MuiInputBase-root": {
-                                                                    width: 101,
-                                                                    marginTop: 0.5
-
-                                                                }
-                                                            }}
-                                                        />
-
-                                                    </Col>
+                                                <div className='tvwpht2-c2'>
+                                                    <input type='text' value={50}></input>
                                                 </div>
                                             </div>
-                                            <div className="tvwpht2-r2">
-                                                <Slider
-                                                    aria-label="Custom marks"
-                                                    defaultValue={2}
-                                                    max={150}
-                                                    getAriaValueText={valuetext}
-                                                    onChange={handleSliderChange}
+                                            <div className='tvwpht2-r'>
+                                                <div className='tvwpht2-r1' >
+                                                    <div className='tvwpht2-r1-1' >
+                                                        Leverage<span> (1-10x)</span>
+                                                    </div>
+                                                    <div className='tvwpht2-r1-2'>
+                                                        <Col span={4}>
+                                                            <Input
+                                                                value={value}
+                                                                size="small"
+                                                                onChange={onChange}
+                                                                onBlur={handleBlur}
+                                                                inputProps={{
+                                                                    min: 1,
+                                                                    max: 10,
+                                                                    type: 'number',
+                                                                    'aria-labelledby': 'Custom marks',
+                                                                }}
+                                                                sx={{
+                                                                    "& .MuiInput-input": {
+                                                                        color: "white",
+                                                                        backgroundColor: "black",
+                                                                        width: 82,
+                                                                        height: 20,  // Update the height here
+                                                                        borderRadius: 1,
 
-                                                    valueLabelDisplay="auto"
-                                                    marks={marks}
-                                                    sx={{
-                                                        ' .MuiSlider-markLabel': {
-                                                            color: '#82828F', // Set the desired mark label color here
-                                                        },
-                                                        ".MuiSlider-rail": {
-                                                            color: "#282C3B",
-                                                            height: "10px",
-                                                        },
-                                                        '& .MuiSlider-thumb': {
-                                                            width: 15,
-                                                            height: 15,
-                                                            border: " 2px solid white",
-                                                            color: "#282C3B",
-                                                        },
-                                                        "	.MuiSlider-track": {
-                                                            backgroundColor: '#D65CD9',
-                                                            height: '10px',
-                                                            border : "0px",
+                                                                    },
+                                                                    ".MuiInputBase-input": {
+                                                                        width: 77,
+                                                                        paddingLeft: 1.8
+                                                                    },
+                                                                    "&.MuiInputBase-root": {
+                                                                        width: 101,
+                                                                        marginTop: 0.5
 
-                                                        },
-                                                        ".MuiSlider-valueLabel:before"
-                                                            : {
-                                                            width: "0px",
+                                                                    }
+                                                                }}
+                                                            />
+
+                                                        </Col>
+                                                    </div>
+                                                </div>
+                                                <div className="tvwpht2-r2">
+                                                    <Slider
+                                                        aria-label="Custom marks"
+                                                        defaultValue={1}
+                                                        max={10}
+                                                        getAriaValueText={valuetext}
+                                                        onChange={handleSliderChange}
+
+                                                        valueLabelDisplay="auto"
+                                                        marks={marks}
+                                                        sx={{
+                                                            ' .MuiSlider-markLabel': {
+                                                                color: '#82828F', // Set the desired mark label color here
+                                                            },
+                                                            ".MuiSlider-rail": {
+                                                                color: "#282C3B",
+                                                                height: "10px",
+                                                            },
+                                                            '& .MuiSlider-thumb': {
+                                                                width: 15,
+                                                                height: 15,
+                                                                border: " 2px solid white",
+                                                                color: "#282C3B",
+                                                            },
+                                                            "	.MuiSlider-track": {
+                                                                backgroundColor: '#D65CD9',
+                                                                height: '10px',
+                                                                border: "0px",
+
+                                                            },
+                                                            ".MuiSlider-valueLabel:before"
+                                                                : {
+                                                                width: "0px",
 
 
 
-                                                        },
+                                                            },
 
 
 
-                                                    }}
+                                                        }}
 
-                                                />
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div className='tvwpht2-p'>
-                                            <div className='tvwpht2-p1'>
-                                                <div className='tvwpht2-p1-1'>
-                                                    Price
+                                            <div className='tvwpht2-p'>
+                                                <div className='tvwpht2-p1'>
+                                                    <div className='tvwpht2-p1-1'>
+                                                        Price
+                                                    </div>
+                                                    <div className='tvwpht2-p1-2'>
+                                                        Slippage(%)
+                                                    </div>
                                                 </div>
-                                                <div className='tvwpht2-p1-2'>
-                                                    Slippage(%)
+                                                <div className='tvwpht2-p2'>
+                                                    <div className='tvwpht2-p2-1'>
+                                                        <span>30415</span>
+                                                    </div>
+                                                    <div className='tvwpht2-p2-2'>
+                                                        <InputNumber min={1} id='p2-2i' defaultValue={1} style={{
+                                                            marginRight: 6,
+                                                            marginTop: 3,
+                                                            backgroundColor: "black",
+                                                            outline: "none",
+                                                            borderStyle: "none",
+                                                            color: "white"
+                                                        }} onChange={onIChange} />
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className='tvwpht2-p2'>
-                                                <div className='tvwpht2-p2-1'>
-                                                    <span>30415</span>
-                                                </div>
-                                                <div className='tvwpht2-p2-2'>
-                                                    <InputNumber min={1} id='p2-2i' defaultValue={1} style={{
-                                                        marginRight: 6,
-                                                        marginTop: 3,
-                                                        backgroundColor: "black",
-                                                        outline: "none",
-                                                        borderStyle: "none",
-                                                        color: "white"
-                                                    }} onChange={onIChange} />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className='tvwpht2-s'>
+                                            {/* <div className='tvwpht2-s'>
 
                                             <div className='tvwpht2-s1'>
                                                 <div className='tvwpht2-s1-1'>
@@ -612,8 +613,8 @@ const Derivex = () => {
                                                 </div>
                                             </div>
 
-                                        </div>
-                                        <div className='tvwpht2-t'>
+                                        </div> */}
+                                            {/* <div className='tvwpht2-t'>
 
                                             <div className='tvwpht2-t1'>
                                                 <div className='tvwpht2-t1-1'>
@@ -636,72 +637,73 @@ const Derivex = () => {
                                                 </div>
                                             </div>
 
-                                        </div>
+                                        </div> */}
 
-                                        <div className="tvwpht2-btn">
+                                            <div className="tvwpht2-btn">
 
-                                        {isConnected ? <button>MARKET (LONG)</button>:   <button id='button1'><span>CONNECT WALLET</span></button>}
-                                        </div>
+                                                {isConnected ? <button>MARKET (LONG)</button> : <button id='button1'><span>CONNECT WALLET</span></button>}
+                                            </div>
 
-                                        <div className="tvwphyt2-mc">
-                                            <div className='tvwphyt2-m'>
-                                                <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
-                                                    BTC/USD
-                                                </span>
-                                                {isConnected ? <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
-                                                    POSITION SIZE {"<"} {"  "} 1,500 DAI
-                                                </span> : <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
-                                                    WALLET NOT CONNECTED
-                                                </span>}
-                                            </div>
-                                            <div className='tvwphyt2-m'>
-                                                <span className='tvwphyt2-m-spanl'>
-                                                    EST. EXECUTION PRICE
-                                                </span>
-                                                <span className='tvwphyt2-m-spanr'>
-                                                    30740.6
-                                                </span>
-                                            </div>
-                                            <div className='tvwphyt2-m'>
-                                                <span className='tvwphyt2-m-spanl'>
-                                                    SPREAD
-                                                </span>
-                                                <span className='tvwphyt2-m-spanr'>
-                                                    0.04%
-                                                </span>
-                                            </div>
-                                            <div className='tvwphyt2-m'>
-                                                <span className='tvwphyt2-m-spanl'>
-                                                    POSITION SIZE
+                                            <div className="tvwphyt2-mc">
+                                                <div className='tvwphyt2-m'>
+                                                    <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
+                                                        BTC/USD
+                                                    </span>
+                                                    {isConnected ? <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                                        POSITION SIZE {"<"} {"  "} 1,500 DAI
+                                                    </span> : <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                                        WALLET NOT CONNECTED
+                                                    </span>}
+                                                </div>
+                                                <div className='tvwphyt2-m'>
+                                                    <span className='tvwphyt2-m-spanl'>
+                                                        EST. EXECUTION PRICE
+                                                    </span>
+                                                    <span className='tvwphyt2-m-spanr'>
+                                                        30740.6
+                                                    </span>
+                                                </div>
+                                                <div className='tvwphyt2-m'>
+                                                    <span className='tvwphyt2-m-spanl'>
+                                                        SPREAD
+                                                    </span>
+                                                    <span className='tvwphyt2-m-spanr'>
+                                                        0.04%
+                                                    </span>
+                                                </div>
+                                                <div className='tvwphyt2-m'>
+                                                    <span className='tvwphyt2-m-spanl'>
+                                                        POSITION SIZE
 
-                                                </span>
-                                                <span className='tvwphyt2-m-spanr'>
-                                                    100 DAI
-                                                </span>
-                                            </div>
-                                            <div className='tvwphyt2-m'>
-                                                <span className='tvwphyt2-m-spanl'>
-                                                    FEES
-                                                </span>
-                                                <span className='tvwphyt2-m-spanr'>
-                                                    0.1 DAI
-                                                </span>
-                                            </div>
-                                            <div className='tvwphyt2-m'>
-                                                <span className='tvwphyt2-m-spanl'>
-                                                    LIQ. PRICE
-                                                </span>
-                                                <span className='tvwphyt2-m-spanr'>
-                                                    16907.6
-                                                </span>
-                                            </div>
-                                            <div className='tvwphyt2-m'>
-                                                <span className='tvwphyt2-m-spanl'>
-                                                    EST. BORROWING FEE / H
-                                                </span>
-                                                <span className='tvwphyt2-m-spanr'>
-                                                    0.0 DAI
-                                                </span>
+                                                    </span>
+                                                    <span className='tvwphyt2-m-spanr'>
+                                                        100 DAI
+                                                    </span>
+                                                </div>
+                                                <div className='tvwphyt2-m'>
+                                                    <span className='tvwphyt2-m-spanl'>
+                                                        FEES
+                                                    </span>
+                                                    <span className='tvwphyt2-m-spanr'>
+                                                        0.1 DAI
+                                                    </span>
+                                                </div>
+                                                <div className='tvwphyt2-m'>
+                                                    <span className='tvwphyt2-m-spanl'>
+                                                        LIQ. PRICE
+                                                    </span>
+                                                    <span className='tvwphyt2-m-spanr'>
+                                                        16907.6
+                                                    </span>
+                                                </div>
+                                                <div className='tvwphyt2-m'>
+                                                    <span className='tvwphyt2-m-spanl'>
+                                                        EST. BORROWING FEE / H
+                                                    </span>
+                                                    <span className='tvwphyt2-m-spanr'>
+                                                        0.0 DAI
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -713,14 +715,14 @@ const Derivex = () => {
                             <div className="tvwnsh">
                                 <div className='tvwnshl'>
                                     &nbsp;&nbsp;&nbsp;
-                                    <button onClick={()=>{setTohmenu(1)}}>Trades</button>
-                                    <button onClick={()=>{setTohmenu(2)}}>Orders</button>
-                                    <button onClick={()=>{setTohmenu(3)}}>History</button>
+                                    <button onClick={() => { setTohmenu(1) }}>Trades</button>
+                                    <button onClick={() => { setTohmenu(2) }}>Orders</button>
+                                    <button onClick={() => { setTohmenu(3) }}>History</button>
                                 </div>
 
                                 {isConnected ?
 
-                                    <div className="tvwnshr1" id={tohmenu === 1 ?'q':"were"}>
+                                    <div className="tvwnshr1" id={tohmenu === 1 ? 'q' : "were"}>
                                         <table className="table1">
                                             <thead>
                                                 <tr>
@@ -792,7 +794,7 @@ const Derivex = () => {
                                             </tbody>
                                         </table>
                                     </div> : <div className='tvwnshr' >
-                                        <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button onClick={()=>{open()}}>Connect</button>
+                                        <span style={{ color: "#82828F" }}>Wallet not connected</span> &nbsp;&nbsp; <button onClick={() => { open() }}>Connect</button>
                                     </div>}
 
                                 {isNarrowScreen && (
@@ -882,128 +884,132 @@ const Derivex = () => {
                                     <button onClick={() => setMenu(2)} id={Menu === 2 ? "tvwpht2-mb" : ""} >Limit</button>
                                     <button onClick={() => setMenu(3)} id={Menu === 3 ? "tvwpht2-mb" : ""} >Stop</button>
                                 </div>
-                                <div className='tvwpht2-c'>
-                                    <div className='tvwpht2-c1'>
-                                        Collateral <span>(50-250k)</span>
-                                    </div>
-                                    <div className='tvwpht2-c2'>
-                                        <input type='text' value={50}></input>
-                                    </div>
+                                <div className={Menu !== 1 ? 'tscs' : "tscsn"}>
+                                    <span>Coming Soon</span>
                                 </div>
-                                <div className='tvwpht2-r'>
-                                    <div className='tvwpht2-r1' >
-                                        <div className='tvwpht2-r1-1' >
-                                            Leverage<span> (50-250k)</span>
+                                <div className={Menu === 1 ? 'tvwphtcontainer' : "tvwphtcontainer23"}>
+                                    <div className='tvwpht2-c'>
+                                        <div className='tvwpht2-c1'>
+                                            Collateral <span>(50-250k)</span>
                                         </div>
-                                        <div className='tvwpht2-r1-2'>
-                                            <Col span={4}>
-                                                <Input
-                                                    value={value}
-                                                    size="small"
-                                                    onChange={onChange}
-                                                    onBlur={handleBlur}
-                                                    inputProps={{
-                                                        min: 0,
-                                                        max: 150,
-                                                        type: 'number',
-                                                        'aria-labelledby': 'Custom marks',
-                                                    }}
-                                                    sx={{
-                                                        "& .MuiInput-input": {
-                                                            color: "white",
-                                                            backgroundColor: "black",
-                                                            width: 82,
-                                                            height: 20,  // Update the height here
-                                                            borderRadius: 1,
-
-                                                        },
-                                                        ".MuiInputBase-input": {
-                                                            width: 77,
-                                                            paddingLeft: 1.8
-                                                        },
-                                                        "&.MuiInputBase-root": {
-                                                            width: 101,
-                                                            marginTop: 0.5
-
-                                                        }
-                                                    }}
-                                                />
-
-                                            </Col>
+                                        <div className='tvwpht2-c2'>
+                                            <input type='text' value={50}></input>
                                         </div>
                                     </div>
-                                    <div className="tvwpht2-r2">
-                                        <Slider
-                                            aria-label="Custom marks"
-                                            defaultValue={2}
-                                            max={150}
-                                            getAriaValueText={valuetext}
-                                            onChange={handleSliderChange}
+                                    <div className='tvwpht2-r'>
+                                        <div className='tvwpht2-r1' >
+                                            <div className='tvwpht2-r1-1' >
+                                                Leverage<span> (1-10x)</span>
+                                            </div>
+                                            <div className='tvwpht2-r1-2'>
+                                                <Col span={4}>
+                                                    <Input
+                                                        value={value}
+                                                        size="small"
+                                                        onChange={onChange}
+                                                        onBlur={handleBlur}
+                                                        inputProps={{
+                                                            min: 1,
+                                                            max: 10,
+                                                            type: 'number',
+                                                            'aria-labelledby': 'Custom marks',
+                                                        }}
+                                                        sx={{
+                                                            "& .MuiInput-input": {
+                                                                color: "white",
+                                                                backgroundColor: "black",
+                                                                width: 82,
+                                                                height: 20,  // Update the height here
+                                                                borderRadius: 1,
 
-                                            valueLabelDisplay="auto"
-                                            marks={marks}
-                                            sx={{
-                                                ' .MuiSlider-markLabel': {
-                                                    color: '#82828F', // Set the desired mark label color here
-                                                },
-                                                ".MuiSlider-rail": {
-                                                    color: "#282C3B",
-                                                    height: "10px",
-                                                },
-                                                '& .MuiSlider-thumb': {
-                                                    width: 15,
-                                                    height: 15,
-                                                    border: " 2px solid white",
-                                                    color: "#282C3B",
-                                                },
-                                                "	.MuiSlider-track": {
-                                                    backgroundColor: '#D65CD9',
-                                                    height: '10px',
-                                                    border : "0px",
+                                                            },
+                                                            ".MuiInputBase-input": {
+                                                                width: 77,
+                                                                paddingLeft: 1.8
+                                                            },
+                                                            "&.MuiInputBase-root": {
+                                                                width: 101,
+                                                                marginTop: 0.5
 
-                                                },
-                                                ".MuiSlider-valueLabel:before"
-                                                    : {
-                                                    width: "0px",
+                                                            }
+                                                        }}
+                                                    />
+
+                                                </Col>
+                                            </div>
+                                        </div>
+                                        <div className="tvwpht2-r2">
+                                            <Slider
+                                                aria-label="Custom marks"
+                                                defaultValue={1}
+                                                max={10}
+                                                getAriaValueText={valuetext}
+                                                onChange={handleSliderChange}
+
+                                                valueLabelDisplay="auto"
+                                                marks={marks}
+                                                sx={{
+                                                    ' .MuiSlider-markLabel': {
+                                                        color: '#82828F', // Set the desired mark label color here
+                                                    },
+                                                    ".MuiSlider-rail": {
+                                                        color: "#282C3B",
+                                                        height: "10px",
+                                                    },
+                                                    '& .MuiSlider-thumb': {
+                                                        width: 15,
+                                                        height: 15,
+                                                        border: " 2px solid white",
+                                                        color: "#282C3B",
+                                                    },
+                                                    "	.MuiSlider-track": {
+                                                        backgroundColor: '#D65CD9',
+                                                        height: '10px',
+                                                        border: "0px",
+
+                                                    },
+                                                    ".MuiSlider-valueLabel:before"
+                                                        : {
+                                                        width: "0px",
 
 
 
-                                                },
+                                                    },
 
 
 
-                                            }}
+                                                }}
 
-                                        />
+                                            />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className='tvwpht2-p'>
-                                    <div className='tvwpht2-p1'>
-                                        <div className='tvwpht2-p1-1'>
-                                            Price
+                                    <div className='tvwpht2-p'>
+                                        <div className='tvwpht2-p1'>
+                                            <div className='tvwpht2-p1-1'>
+                                                Price
+                                            </div>
+                                            <div className='tvwpht2-p1-2'>
+                                                Slippage(%)
+                                            </div>
                                         </div>
-                                        <div className='tvwpht2-p1-2'>
-                                            Slippage(%)
+                                        <div className='tvwpht2-p2'>
+                                            <div className='tvwpht2-p2-1'>
+                                                <span>30415</span>
+                                            </div>
+                                            <div className='tvwpht2-p2-2'>
+                                                <InputNumber min={1} id='p2-2i' defaultValue={1} style={{
+                                                    marginRight: 6,
+                                                    marginTop: 3,
+                                                    backgroundColor: "black",
+                                                    outline: "none",
+                                                    borderStyle: "none",
+                                                    color: "white"
+                                                }} onChange={onIChange} />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className='tvwpht2-p2'>
-                                        <div className='tvwpht2-p2-1'>
-                                            <span>30415</span>
-                                        </div>
-                                        <div className='tvwpht2-p2-2'>
-                                            <InputNumber min={1} id='p2-2i' defaultValue={1} style={{
-                                                marginRight: 6,
-                                                marginTop: 3,
-                                                backgroundColor: "black",
-                                                outline: "none",
-                                                borderStyle: "none",
-                                                color: "white"
-                                            }} onChange={onIChange} />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='tvwpht2-s'>
+                                    {/* <div className='tvwpht2-s'>
 
                                     <div className='tvwpht2-s1'>
                                         <div className='tvwpht2-s1-1'>
@@ -1026,8 +1032,8 @@ const Derivex = () => {
                                         </div>
                                     </div>
 
-                                </div>
-                                <div className='tvwpht2-t'>
+                                </div> */}
+                                    {/* <div className='tvwpht2-t'>
 
                                     <div className='tvwpht2-t1'>
                                         <div className='tvwpht2-t1-1'>
@@ -1050,70 +1056,71 @@ const Derivex = () => {
                                         </div>
                                     </div>
 
-                                </div>
-                                <div className="tvwpht2-btn">
-                                {isConnected ? <button>MARKET {tab ? "(LONG)" : "(SHORT)"}</button>:   <button id='button1'>CONNECT WALLET</button>}
-                                    
-                                </div>
-                                <div className="tvwphyt2-mc">
-                                    <div className='tvwphyt2-m'>
-                                        <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
-                                            BTC/USD
-                                        </span>
-                                        {isConnected ? <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
-                                            POSITION SIZE {"<"} {"  "} 1,500 DAI
-                                        </span> : <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
-                                            WALLET NOT CONNECTED
-                                        </span>}
-                                    </div>
-                                    <div className='tvwphyt2-m'>
-                                        <span className='tvwphyt2-m-spanl'>
-                                            EST. EXECUTION PRICE
-                                        </span>
-                                        <span className='tvwphyt2-m-spanr'>
-                                            30740.6
-                                        </span>
-                                    </div>
-                                    <div className='tvwphyt2-m'>
-                                        <span className='tvwphyt2-m-spanl'>
-                                            SPREAD
-                                        </span>
-                                        <span className='tvwphyt2-m-spanr'>
-                                            0.04%
-                                        </span>
-                                    </div>
-                                    <div className='tvwphyt2-m'>
-                                        <span className='tvwphyt2-m-spanl'>
-                                            POSITION SIZE
+                                </div> */}
+                                    <div className="tvwpht2-btn">
+                                        {isConnected ? <button>MARKET {tab ? "(LONG)" : "(SHORT)"}</button> : <button id='button1'>CONNECT WALLET</button>}
 
-                                        </span>
-                                        <span className='tvwphyt2-m-spanr'>
-                                            100 DAI
-                                        </span>
                                     </div>
-                                    <div className='tvwphyt2-m'>
-                                        <span className='tvwphyt2-m-spanl'>
-                                            FEES
-                                        </span>
-                                        <span className='tvwphyt2-m-spanr'>
-                                            0.1 DAI
-                                        </span>
-                                    </div>
-                                    <div className='tvwphyt2-m'>
-                                        <span className='tvwphyt2-m-spanl'>
-                                            LIQ. PRICE
-                                        </span>
-                                        <span className='tvwphyt2-m-spanr'>
-                                            16907.6
-                                        </span>
-                                    </div>
-                                    <div className='tvwphyt2-m'>
-                                        <span className='tvwphyt2-m-spanl'>
-                                            EST. BORROWING FEE / H
-                                        </span>
-                                        <span className='tvwphyt2-m-spanr'>
-                                            0.0 DAI
-                                        </span>
+                                    <div className="tvwphyt2-mc">
+                                        <div className='tvwphyt2-m'>
+                                            <span className='tvwphyt2-m-spanl' id='tvwphyt2-m-spanl-hl'>
+                                                BTC/USD
+                                            </span>
+                                            {isConnected ? <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                                POSITION SIZE {"<"} {"  "} 1,500 DAI
+                                            </span> : <span className='tvwphyt2-m-spanr' id='tvwphyt2-m-spanl-hr'>
+                                                WALLET NOT CONNECTED
+                                            </span>}
+                                        </div>
+                                        <div className='tvwphyt2-m'>
+                                            <span className='tvwphyt2-m-spanl'>
+                                                EST. EXECUTION PRICE
+                                            </span>
+                                            <span className='tvwphyt2-m-spanr'>
+                                                30740.6
+                                            </span>
+                                        </div>
+                                        <div className='tvwphyt2-m'>
+                                            <span className='tvwphyt2-m-spanl'>
+                                                SPREAD
+                                            </span>
+                                            <span className='tvwphyt2-m-spanr'>
+                                                0.04%
+                                            </span>
+                                        </div>
+                                        <div className='tvwphyt2-m'>
+                                            <span className='tvwphyt2-m-spanl'>
+                                                POSITION SIZE
+
+                                            </span>
+                                            <span className='tvwphyt2-m-spanr'>
+                                                100 DAI
+                                            </span>
+                                        </div>
+                                        <div className='tvwphyt2-m'>
+                                            <span className='tvwphyt2-m-spanl'>
+                                                FEES
+                                            </span>
+                                            <span className='tvwphyt2-m-spanr'>
+                                                0.1 DAI
+                                            </span>
+                                        </div>
+                                        <div className='tvwphyt2-m'>
+                                            <span className='tvwphyt2-m-spanl'>
+                                                LIQ. PRICE
+                                            </span>
+                                            <span className='tvwphyt2-m-spanr'>
+                                                16907.6
+                                            </span>
+                                        </div>
+                                        <div className='tvwphyt2-m'>
+                                            <span className='tvwphyt2-m-spanl'>
+                                                EST. BORROWING FEE / H
+                                            </span>
+                                            <span className='tvwphyt2-m-spanr'>
+                                                0.0 DAI
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
