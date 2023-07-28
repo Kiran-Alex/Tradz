@@ -711,9 +711,7 @@ pre code {
   .container {
     max-width: 540px;
   }
-  div.greytack span {
-    display: none;
-  }
+
 
 
 
@@ -12811,9 +12809,7 @@ margin-left: 10px;
 
 @media screen and (max-width: 800px) {
 
-  div.greytack span {
-    display: none;
-  }
+
 
 
   
@@ -12900,7 +12896,16 @@ div#he3 {
     padding-left: 5%;
   }
   div.greytack span {
+ 
+  }
+
+#collapse-button
+  {
     display: none;
+  }
+
+  .table2 td {
+
   }
 
 
@@ -12919,6 +12924,22 @@ div#he3 {
 
 }
 
+@media (max-width : 400px) {
+  .table2 thead tr th {
+  padding : 7px 15px;
+  }
+
+  .table2 tr td {
+    padding: 7px 15px;
+  }
+}
+
+@media (max-width : 367px)
+ {
+  .wb {
+    width: 50%;
+  }
+ }
 
 
 

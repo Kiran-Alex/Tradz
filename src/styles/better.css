@@ -37,9 +37,9 @@ div.tvwhm {
 }
 
 .tvwnshr button {
-  color: #82828F;
+  color: #fd82ff;
   background-color: black;
-  border: 0.4px solid #232325;
+  border: 0.4px solid #fd82ff;
   border-radius: 5px;
   font-size: 14px;
   padding: 5px 7px;
@@ -1043,6 +1043,7 @@ input.tvwpht2-s2-1-c::placeholder {
 .table1 {
   width:100%;
 }
+
 .tvwpht2-btn {
   height: 49px;
   width: 318px;
@@ -1062,24 +1063,55 @@ input.tvwpht2-s2-1-c::placeholder {
   border: 0.5px solid #5C5B64;
 }
 
-.tvwpht2-btn #button1 {
+/* .tvwpht2-btn #button1 {
   height: 37px;
   background-color: #000000;
   outline: none;
   border-style: none;
   color: #549cfc;
   border-width: 1px;
-  border-radius: 5px;
   border-style: solid;
   border-image: linear-gradient(to right, #FC66FF, #FEC5FF) 1;
   font-weight: bold;
   background: linear-gradient(45deg, #FC66FF, #FEC5FF);
-  -webkit-background-clip: text; /* For Safari and older versions of Chrome */
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+} */
+
+.bcont {
+  width : 100%;
+  height: 37px;
+    background-image:linear-gradient(45deg, #FC66FF, #FEC5FF);
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: block;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    padding: 1px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
 }
 
+.bcont span {
+  align-items: center;
+	background: black;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+  color: #FE9EFF;
+	transition: background .5s ease;
+	width: 100%;
+  
+}
 
+.bcont #button1 {
+  width: 100%;
+}
 .tvwphtcontainer {
   height: 490px;
 }

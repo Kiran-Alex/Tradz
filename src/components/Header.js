@@ -71,12 +71,9 @@ export default function Header() {
 
 
 
-
-
-
-
               <button
                 className="navbar-toggler navbar-toggler-right border-0"
+                id="collapse-button"
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbarCollapse"
