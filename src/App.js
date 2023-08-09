@@ -34,6 +34,9 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains)
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
 
+
+
+
   useEffect(() => {
     // Update the width state whenever the window is resized
     const handleResize = () => {
@@ -46,6 +49,7 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
   return (
     <div>
        <WagmiConfig config={wagmiConfig}>

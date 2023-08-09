@@ -3,11 +3,12 @@ import TradingViewWidget from "./TradingViewWidget";
 import "../styles/better.css";
 import { Col, InputNumber, Row, Space } from "antd";
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
-import { useAccount } from "wagmi";
+import { useAccount, usePrepareContractWrite, useContractWrite } from "wagmi";
 import { useWeb3Modal } from "@web3modal/react";
 import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
+// import Slider from "@mui/material/Slider";
 import Tooltip from "@mui/material/Tooltip";
+import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import MuiInput from "@mui/material/Input";
@@ -15,6 +16,18 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
+import { ethers } from "ethers";
+import {
+  CLEARING_HOUSE_ADDRESS,
+  BTC_BASE_TOKEN_ADDRESS,
+  QUOTE_TOKEN_ADDRESS,
+  ORDER_BOOK_ADDRESS,
+  VAULT_ADDRESS,
+  XUSD_ADDRESS,
+} from "../constants/constants";
+import clearingHouseABI from "../constants/abis/clearingHouseABI.json";
+import xusdABI from "../constants/abis/xusdABI.json";
+import vaultABI from "../constants/abis/vaultABI.json";
 
 const Derivex = () => {
   const [inputValue, setInputValue] = useState(1);
@@ -30,6 +43,43 @@ const Derivex = () => {
   const [selectedRow, setSelectedRow] = useState(null);
   const { open, close } = useWeb3Modal();
   const [tohmenu, setTohmenu] = useState(1);
+
+  const amountArg =  56 ;
+  const deadline = 1912176727 ; 
+
+  const { config: setOpenPositionLongConfig } = usePrepareContractWrite({
+    enabled: !!isConnected,
+    address: CLEARING_HOUSE_ADDRESS,
+    abi: clearingHouseABI,
+    // overrides: {
+    //   gasLimit: 690000, // Keeping this here just in case you need to modify the gas limit
+    // },
+    functionName: "openPosition",
+    args: [
+      {
+        baseToken:  BTC_BASE_TOKEN_ADDRESS,
+        isBaseToQuote: false,
+        isExactInput: true,
+        amount: amountArg,
+        oppositeAmountBound: 0,
+        deadline : deadline,
+        sqrtPriceLimitX96: 0,
+        referralCode: ethers.constants.HashZero,
+      },
+    ], // TODO: Change args from "56" to an amountArg variable
+  });
+
+  const { write: submitOpenPositionLong } = useContractWrite({
+    ...setOpenPositionLongConfig,
+    async onSuccess(data) {
+      // You can add Snackbar notifications such as from https://notistack.com/
+      await enqueueSnackbar('Success')
+    },
+    async onError(data) {
+      // You can add Snackbar notifications such as from https://notistack.com/
+       await enqueueSnackbar('Failure')
+    },
+  });
 
   const [rows1, setRows] = useState([
     {
@@ -307,6 +357,7 @@ const Derivex = () => {
 
   return (
     <>
+    <SnackbarProvider />
       <div className="lol" id="derivexlol">
         {/* twap - trading view widget and panel */}
         <div className="tvwap">
@@ -525,7 +576,7 @@ const Derivex = () => {
                           </div>
                         </div>
                         <div className="tvwpht2-r2">
-                          <Slider
+                          {/* <Slider
                             aria-label="Custom marks"
                             defaultValue={1}
                             max={10}
@@ -556,7 +607,7 @@ const Derivex = () => {
                                 width: "0px",
                               },
                             }}
-                          />
+                          /> */}
                         </div>
                       </div>
 
@@ -635,10 +686,12 @@ const Derivex = () => {
                                             </div>
 
                                         </div> */}
-
+                      {/* onClick={() => submitOpenPositionLong?.()} */}
                       <div className="tvwpht2-btn">
                         {isConnected ? (
-                          <button>MARKET (LONG)</button>
+                          <button onClick={() => submitOpenPositionLong?.()}>
+                            MARKET (LONG)
+                          </button>
                         ) : (
                           <div
                             className="bcont"
@@ -1040,7 +1093,7 @@ const Derivex = () => {
                       </div>
                     </div>
                     <div className="tvwpht2-r2">
-                      <Slider
+                      {/* <Slider
                         aria-label="Custom marks"
                         defaultValue={1}
                         max={10}
@@ -1071,7 +1124,7 @@ const Derivex = () => {
                             width: "0px",
                           },
                         }}
-                      />
+                      /> */}
                     </div>
                   </div>
 
@@ -1152,7 +1205,7 @@ const Derivex = () => {
                                 </div> */}
                   <div className="tvwpht2-btn">
                     {isConnected ? (
-                      <button>MARKET {tab ? "(LONG)" : "(SHORT)"}</button>
+                      <button onClick={() => submitOpenPositionLong?.()} >MARKET {tab ? "(LONG)" : "(SHORT)"}</button>
                     ) : (
                       <div
                         className="bcont"
