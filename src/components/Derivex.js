@@ -15,6 +15,7 @@ import MuiInput from "@mui/material/Input";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import Drawer from "@mui/material/Drawer";
+import { encodeErrorResult, parseEther,stringToHex } from 'viem'
 import Button from "@mui/material/Button";
 import { ethers } from "ethers";
 import {
@@ -47,25 +48,38 @@ const Derivex = () => {
   const amountArg =  56 ;
   const deadline = 1912176727 ; 
 
+  const params = {
+    baseToken: BTC_BASE_TOKEN_ADDRESS,
+    isBaseToQuote: true, 
+    isExactInput: true,  
+    amount: parseEther("1.0"), 
+    oppositeAmountBound:parseEther("0.5"), 
+    deadline: Math.floor(Date.now() / 1000) + 60 * 20,  //  20 minutes from now
+    sqrtPriceLimitX96: 0,
+    referralCode: stringToHex(
+      'Hello world', 
+      { size: 32 }
+    ) // Convert string referral code to bytes32
+};
+
   const { config: setOpenPositionLongConfig } = usePrepareContractWrite({
-    enabled: !!isConnected,
     address: CLEARING_HOUSE_ADDRESS,
     abi: clearingHouseABI,
     // overrides: {
     //   gasLimit: 690000, // Keeping this here just in case you need to modify the gas limit
     // },
     functionName: "openPosition",
-    args: [
-      {
-        baseToken:  BTC_BASE_TOKEN_ADDRESS,
-        isBaseToQuote: false,
-        isExactInput: true,
-        amount: amountArg,
-        oppositeAmountBound: 0,
-        deadline : deadline,
-        sqrtPriceLimitX96: 0,
-        referralCode: ethers.constants.HashZero,
-      },
+    args: [params
+      // {
+      //   baseToken:  BTC_BASE_TOKEN_ADDRESS,
+      //   isBaseToQuote: false,
+      //   isExactInput: true,
+      //   amount: amountArg,
+      //   oppositeAmountBound: 0,
+      //   deadline : deadline,
+      //   sqrtPriceLimitX96: 0,
+      //   referralCode: ethers.constants.HashZero,
+      // },
     ], // TODO: Change args from "56" to an amountArg variable
   });
 
@@ -382,38 +396,31 @@ const Derivex = () => {
                 <div className="tvwhm" ref={Arrow === false ? innerRef : oRef}>
                   <LeftButton show={showLeft} onClick={handleLeftScroll} />
                   <div className=" tv tvwch-2">
-                    <span className="oi">Open Interest(L)</span>
+                    <span className="oi">Mark Price</span>
 
                     <span className="oid">14.6M / 22M</span>
                   </div>
 
                   <div className=" tv tvwch-2">
-                    <span className="oi">Open Interest(S)</span>
+                    <span className="oi">Index Price</span>
 
                     <span className="oid">361.6k / 22M</span>
                   </div>
 
                   <div className="tv tvwch-2">
                     <div className="tvwch-3-1">
-                      <span>Borrowing (L)</span>
+                      <span>Volume (24h)</span>
                     </div>
                     <div className="tvwch-4-2">
                       <span>0.0067%</span>
                     </div>
                   </div>
 
-                  <div className="tv tvwch-2">
-                    <div className="tvwch-3-1">
-                      <span>Borrowing (S)</span>
-                    </div>
-                    <div className="tvwch-4-2">
-                      <span>0.0000%</span>
-                    </div>
-                  </div>
+                  
 
                   <div className="tv tvwch-2">
                     <div className="tvwch-3-1">
-                      <span id="vq1">Rollover</span>
+                      <span id="vq1">Funding Rate (8h)</span>
                     </div>
                     <div className="tvwch-5-2">
                       <span>0.0033%</span>
@@ -689,7 +696,7 @@ const Derivex = () => {
                       {/* onClick={() => submitOpenPositionLong?.()} */}
                       <div className="tvwpht2-btn">
                         {isConnected ? (
-                          <button onClick={() => submitOpenPositionLong?.()}>
+                          <button>
                             MARKET (LONG)
                           </button>
                         ) : (
@@ -1205,7 +1212,7 @@ const Derivex = () => {
                                 </div> */}
                   <div className="tvwpht2-btn">
                     {isConnected ? (
-                      <button onClick={() => submitOpenPositionLong?.()} >MARKET {tab ? "(LONG)" : "(SHORT)"}</button>
+                      <button >MARKET {tab ? "(LONG)" : "(SHORT)"}</button>
                     ) : (
                       <div
                         className="bcont"

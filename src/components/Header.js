@@ -122,7 +122,9 @@ export default function Header() {
                 </div>
                 <div>
 
-
+                  <li className="poolsbtn">
+                    Pools
+                  </li>
                   &nbsp; &nbsp;
                   {isConnected ? <li className="webappconnected" style={{ fontFamily: 'Regular' }} onClick={() => open()} >
                     <span>0.10tMATIC</span>
