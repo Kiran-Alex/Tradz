@@ -18,9 +18,11 @@ import Derivex from "./components/Derivex";
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import { configureChains, createConfig, WagmiConfig } from 'wagmi'
-import { arbitrum, mainnet, polygon } from 'wagmi/chains'
+import { polygonMumbai} from 'wagmi/chains'
+import { Routes,Router, Route } from "react-router-dom";
+import Pools from "./components/Pools";
 
-const chains = [arbitrum, mainnet, polygon]
+const chains = [polygonMumbai]
 const projectId = '397a95937ac0b7fce6cedb9aea9665f6'
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
@@ -33,6 +35,7 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains)
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [pooltoggle,setpooltoggle] = useState(false)
 
 
 
@@ -52,9 +55,15 @@ function App() {
   
   return (
     <div>
+
+      
        <WagmiConfig config={wagmiConfig}>
       <Header />
-      <Derivex/>
+      <Routes>
+        <Route path="/pools/BTC:USD" element={<Pools/>}/>
+        <Route path="/" element={<Derivex/>}/>
+      </Routes>
+      {/* <Derivex/> */}
      <Footer />
      </WagmiConfig>
      <Web3Modal themeVariables={{

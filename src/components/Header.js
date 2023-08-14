@@ -4,13 +4,15 @@ import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOu
 import { useWeb3Modal } from '@web3modal/react'
 import { useAccount } from 'wagmi'
 import { useState } from "react";
-
+import OpacityOutlinedIcon from '@mui/icons-material/OpacityOutlined';
 import { Web3Button } from '@web3modal/react'
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const { open, close } = useWeb3Modal()
   const [trackindex, setTrackindex] = useState(false)
   const { address, connector: activeConnector, isConnected } = useAccount()
+  const navigate = useNavigate()
   const toggleIndex = () => {
     open();
     setTrackindex(true)
@@ -122,8 +124,11 @@ export default function Header() {
                 </div>
                 <div>
 
-                  <li className="poolsbtn">
-                    Pools
+                  <li className="poolsbtn" onClick={()=>{navigate("/pools/BTC:USD")}}>
+                    <span>  < OpacityOutlinedIcon/></span>
+                    <span style={{fontWeight : "bolder"}}>
+                 
+                      Pools</span>
                   </li>
                   &nbsp; &nbsp;
                   {isConnected ? <li className="webappconnected" style={{ fontFamily: 'Regular' }} onClick={() => open()} >

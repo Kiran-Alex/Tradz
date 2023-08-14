@@ -52,7 +52,7 @@ const Derivex = () => {
     baseToken: BTC_BASE_TOKEN_ADDRESS,
     isBaseToQuote: true, 
     isExactInput: true,  
-    amount: parseEther("1.0"), 
+    amount: 56, 
     oppositeAmountBound:parseEther("0.5"), 
     deadline: Math.floor(Date.now() / 1000) + 60 * 20,  //  20 minutes from now
     sqrtPriceLimitX96: 0,
@@ -283,9 +283,12 @@ const Derivex = () => {
     handleResize();
 
     return () => {
-      innerRef.current.removeEventListener("scroll", handleScroll);
+      if (innerRef.current) {
+        innerRef.current.removeEventListener("scroll", handleScroll);
+      }
       window.removeEventListener("resize", handleResize);
     };
+    
   }, [Arrow]);
 
   const handleBlur = () => {
@@ -696,7 +699,7 @@ const Derivex = () => {
                       {/* onClick={() => submitOpenPositionLong?.()} */}
                       <div className="tvwpht2-btn">
                         {isConnected ? (
-                          <button>
+                          <button onClick={() => submitOpenPositionLong?.()} >
                             MARKET (LONG)
                           </button>
                         ) : (

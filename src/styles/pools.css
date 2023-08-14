@@ -1,0 +1,242 @@
+.poolmaincont {
+    width: 80%;
+    height: 80%;
+    padding: 0px 2%;
+
+}
+
+span +  #derivexlol {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.poolmch {
+    width: 100%;
+    height: 13%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.poolmch1 {
+    height: 40px;
+  
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.pmch1l {
+    display: flex;
+}
+
+.pmch1c1 {
+    font-size: 1.125rem;
+    height: 24px;
+    font-weight: 800;
+}
+.pmch1c2
+ {
+    font-size: 0.75rem;
+ }
+.pmch1c {
+    display: flex;
+    flex-direction: column;
+}
+.poolinfoliq {
+    width: 100%;
+    height : 87%;
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.poolinfo {
+
+    width: 25rem;
+    height:100%;
+    padding: 25px;
+    border-radius: 18px;
+    overflow-x: hidden ;
+    overflow-y: auto;
+    background-color: #242629;
+    
+}
+
+.poolliq {
+    background-color: #242629;
+    width: 46rem;
+    height:100%;
+    padding: 25px;
+    border-radius: 18px;
+    overflow-x: hidden ;
+    overflow-y: auto;
+}
+
+.poolinfo .infocont {
+    width: 100%;
+    height: 18rem;
+    background-color: lightblue;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 26px;
+}
+
+.infocont + p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-align: start;
+    margin-top: 1.5rem;
+    margin-bottom: 0px;
+}
+
+.picont1 {
+    height: 70px;
+    width: 22rem;
+ 
+    margin-top: 1.5rem;
+}
+
+.picont11 {
+    font-size: 0.85rem;
+    color: rgba(145,153,167,1);
+}
+
+
+.picont12 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #3deca7;
+}
+
+.picont2 {
+    height: 60px;
+    width: 22rem;
+   
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.picont21 {
+    width: 10rem;
+    height: 100%;
+   
+}
+.picont22 {
+    width: 10rem;
+    height: 100%;
+
+}
+
+.picont211 {
+    font-weight: bold;
+    color: #3deca7;
+    font-size:1.25rem ;
+}
+.picont3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    width: 100%;
+}
+.picont31 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+   
+}
+
+.picont32 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+ 
+}
+
+.picont311 {
+    width: 10rem;
+    height: 100%;
+}
+
+.picont312 {
+    width: 10rem;
+    height: 100%;
+}
+
+
+.picont3111 {
+    font-weight: bold;
+    color: #ffffff;
+    font-size:1.4rem ;
+}
+
+.poolliq p {
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.plc2 {
+    width: 30rem;
+    height: 82px;
+}
+.plc2 .picont21 {
+     
+        width: 18rem;
+   
+}
+
+.plc3 {
+    width: 71%;
+    height: 160px;
+}
+
+.plc3 .picont31 {
+    height: 80px;
+}
+
+.plc3  .picont3111 {
+    display: flex;
+    flex-direction: row;
+}
+
+.plc2   .picont3111 {
+    display: flex;
+    flex-direction: row;
+}
+
+.plc4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.plc4 button {
+    background-color: #B794F4;
+    height: 32px;
+    outline: none;
+    border: none;
+    padding : 0px 20px;
+    border-radius: 20px;
+}
+.plc5 {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
