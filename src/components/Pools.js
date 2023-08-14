@@ -31,7 +31,7 @@ const Pools = () => {
               <div className="picont2">
 
                 <div className="picont21">
-                <div className="picont11"><span>Base Apr</span></div> 
+                <div className="picont11"><span>Bas Apr</span></div> 
                 <div className="picont211"><span>0.0% - 48.7%</span></div>
                 </div>
                 <div className="picont22">
