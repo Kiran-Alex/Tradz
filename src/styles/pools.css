@@ -73,6 +73,27 @@ span +  #derivexlol {
     
 }
 
+.infocont1 {
+    height: 20%;
+    width: 100%;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.infocont2 {
+    width: 100%;
+}
+
+.infocont2 button {
+    background-color: #242629bc;
+    color: white;
+    padding: 7px 20px;
+    border-radius: 10em;
+    border: none;
+    outline: none;
+}
+
 .poolliq {
     background-color: #242629;
     width: 46rem;
@@ -86,10 +107,14 @@ span +  #derivexlol {
 .poolinfo .infocont {
     width: 100%;
     height: 18rem;
-    background-color: lightblue;
+    background-color: #332C57;
     border-radius: 18px;
     padding: 25px;
     margin-bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .infocont + p {

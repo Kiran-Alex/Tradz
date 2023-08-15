@@ -74,7 +74,19 @@ const Pools = () => {
           </div>
           <div className="poolinfoliq">
             <div className="poolinfo">
-              <div className="infocont"></div>
+              <div className="infocont">
+                <div className="infocont1">Pool Party</div>
+                <div className="picont11" >
+                  <span>
+                    Earn PERP+OP by providing liquidity! The more trading fees
+                    you earn proportionately in a week, the higher % you can
+                    claim from the liquidity mining rewards.
+                  </span>
+                </div>
+                <div className="infocont2">
+                  <button>Claim Here</button>
+                </div>
+              </div>
               <p>Pool Info</p>
               <div className="picont1">
                 <div className="picont11">
@@ -283,7 +295,9 @@ const Pools = () => {
                         Add Liquidity
                       </Typography>
                       <IconButton
-                      onClick={()=>{handleClose()}}
+                        onClick={() => {
+                          handleClose();
+                        }}
                         sx={{
                           position: "absolute",
                           top: 0,
@@ -575,7 +589,9 @@ const Pools = () => {
                         Add Liquidity
                       </Typography>
                       <IconButton
-                      onClick={()=>{handleClose()}}
+                        onClick={() => {
+                          handleClose();
+                        }}
                         sx={{
                           position: "absolute",
                           top: 0,
