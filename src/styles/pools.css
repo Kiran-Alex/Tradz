@@ -301,7 +301,8 @@ span +  #derivexlol {
 
 @media(max-width : 410px) {
     .plc4 button {
-        padding: 0 12px;
+        padding: 0px;
+        width: 150px;
         
     }
 }
