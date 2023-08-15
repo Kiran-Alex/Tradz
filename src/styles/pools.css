@@ -231,7 +231,7 @@ span +  #derivexlol {
 }
 
 .plc4 button {
-    background-color: #B794F4;
+    background-color: #D6BCFA;
     height: 32px;
     outline: none;
     border: none;
@@ -245,6 +245,290 @@ span +  #derivexlol {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.modalsimple {
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    flex-direction: row;
+
+}
+
+.modalsimple .main {
+    border-right : 1px solid grey;
+    height: fit-content;
+    width: 60%;
+    padding: 10px 0px;
+    padding-right: 1em;
+}
+
+.modalsimple .summary {
+    padding-left: 10px;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    justify-content: space-between;
+
+}
+
+.sabtns {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    
+}
+.sabtns .sa button {
+    padding: 5px 1em;
+    border-radius: 30px;
+    border: none;
+}
+
+.sabtns + .predict {
+    width : 100%;
+    height: 14em;
+    padding: 20px 0px;
+
+    display: flex;
+    flex-direction: column  ;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 0;
+}
+
+.pt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    width: 100%;
+}
+
+.pt p {
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.65;
+}
+
+.pi {
+    width: 100%;
+    height: 97%;
+    padding: 1em 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+.piupdn {
+    width: 47%;
+    height: 90%;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+.pricerange {
+    height: fit-content ;
+    width: 100%;
+
+}
+.plab {
+    width: 100%;
+    height: 11em;
+  
+}
+.pti {
+    width: 100%;
+    height: 7em;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.amt {
+    height: 90%;
+    width: 60%;
+
+}
+
+.amtm {
+    width: 100%;
+    height:4em;
+    padding: 10px 0px;
+
+}
+
+#am1 {
+    padding: 10px 7px;
+}
+.amtm1 {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.amtm1lo {
+    height: 100%;
+    width: 15%;
+    background-image: url("https://app.perp.com/assets/coins/usd.svg");
+    background-size:80%;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.amtm1in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.amtm1in input {
+   outline: none;
+   border: none;
+   background-color: transparent;
+}
+
+.amdt {
+    width: 40%;
+    height: 90%;
+}
+
+.ptsd {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.ptsd1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.scobtn {
+    padding: 15px;
+    width: 100%;
+    height: 12%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.hrc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* advanced */
+
+.pia {
+    height: 30%;
+}
+
+.pia1 {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5;
+    background-color: #242629;
+    border: 1px solid rgb(64, 64, 64);
+
+}
+.pia1  .mbtnt{
+    height: 100%;
+    width: 29%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mbtn button {
+    border-radius: 90px;
+    padding: 0px 8px;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: #242629;
+    font-style: bold;
+}
+
+.matxt {
+    width : 71%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.matxt input {
+    width: 75%;
+    border: none;
+    background-color: #242629;
+    color: white;
+}
+
+.btcusdi {
+    height :13em;
+    width: 100%;
+
+}
+.abpr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bua span {
+    font-size: 0.9rem;
+    color: white;
+    font-weight: medium;
+}
+
+.bumain {
+    display: flex;
+    flex-direction: column;
+    height: 6.5em;
+    width: 100%;
+    border-radius: 20px;
+    margin: 10px 0px;
+    border: 0.5px solid rgb(51, 51, 51);
+}
+
+.bumain1 {
+    width: 100%;
+    height: 50%;
+    border: none;
+    border-bottom: 1px solid rgb(40, 40, 40);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bm1cont {
+    display: flex;
+    flex-direction: row;
+    width: 13%;
+    justify-content: space-between;
+}
+
+.bm1cont + input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 90%;
+    padding: 0px 10px;
 }
 
 
@@ -296,6 +580,35 @@ span +  #derivexlol {
     }
     .plc3 {
         width: 100%;
+    }
+    .modalsimple {
+        flex-direction: column;
+    }
+    .modalsimple .main { 
+        width: 100%;
+        border: none;
+    }
+    .pti {
+       
+        height:fit-content;
+       
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .amt {
+        width: 100%;
+    }
+    .amdt {
+        width: 100%;
+    }
+
+    .modalsimple .summary {
+        margin-top: 25px;
+        width: 100%;
+    }
+    .scobtnli {
+        margin-bottom: 10px;
     }
 }
 
