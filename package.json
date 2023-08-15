@@ -20,6 +20,8 @@
     "@web3modal/react": "^2.7.0",
     "antd": "^5.6.4",
     "classnames": "^2.3.2",
+    "core-js": "^3.32.0",
+    "decimal.js": "^10.4.3",
     "ethers": "^5.7.2",
     "framer-motion": "^10.12.18",
     "gsap": "^3.12.2",

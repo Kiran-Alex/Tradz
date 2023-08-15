@@ -17,7 +17,9 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import Drawer from "@mui/material/Drawer";
 import { encodeErrorResult, parseEther,stringToHex } from 'viem'
 import Button from "@mui/material/Button";
+
 import { ethers } from "ethers";
+
 import {
   CLEARING_HOUSE_ADDRESS,
   BTC_BASE_TOKEN_ADDRESS,
@@ -29,8 +31,10 @@ import {
 import clearingHouseABI from "../constants/abis/clearingHouseABI.json";
 import xusdABI from "../constants/abis/xusdABI.json";
 import vaultABI from "../constants/abis/vaultABI.json";
+import "core-js/features/bigint";
 
 const Derivex = () => {
+  
   const [inputValue, setInputValue] = useState(1);
   const { address, connector: activeConnector, isConnected } = useAccount();
   const [value, setValue] = React.useState(1);
@@ -47,12 +51,14 @@ const Derivex = () => {
 
   const amountArg =  56 ;
   const deadline = 1912176727 ; 
+  // const amount = BigInt("0.000034")
 
   const params = {
     baseToken: BTC_BASE_TOKEN_ADDRESS,
     isBaseToQuote: true, 
-    isExactInput: true,  
-    amount: 56, 
+    isExactInput: false,  
+    /* eslint-disable */
+    amount: parseEther("0.000034"), 
     oppositeAmountBound:parseEther("0.5"), 
     deadline: Math.floor(Date.now() / 1000) + 60 * 20,  //  20 minutes from now
     sqrtPriceLimitX96: 0,

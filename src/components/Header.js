@@ -7,11 +7,13 @@ import { useState } from "react";
 import OpacityOutlinedIcon from '@mui/icons-material/OpacityOutlined';
 import { Web3Button } from '@web3modal/react'
 import { useNavigate } from "react-router-dom";
+import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
 
 export default function Header() {
   const { open, close } = useWeb3Modal()
   const [trackindex, setTrackindex] = useState(false)
   const { address, connector: activeConnector, isConnected } = useAccount()
+  const [PoolBack,setPoolBack] = useState(true)
   const navigate = useNavigate()
   const toggleIndex = () => {
     open();
@@ -124,12 +126,17 @@ export default function Header() {
                 </div>
                 <div>
 
-                  <li className="poolsbtn" onClick={()=>{navigate("/pools/BTC:USD")}}>
+                 {PoolBack ?  <li className="poolsbtn" onClick={()=>{navigate("/pools/BTC:USD", setPoolBack(false))}}>
                     <span>  < OpacityOutlinedIcon/></span>
                     <span style={{fontWeight : "bolder"}}>
                  
                       Pools</span>
-                  </li>
+                  </li> :<li className="poolsbtn" onClick={()=>{navigate("/", setPoolBack(true))}}>
+                    <span>  < KeyboardBackspaceOutlinedIcon/></span>
+                    <span style={{fontWeight : "bolder"}}>
+                 
+                      Back</span>
+                  </li> }
                   &nbsp; &nbsp;
                   {isConnected ? <li className="webappconnected" style={{ fontFamily: 'Regular' }} onClick={() => open()} >
                     <span>0.10tMATIC</span>

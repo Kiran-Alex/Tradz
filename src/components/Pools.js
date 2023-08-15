@@ -10,6 +10,7 @@ const Pools = () => {
         <div className="poolmaincont">
           <div className="poolmch">
             <div className="poolmch1">
+              <div className="poolmch11" style={{display:"flex",flexDirection : "row"}}>
                 <div className="pmch1l">
                     <img src="	https://app.perp.com/assets/coins/btc.svg" alt="BTC"/>
                 </div>&nbsp;&nbsp;&nbsp;
@@ -17,7 +18,13 @@ const Pools = () => {
                     <span className="pmch1c1" >BTC</span>
                     <span className="pmch1c2" >Bitcoin</span>
                 </div>
+                </div>
+
             </div>
+            <div className="pmch1s">
+
+</div>
+           
           </div>
           <div className="poolinfoliq">
             <div className="poolinfo">
