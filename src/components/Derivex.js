@@ -8,16 +8,17 @@ import { useWeb3Modal } from "@web3modal/react";
 import Box from "@mui/material/Box";
 // import Slider from "@mui/material/Slider";
 import Tooltip from "@mui/material/Tooltip";
-import { SnackbarProvider, enqueueSnackbar } from 'notistack'
+import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import MuiInput from "@mui/material/Input";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import OpacityOutlinedIcon from "@mui/icons-material/OpacityOutlined";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import Drawer from "@mui/material/Drawer";
-import { encodeErrorResult, parseEther,stringToHex } from 'viem'
+import { encodeErrorResult, parseEther, stringToHex } from "viem";
 import Button from "@mui/material/Button";
-
+import Fab from "@mui/material/Fab";
 import { ethers } from "ethers";
 
 import {
@@ -34,7 +35,6 @@ import vaultABI from "../constants/abis/vaultABI.json";
 import "core-js/features/bigint";
 
 const Derivex = () => {
-  
   const [inputValue, setInputValue] = useState(1);
   const { address, connector: activeConnector, isConnected } = useAccount();
   const [value, setValue] = React.useState(1);
@@ -49,24 +49,21 @@ const Derivex = () => {
   const { open, close } = useWeb3Modal();
   const [tohmenu, setTohmenu] = useState(1);
 
-  const amountArg =  56 ;
-  const deadline = 1912176727 ; 
+  const amountArg = 56;
+  const deadline = 1912176727;
   // const amount = BigInt("0.000034")
 
   const params = {
     baseToken: BTC_BASE_TOKEN_ADDRESS,
-    isBaseToQuote: true, 
-    isExactInput: false,  
+    isBaseToQuote: true,
+    isExactInput: false,
     /* eslint-disable */
-    amount: parseEther("0.000034"), 
-    oppositeAmountBound:parseEther("0.5"), 
-    deadline: Math.floor(Date.now() / 1000) + 60 * 20,  //  20 minutes from now
+    amount: parseEther("0.000034"),
+    oppositeAmountBound: parseEther("0.5"),
+    deadline: Math.floor(Date.now() / 1000) + 60 * 20, //  20 minutes from now
     sqrtPriceLimitX96: 0,
-    referralCode: stringToHex(
-      'Hello world', 
-      { size: 32 }
-    ) // Convert string referral code to bytes32
-};
+    referralCode: stringToHex("Hello world", { size: 32 }), // Convert string referral code to bytes32
+  };
 
   const { config: setOpenPositionLongConfig } = usePrepareContractWrite({
     address: CLEARING_HOUSE_ADDRESS,
@@ -75,7 +72,8 @@ const Derivex = () => {
     //   gasLimit: 690000, // Keeping this here just in case you need to modify the gas limit
     // },
     functionName: "openPosition",
-    args: [params
+    args: [
+      params,
       // {
       //   baseToken:  BTC_BASE_TOKEN_ADDRESS,
       //   isBaseToQuote: false,
@@ -93,11 +91,11 @@ const Derivex = () => {
     ...setOpenPositionLongConfig,
     async onSuccess(data) {
       // You can add Snackbar notifications such as from https://notistack.com/
-      await enqueueSnackbar('Success')
+      await enqueueSnackbar("Success");
     },
     async onError(data) {
       // You can add Snackbar notifications such as from https://notistack.com/
-       await enqueueSnackbar('Failure')
+      await enqueueSnackbar("Failure");
     },
   });
 
@@ -294,7 +292,6 @@ const Derivex = () => {
       }
       window.removeEventListener("resize", handleResize);
     };
-    
   }, [Arrow]);
 
   const handleBlur = () => {
@@ -380,7 +377,7 @@ const Derivex = () => {
 
   return (
     <>
-    <SnackbarProvider />
+      <SnackbarProvider />
       <div className="lol" id="derivexlol">
         {/* twap - trading view widget and panel */}
         <div className="tvwap">
@@ -424,8 +421,6 @@ const Derivex = () => {
                       <span>0.0067%</span>
                     </div>
                   </div>
-
-                  
 
                   <div className="tv tvwch-2">
                     <div className="tvwch-3-1">
@@ -705,7 +700,7 @@ const Derivex = () => {
                       {/* onClick={() => submitOpenPositionLong?.()} */}
                       <div className="tvwpht2-btn">
                         {isConnected ? (
-                          <button onClick={() => submitOpenPositionLong?.()} >
+                          <button onClick={() => submitOpenPositionLong?.()}>
                             MARKET (LONG)
                           </button>
                         ) : (
@@ -1016,7 +1011,9 @@ const Derivex = () => {
                   <Table data={rows} />
                 </div>
               </div>
+            
             </div>
+           
           </div>
 
           <div className="tvwp" id="tvwp2">
@@ -1221,7 +1218,7 @@ const Derivex = () => {
                                 </div> */}
                   <div className="tvwpht2-btn">
                     {isConnected ? (
-                      <button >MARKET {tab ? "(LONG)" : "(SHORT)"}</button>
+                      <button>MARKET {tab ? "(LONG)" : "(SHORT)"}</button>
                     ) : (
                       <div
                         className="bcont"
@@ -1285,7 +1282,9 @@ const Derivex = () => {
                       </span>
                       <span className="tvwphyt2-m-spanr">0.0 DAI</span>
                     </div>
+                    
                   </div>
+                  
                 </div>
               </div>
             </div>
