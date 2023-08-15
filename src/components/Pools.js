@@ -335,8 +335,8 @@ const Pools = () => {
                               I think the price of BTC will...
                             </div>
                             <div className="pi">
-                              <div className="piupdn"> go down then up</div>
-                              <div className="piupdn">go up then down</div>
+                              <div className="piupdn"> Go down then up</div>
+                              <div className="piupdn" style={{    backgroundColor: "#62232c"}}>Go up then down</div>
                             </div>
                           </div>
 

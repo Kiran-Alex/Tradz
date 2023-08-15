@@ -355,9 +355,16 @@ span +  #derivexlol {
 .piupdn {
     width: 47%;
     height: 90%;
-    background-color: aquamarine;
+    background-color: #204f40;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: medium;
 }
+
 
 .pricerange {
     height: fit-content ;
@@ -555,6 +562,8 @@ span +  #derivexlol {
     width: 90%;
     padding: 0px 10px;
 }
+
+
 
 
 
