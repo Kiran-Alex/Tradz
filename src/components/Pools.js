@@ -345,7 +345,7 @@ const Pools = () => {
                           <div className="pricerange">
                             <div className="pt">
                               Set Price Range
-                              <p>Narrow (20% below the current price)</p>
+                              <p>Narrow (20% below the curent price)</p>
                             </div>
                             <Box
                               sx={{
