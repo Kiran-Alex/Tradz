@@ -6,7 +6,7 @@ import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { useAccount, usePrepareContractWrite, useContractWrite } from "wagmi";
 import { useWeb3Modal } from "@web3modal/react";
 import Box from "@mui/material/Box";
-// import Slider from "@mui/material/Slider";
+import Slider from "@mui/material/Slider";
 import Tooltip from "@mui/material/Tooltip";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import PropTypes from "prop-types";
@@ -48,10 +48,42 @@ const Derivex = () => {
   const [selectedRow, setSelectedRow] = useState(null);
   const { open, close } = useWeb3Modal();
   const [tohmenu, setTohmenu] = useState(1);
+  const [btcprice,setBtcprice] = useState(30083.4)
 
   const amountArg = 56;
   const deadline = 1912176727;
   // const amount = BigInt("0.000034")
+
+
+  // btc price fetching funcion
+  const fetchbtcdata = async () => {
+    try {
+        const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd", {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json"
+            }
+        });
+
+        const data = await response.json();
+        setBtcprice(data.bitcoin.usd)
+       
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+};
+
+
+useEffect(() => {
+  // Fetch data initially
+  fetchbtcdata();
+
+  // Set up an interval to fetch data every minute (60,000 milliseconds)
+  const fetchInterval = setInterval(fetchbtcdata, 60000);
+
+  // Clean up the interval when the component unmounts
+  return () => clearInterval(fetchInterval);
+}, []);
 
   const params = {
     baseToken: BTC_BASE_TOKEN_ADDRESS,
@@ -242,6 +274,7 @@ const Derivex = () => {
   }
 
   useEffect(() => {
+    
     const computedStyle = window.getComputedStyle(outerRef.current);
     const displayStatus = computedStyle.getPropertyValue("display");
     const bodyWidth = document.body.clientWidth;
@@ -327,33 +360,37 @@ const Derivex = () => {
 
   const marks = [
     {
-      value: 1,
+      value: 0,
       label: "1",
     },
     {
-      value: 3,
+      value: 16.66666666666667,
       label: "3",
     },
     {
-      value: 5,
+      value:33.33333333333334,
       label: "5",
     },
     {
-      value: 7,
+      value: 50.00000000000001,
       label: "7",
     },
     {
-      value: 9,
+      value: 66.66666666666668,
       label: "9",
     },
     {
-      value: 125,
+      value: 83.33333333333335,
+      label: "100",
+    },
+    {
+      value:100,
       label: "125",
     },
   ];
 
   function valuetext(value) {
-    onChange(value);
+    setInputValue(newValue);
     return `${value}°C`;
   }
 
@@ -392,10 +429,10 @@ const Derivex = () => {
                 </div>
                 <div className="  tvwch-2">
                   <div className="tvwch-2-1">
-                    <span>30838.4</span>
+                    <span>{btcprice}</span>
                   </div>
                   <div className="tvwch-2-2">
-                    <span>+429.2</span>
+                    <span>+0.00</span>
                   </div>
                 </div>
 
@@ -619,6 +656,38 @@ const Derivex = () => {
                               },
                             }}
                           /> */}
+                          <Slider
+            value={typeof value === 'number' ? value : 0}
+            onChange={handleSliderChange}
+            aria-labelledby="input-slider"
+            valueLabelDisplay="auto"
+            marks={marks}
+            getAriaValueText={(e)=> e}
+            
+            sx={{
+              " .MuiSlider-markLabel": {
+                color: "#82828F", // Set the desired mark label color here
+              },
+              ".MuiSlider-rail": {
+                color: "#282C3B",
+                height: "10px",
+              },
+              "& .MuiSlider-thumb": {
+                width: 15,
+                height: 15,
+                border: " 2px solid white",
+                color: "#282C3B",
+              },
+              "	.MuiSlider-track": {
+                backgroundColor: "#D65CD9",
+                height: "10px",
+                border: "0px",
+              },
+              ".MuiSlider-valueLabel:before": {
+                width: "0px",
+              },
+            }}
+          />
                         </div>
                       </div>
 
@@ -802,8 +871,8 @@ const Derivex = () => {
                   </button>
                 </div>
 
-                {isConnected ? (
-                  <div className="tvwnshr1" id={tohmenu === 1 ? "q" : "were"}>
+                {isConnected ? (<>
+                  {/* <div className="tvwnshr1" id={tohmenu === 1 ? "q" : "were"}>
                     <table className="table1">
                       <thead>
                         <tr>
@@ -902,7 +971,16 @@ const Derivex = () => {
                         ))}
                       </tbody>
                     </table>
+                  </div> */}
+                  <div className="tvwnshr">
+                    <span style={{ color: "#82828F" }}>
+                      No Trades
+                    </span>
+                   
+                  
                   </div>
+                  
+                  </>
                 ) : (
                   <div className="tvwnshr">
                     <span style={{ color: "#82828F" }}>
@@ -1138,6 +1216,38 @@ const Derivex = () => {
                           },
                         }}
                       /> */}
+                      <Slider
+            value={typeof value === 'number' ? value : 0}
+            onChange={handleSliderChange}
+            aria-labelledby="input-slider"
+            valueLabelDisplay="auto"
+            marks={marks}
+            getAriaValueText={(e)=> e}
+            
+            sx={{
+              " .MuiSlider-markLabel": {
+                color: "#82828F", // Set the desired mark label color here
+              },
+              ".MuiSlider-rail": {
+                color: "#282C3B",
+                height: "10px",
+              },
+              "& .MuiSlider-thumb": {
+                width: 15,
+                height: 15,
+                border: " 2px solid white",
+                color: "#282C3B",
+              },
+              "	.MuiSlider-track": {
+                backgroundColor: "#D65CD9",
+                height: "10px",
+                border: "0px",
+              },
+              ".MuiSlider-valueLabel:before": {
+                width: "0px",
+              },
+            }}
+          />
                     </div>
                   </div>
 

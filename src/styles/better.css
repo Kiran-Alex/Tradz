@@ -638,6 +638,15 @@ thead {
   width: 100%;
 }
 
+.tvwnshr12321 {
+  height: 259.86px;
+  padding-left: 6px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
 .tdclose {
   display: flex;
   flex-direction: row;
