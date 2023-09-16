@@ -77,6 +77,7 @@ const Derivex = () => {
 useEffect(() => {
   // Fetch data initially
   fetchbtcdata();
+  console.clear()
 
   // Set up an interval to fetch data every minute (60,000 milliseconds)
   const fetchInterval = setInterval(fetchbtcdata, 60000);
@@ -318,6 +319,7 @@ useEffect(() => {
     window.addEventListener("resize", handleResize);
 
     handleResize();
+    console.clear()
 
     return () => {
       if (innerRef.current) {
@@ -388,6 +390,8 @@ useEffect(() => {
       label: "125",
     },
   ];
+
+  
 
   function valuetext(value) {
     setInputValue(newValue);

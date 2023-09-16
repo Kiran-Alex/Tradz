@@ -1854,7 +1854,7 @@ input.tvwpht2-t2-1-c::placeholder {
 
 
   #derivexlol {
-    height: 100vw;
+    height: fit-content;
     margin-top: 9em;
   }
 
@@ -1937,7 +1937,8 @@ input.tvwpht2-t2-1-c::placeholder {
 
   .table2 tr td {
     font-size: small;
-    padding: 7px 56px;
+    padding: 0px 0px;
+    padding-left: 50px;
 }
 
 .table2 thead tr th {

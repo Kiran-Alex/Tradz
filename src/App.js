@@ -1,26 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
-import TopSection from "./components/TopSection";
-import ExploreFeatures from "./components/ExploreFeatures";
-import ExploreFeaturesMobile from "./components/ExploreFeaturesMobile";
-import BottomSection from "./components/BottomSection";
-import FAQ from "./components/FAQ";
-import CredSection from "./components/CredSection";
-import CredSectionMobile from "./components/CredSectionMobile";
-import BetterSection from "./components/BetterSection";
-import NFT from "./components/NFTSection";
-import CardSection from "./components/CardSection";
-import CoinSection from "./components/CoinsSection";
-import Stats from "./components/Stats";
-import Security from "./components/Security";
 import Derivex from "./components/Derivex";
-import Button from "@mui/material/Button";
 import Fab from "@mui/material/Fab";
 import OpacityOutlinedIcon from "@mui/icons-material/OpacityOutlined";
 import Box from "@mui/material/Box";
 import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
-import "./App.css"
+import "./App.css";
+import "../src/styles/better.css";
+import "../src/styles/style.css";
+import "../src/components/styles.css"
+import "../src/components/stylesmobile.css"
 import {
   EthereumClient,
   w3mConnectors,
@@ -71,7 +60,7 @@ function App() {
           <Route path="/" element={<Derivex />} />
         </Routes>
         {/* <Derivex/> */}
-        <Footer />
+     
         <Box
           sx={{
             "& > :not(style)": { m: 1 },

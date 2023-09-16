@@ -46,8 +46,8 @@ export default function Header() {
       <section className="smart-scroll" id={trackindex ? "" : "smart-scrollweb3"} style={{ background: "rgba(0,0,0,0.75" }}>
         <div className="container-fluid" >
           <nav className="navbar navbar-expand-md navbar-dark">
-            <a className="navbar-brand heading-black" href="#">
-              <div className="name">XADE</div>
+            <a className="navbar-brand heading-black" >
+              <div className="name">Tradz</div>
             </a>
 
             <div className="wb">
@@ -98,33 +98,9 @@ export default function Header() {
                 <span data-feather="grid" />
               </button>
             </div>
-            <div className="collapse navbar-collapse" id="navbarCollapse">
-              <ul className="navbar-nav ml-auto desktop-arrangement-navbar">
-                <div>
-                  <li className="nav-item">
-                    <a className="nav-link page-scroll" href="#">
-                      Home
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a href="https://docs.xade.finance/" className="nav-link page-scroll">
-                      Docs
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a href="http://explorers.xade.finance/" className="nav-link page-scroll">
-                      Premium
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link page-scroll"
-                      href="https://medium.com/@XadeFinance/what-is-xade-and-why-do-you-need-it-b483f46ba5a1"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                </div>
+            
+              <ul className="navbar-nav ml-auto desktop-arrangement-navbar" id="navbarer">
+               
                 <div>
 
                  {PoolBack ?  <li className="poolsbtn" onClick={()=>{navigate("/pools/BTC:USD", setPoolBack(false))}}>
@@ -160,7 +136,7 @@ export default function Header() {
 
                 </div>
               </ul>
-            </div>
+            
           </nav>
         </div >
       </section >

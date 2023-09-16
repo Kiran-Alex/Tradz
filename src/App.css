@@ -2,6 +2,10 @@
   display: none !important;
 }
 
+body {
+  overflow: hidden;
+}
+
 @media(max-width : 804px) {
   .css-10mozfj {
     display: flex !important;
