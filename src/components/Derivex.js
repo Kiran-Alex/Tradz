@@ -427,7 +427,7 @@ useEffect(() => {
               <div className="tvwch">
                 <div className=" tvwch-1">
                   <div className="tvwch-1c">
-                    <img src="https://gains.trade//_next/static/media/btc.fdaa3ece.svg" />
+                    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="bitcoin"/>
                     <span>BTC/USD</span>
                   </div>
                 </div>
